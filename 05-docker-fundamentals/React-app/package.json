@@ -1,0 +1,17 @@
+{
+  "name": "react-hello-world",
+  "version": "1.0.0",
+  "author": "pranav 10006",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {}
+}

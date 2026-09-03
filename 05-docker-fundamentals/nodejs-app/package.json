@@ -1,0 +1,9 @@
+{
+  "name": "nodejs-hello-world",
+  "version": "1.0.0",
+  "author": "pranav 10006",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  }
+}
