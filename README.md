@@ -1,6 +1,6 @@
 # DevOps Homework
 
-Name: Nishant Dasgupta  
+Name: pranav bharadwaj
 Roll number: **24bcs10006**
 
 This folder contains all completed homework tasks.
