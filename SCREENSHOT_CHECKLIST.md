@@ -1,0 +1,23 @@
+# Screenshot checklist
+
+Capture genuine output only after the matching runtime or credential is available. Save images at the listed path and link them from the relevant README. Do not reuse example output as fresh proof.
+
+| Screenshot name | Exact command or page | What must be visible | Save to | Requirement proved |
+|---|---|---|---|---|
+| `kubernetes12.png` | Session 12 ConfigMap/Secret injection and Ingress `/health` commands in `12-kubernetes-config-ingress/README.md` | `PORT=8000 DATABASE_URL_present=yes`, Ingress address, healthy JSON | `12-kubernetes-config-ingress/kubernetes12.png` (captured) | Session 12 ConfigMap, Secret, Ingress |
+| `kubernetes12session.png` | `kubectl get pods,svc,endpoints -n session12-debug; kubectl describe svc session12-web -n session12-debug; kubectl get pods -n session12-debug --show-labels` | Ready Pod with `app=session12-web` but Service selector `app=wrong-label` and no endpoints | `12-kubernetes-config-ingress/kubernetes12session.png` (captured) | Session 12 troubleshooting before state |
+| `kuberenetes12troubleshooting.png` | `kubectl get pods,svc,endpoints -n session12-debug; kubectl describe svc session12-web -n session12-debug; kubectl logs session12-client -n session12-debug` | Matching selector, populated endpoint and Nginx HTML | `12-kubernetes-config-ingress/kuberenetes12troubleshooting.png` (captured) | Session 12 troubleshooting fix |
+| `session14-pods-before.png` | `kubectl get pods -n session14-debug -o wide; kubectl get events -n session14-debug --sort-by=.lastTimestamp` | Crash restart/backoff, ImagePullBackOff, Pending, ContainerCreating, CreateContainerConfigError and explanatory events | `14-kubernetes-troubleshooting/session14-pods-before.png` (captured) | Session 14 broken Pod scenarios |
+| `session14.png` | `kubectl get pods -n session14-debug -o wide; kubectl logs crash-loop -n session14-debug; kubectl exec missing-key -n session14-debug -- printenv APP_MODE` after fixes | All five Ready, healthy startup log, `APP_MODE=healthy` value | `14-kubernetes-troubleshooting/session14.png` (captured) | Session 14 fixes verified |
+| `final-api-tests.png` | `python -m unittest discover -s final-devops-project/application -p 'test_*.py' -v` | Four passing test names and final `OK` | `final-devops-project/evidence/final-api-tests.png` | Application tests |
+| `final-compose-stack.png` | Run `docker compose -f final-devops-project/docker/compose.yaml up --build -d`, then `docker compose -f final-devops-project/docker/compose.yaml ps` | API and healthy PostgreSQL containers | `final-devops-project/evidence/final-compose-stack.png` | Docker build, runtime and database stack |
+| `final-api-browser.png` | Open `http://localhost:8000/` and `http://localhost:8000/health` | API JSON and healthy response | `final-devops-project/evidence/final-api-browser.png` | Working API endpoints |
+| `kubernetes-resources.png` | `kubectl get pods,deployments,svc,ingress,hpa -o wide` | Ready Pods and created resources | `final-devops-project/evidence/kubernetes-resources.png` | Kubernetes deployment |
+| `session13.png` | `kubectl get hpa,pods,pvc -n homework; kubectl top pods -n homework; kubectl describe hpa homework -n homework` during load | HPA target and eight Ready API Pods, live CPU values, Bound PVC and rescale events | `13-kubernetes-storage-hpa/session13.png` (captured) | Session 13 HPA output, scaling and screenshot deliverable |
+| `helm-rollback.png` | Follow `15-helm/README.md`, then `helm history homework` and `helm status homework` | Release revisions including rollback and healthy status | `final-devops-project/evidence/helm-rollback.png` | Helm lifecycle |
+| `github-actions.png` | GitHub repository → Actions → completed workflow run | Green run and passed security jobs | `final-devops-project/evidence/github-actions.png` | CI/CD and DevSecOps execution |
+| `terraform-plan.png` | In `terraform-s3-demo`, run `terraform plan` with AWS credentials | Planned S3 resources and successful plan summary | `terraform-s3-demo/evidence/terraform-plan.png` | Terraform plan (not apply) |
+| `monitoring-grafana.png` | Open Grafana after deploying monitoring stack | Prometheus datasource and live API metric | `20-monitoring-gitops/evidence/monitoring-grafana.png` | Monitoring |
+| `argocd-sync.png` | Argo CD UI → `homework-api` application | Actual Synced and Healthy state | `20-monitoring-gitops/evidence/argocd-sync.png` | GitOps reconciliation |
+
+Historical screenshots for Sessions 01–11 are linked from their session documents. The assignment does not require a presentation deck.

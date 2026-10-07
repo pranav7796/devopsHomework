@@ -1,0 +1,12 @@
+.git
+.aws
+.codex
+.agents
+**/*.png
+**/__pycache__
+**/*.pyc
+**/.terraform
+**/terraform.tfstate*
+**/terraform.tfvars
+**/.env
+**/evidence

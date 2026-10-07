@@ -1,2 +1,10 @@
 .DS_Store
 **/system-report/process.log
+**/.env
+**/terraform.tfvars
+!terraform-s3-demo/terraform.tfvars
+**/terraform.tfstate
+**/terraform.tfstate.backup
+**/.terraform/
+**/tfplan
+**/__pycache__/

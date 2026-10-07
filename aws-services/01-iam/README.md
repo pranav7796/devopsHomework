@@ -1,0 +1,3 @@
+# AWS IAM — governance
+
+Identity and Access Management controls authentication and authorization. Users represent people or legacy credentials; groups collect users; roles provide temporary assumable identities to users and services; policies are JSON permission documents attached to identities or resources. Grant only necessary actions on necessary resources, prefer roles and short-lived credentials, enable MFA for human access, review unused access, and never commit keys. Typical uses include CI assuming a deployment role, EC2 instance profiles, and operator access. Avoid long-lived IAM users for automation.

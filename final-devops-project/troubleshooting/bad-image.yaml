@@ -1,0 +1,17 @@
+# Isolated exercise: do not apply to the working homework namespace.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: broken-image-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels: {app: broken-image-demo}
+  template:
+    metadata:
+      labels: {app: broken-image-demo}
+    spec:
+      containers:
+        - name: api
+          image: devops-homework-final-api:tag-that-does-not-exist
+          ports: [{containerPort: 8000}]

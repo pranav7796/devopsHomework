@@ -1,0 +1,43 @@
+{{- if .Values.database.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-db
+spec:
+  selector: {app.kubernetes.io/instance: {{ .Release.Name }}, component: db}
+  ports: [{name: postgres, port: 5432, targetPort: 5432}]
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ .Release.Name }}-db
+spec:
+  serviceName: {{ .Release.Name }}-db
+  replicas: 1
+  selector:
+    matchLabels: {app.kubernetes.io/instance: {{ .Release.Name }}, component: db}
+  template:
+    metadata:
+      labels: {app.kubernetes.io/instance: {{ .Release.Name }}, component: db}
+    spec:
+      containers:
+        - name: postgres
+          image: {{ .Values.database.image }}
+          ports: [{name: postgres, containerPort: 5432}]
+          env:
+            - {name: POSTGRES_DB, value: homework}
+            - {name: POSTGRES_USER, value: homework}
+            - {name: POSTGRES_PASSWORD, valueFrom: {secretKeyRef: {name: {{ .Values.secretName }}, key: DB_PASSWORD}}}
+            - {name: PGDATA, value: /var/lib/postgresql/data/pgdata}
+          readinessProbe: {exec: {command: [sh, -c, "pg_isready -U homework -d homework"]}, periodSeconds: 5}
+          resources:
+            requests: {cpu: 100m, memory: 128Mi}
+            limits: {cpu: 500m, memory: 512Mi}
+          volumeMounts: [{name: data, mountPath: /var/lib/postgresql/data}]
+  volumeClaimTemplates:
+    - metadata: {name: data}
+      spec:
+        accessModes: [ReadWriteOnce]
+        resources:
+          requests: {storage: {{ .Values.database.storage }}}
+{{- end }}

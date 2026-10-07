@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: homework-load-generator
+  namespace: homework
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: load
+          image: busybox:1.36
+          command:
+            - sh
+            - -c
+            - |
+              for worker in $(seq 1 16); do
+                (while true; do wget -q -O /dev/null http://homework/; done) &
+              done
+              wait

@@ -1,0 +1,3 @@
+# Amazon EC2 — compute
+
+EC2 provides virtual machine instances. An AMI is the boot image; instance families/sizes trade CPU, memory, storage, and network capacity. Key pairs support SSH authentication. Security Groups are stateful virtual firewalls; EBS provides persistent block volumes. Public IPs route through an internet gateway when network rules allow; private IPs are internal to a VPC. Instance lifecycle includes pending, running, stopping/stopped, and terminated; stopping may retain EBS while termination removes the instance. Common uses include application hosts, workers, and experiments. Restrict SSH to a trusted CIDR and prefer managed access.

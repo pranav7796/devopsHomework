@@ -1,0 +1,9 @@
+groups:
+  - name: homework
+    rules:
+      - alert: HomeworkApiDown
+        expr: up{job="homework-api"} == 0
+        for: 1m
+        labels: {severity: warning}
+        annotations:
+          summary: Homework API scrape is unavailable

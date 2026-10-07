@@ -1,0 +1,80 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: homework-api-config
+data:
+  PORT: "8000"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: homework-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels: {app: homework-api}
+  template:
+    metadata:
+      labels: {app: homework-api}
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 100
+        seccompProfile: {type: RuntimeDefault}
+      containers:
+        - name: api
+          image: ghcr.io/pranav7796/devopshomework/homework-api:latest
+          ports: [{name: http, containerPort: 8000}]
+          envFrom:
+            - configMapRef: {name: homework-api-config}
+            - secretRef: {name: homework-api-secret}
+          resources:
+            requests: {cpu: 100m, memory: 64Mi}
+            limits: {cpu: 500m, memory: 256Mi}
+          readinessProbe:
+            httpGet: {path: /health, port: http}
+            periodSeconds: 5
+          livenessProbe:
+            httpGet: {path: /health, port: http}
+            periodSeconds: 10
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: {drop: [ALL]}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: homework-api
+spec:
+  selector: {app: homework-api}
+  ports: [{name: http, port: 80, targetPort: http}]
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: homework-api
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: homework.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service: {name: homework-api, port: {number: 80}}
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: homework-api
+spec:
+  scaleTargetRef: {apiVersion: apps/v1, kind: Deployment, name: homework-api}
+  minReplicas: 2
+  maxReplicas: 8
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target: {type: Utilization, averageUtilization: 70}

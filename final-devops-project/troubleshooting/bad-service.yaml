@@ -1,0 +1,8 @@
+# Isolated exercise: selector intentionally differs from Pod labels.
+apiVersion: v1
+kind: Service
+metadata:
+  name: broken-service-demo
+spec:
+  selector: {app: no-such-pod}
+  ports: [{port: 80, targetPort: 8000}]

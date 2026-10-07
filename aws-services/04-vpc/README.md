@@ -1,0 +1,3 @@
+# Amazon VPC — networking
+
+A VPC is an isolated IP network in a region. CIDR blocks define address space; subnets occupy one availability zone. Route tables direct traffic. An Internet Gateway enables public routing; a NAT Gateway lets private subnet resources initiate outbound internet access without accepting unsolicited inbound connections. Security Groups are stateful instance/network-interface filters; Network ACLs are stateless subnet filters. A public subnet has a route to an Internet Gateway; a private subnet does not. Minimize exposed ports and use private subnets for databases and internal services.

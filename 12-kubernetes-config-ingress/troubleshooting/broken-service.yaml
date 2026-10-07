@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: session12-debug
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: session12-web
+  namespace: session12-debug
+spec:
+  replicas: 1
+  selector:
+    matchLabels: {app: session12-web}
+  template:
+    metadata:
+      labels: {app: session12-web}
+    spec:
+      containers:
+        - name: web
+          image: nginx:1.27-alpine
+          ports: [{containerPort: 80}]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: session12-web
+  namespace: session12-debug
+spec:
+  selector: {app: wrong-label}
+  ports: [{port: 80, targetPort: 80}]
