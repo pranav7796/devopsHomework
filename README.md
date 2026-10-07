@@ -41,9 +41,9 @@ The AWS Terraform project is a separate cloud learning demo. It does not provisi
 | 15 Helm | `15-helm/` |
 | 16 CI/CD | `16-cicd/` |
 | 17 DevSecOps | `17-devsecops/` |
-| 18 Terraform S3 | `terraform-s3-demo/` |
+| 18 Terraform and AWS services | `18-terraform-infrastructure/` (links to `terraform-s3-demo/` and `aws-services/`) |
 | 18 AWS services | `aws-services/` |
-| 19 Terraform architecture | `terraform-cloud/` |
+| 19 Terraform architecture | `19-cloud-terraform/` (links to `terraform-cloud/`) |
 | 20 Monitoring and GitOps | `20-monitoring-gitops/` |
 | 21 Final project | `final-devops-project/` |
 
