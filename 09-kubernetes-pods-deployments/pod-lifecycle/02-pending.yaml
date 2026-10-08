@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
     - name: impossible-resource
-      image: nginx:1.27
+      image: nginx:1.27-alpine
       resources:
         requests:
           cpu: "1"

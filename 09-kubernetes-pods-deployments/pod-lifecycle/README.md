@@ -106,6 +106,8 @@ NAME                READY   STATUS    RESTARTS
 lifecycle-running   1/1     Running   0
 ```
 
+In the isolated `session10-lifecycle` namespace, the Pod reached `1/1 Running` with `nginx:1.27-alpine`; `kubectl describe` showed `State: Running` and `Ready: True`. [Live output screenshot](01-running.png).
+
 ## 2. Pending
 
 ```bash
@@ -117,6 +119,8 @@ kubectl describe pod lifecycle-pending
 This requests impossible CPU/memory resources, so on a normal small cluster it should remain Pending.
 
 The exact message depends on the cluster.
+
+In `session10-lifecycle`, the Pod remained `0/1 Pending`; `kubectl describe` showed a `100Gi` memory request and `FailedScheduling: Insufficient memory`. [Live output screenshot](02-pending.png).
 
 ## 3. Succeeded
 
@@ -136,6 +140,8 @@ Pod phase:
 Succeeded
 ```
 
+The local Pod finished as `Completed` with phase `Succeeded` and exit code `0`; its log ends with `Task completed successfully`. [Live output screenshot](03-succeeded.png).
+
 ## 4. Failed
 
 ```bash
@@ -154,6 +160,8 @@ Pod phase:
 Failed
 ```
 
+The local Pod ended in `Error` with phase `Failed` and exit code `1`; its log says `Task failed`. [Live output screenshot](04-failed.png).
+
 ## 5. CrashLoopBackOff
 
 ```bash
@@ -162,6 +170,8 @@ kubectl get pod lifecycle-crashloop -w
 ```
 
 The container starts, exits with code 1, gets restarted, and keeps failing.
+
+In `session10-lifecycle`, the container exited with code `1` and entered a restart backoff. The status can cycle between `Running`, `Error`, and `CrashLoopBackOff`; the captured `describe` output shows the terminated state and `BackOff` event. [Live output screenshot](05-crashloopbackoff.png).
 
 Inspect:
 ```bash
@@ -179,6 +189,8 @@ kubectl describe pod lifecycle-image-error
 ```
 
 The image tag intentionally does not exist.
+
+The local Pod showed `ImagePullBackOff`; `kubectl describe` identified the invalid image and pull failure. [Live output screenshot](06-imagepullbackoff.png).
 
 ## 7. Readiness probe
 
@@ -201,6 +213,8 @@ Running != Ready
 Readiness answers:
 "Should this Pod receive traffic?"
 
+The local readiness Pod reached `1/1 Running`; `kubectl describe` showed `Ready: True` and an HTTP probe on port `80`. [Live output screenshot](07-readiness.png).
+
 ## 8. Liveness probe
 
 ```bash
@@ -220,6 +234,8 @@ Look at:
 RESTARTS
 ```
 
+The local liveness Pod restarted after its health file was removed; `kubectl get` showed `RESTARTS 1` and `kubectl describe` showed the configured probe. [Live output screenshot](08-liveness.png).
+
 ## 9. Startup probe
 
 ```bash
@@ -230,6 +246,8 @@ kubectl get pod lifecycle-startup -w
 The application intentionally takes 30 seconds to start.
 
 The startup probe gives it time before normal health management takes over.
+
+The local Pod reached `1/1 Running` after its delayed start; logs showed `Application started`, and `kubectl describe` showed the startup probe. [Live output screenshot](09-startup.png).
 
 ## 10. Init container
 
@@ -254,6 +272,8 @@ Init completes
 Main container starts
 ```
 
+The local Pod reached `1/1 Running`; init logs ended with `Init complete`, and `kubectl describe` showed the init container `Completed` before the Nginx container ran. [Live output screenshot](10-init-container.png).
+
 ## 11. Multi-container Pod
 
 ```bash
@@ -271,6 +291,8 @@ View individual container logs:
 kubectl logs lifecycle-multi-container -c app
 kubectl logs lifecycle-multi-container -c sidecar
 ```
+
+The local Pod reached `2/2 Running`; `kubectl describe` showed both `app` and `sidecar` containers running and ready. [Live output screenshot](11-multi-container.png).
 
 Teaching point:
 
@@ -299,6 +321,8 @@ kubectl get pod lifecycle-termination -w
 ```
 
 The process handles SIGTERM, performs cleanup, and exits.
+
+In `session10-lifecycle`, `kubectl get pod -w` showed the Pod move from `1/1 Running` through `Terminating` to `Completed` after deletion. A later `kubectl get` confirmed the Pod was gone. [Live output screenshot](12-termination.png).
 
 ## Cleanup everything
 

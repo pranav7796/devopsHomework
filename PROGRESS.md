@@ -14,7 +14,7 @@ Status meanings: **NOT STARTED**, **IN PROGRESS**, **IMPLEMENTED**, **VERIFIED**
 | 07 Multistage build and three application types | IMPLEMENTED | `06-dockerfiles-images/`; existing screenshots, fresh build not yet run. |
 | 08 Docker networks, host mode, bind mount, overlay research | IMPLEMENTED | `07-docker-networking-volumes/`; sample DB password replaced with environment input. |
 | 09 Kubernetes fundamentals and Minikube | VERIFIED | Local Minikube v1.37 node Ready with CoreDNS and system Pods; existing tutorial notes/screenshots remain in `08-kubernetes-fundamentals/`. |
-| 10 Deployments, four strategies, Pod lifecycle | IMPLEMENTED | User confirmed Session 10 was already completed; existing work in `09-kubernetes-pods-deployments/` preserved. |
+| 10 Deployments, four strategies, Pod lifecycle | IMPLEMENTED | Existing strategy work preserved; all 12 Pod lifecycle YAML examples were run in `session10-lifecycle`, with individual output screenshots linked from the lifecycle README. |
 | 11 Five Services, comparisons, FQDN and CoreDNS | VERIFIED | `10-kubernetes-services/`: 5/5 Services deployed in `session11`, Ready backends, ClusterIP/NodePort/LoadBalancer HTTP, ExternalName CNAME, headless DNS and per-Pod HTTP; real output appended to README. |
 
 ## Sessions 12–21 and final project
@@ -23,8 +23,8 @@ Status meanings: **NOT STARTED**, **IN PROGRESS**, **IMPLEMENTED**, **VERIFIED**
 |---|---|---|
 | 12 ConfigMap, Secret, Ingress, troubleshooting | VERIFIED | ConfigMap and Secret injection, ingress-nginx `/health` route, and isolated broken/fixed Service checked; three genuine screenshots linked in README. |
 | 13 Storage, HPA, load generator, mini project | VERIFIED | `hpa.yml`, load Job, volume guide and mini project; local HPA scaled 2→8 twice with actual CPU/output and genuine `session13.png`. |
-| 14 Kubernetes troubleshooting commands and failure scenarios | IN PROGRESS | Five isolated Pod failure cases were investigated and fixed; genuine before/after screenshots captured. Service, DNS and Pod networking drills remain. |
-| 15 Helm commands and rollback project | USER ACTION REQUIRED | Chart lint passed and local revisions 1→2→3→4 include rollback to 1; screenshot and remaining command evidence still required. |
+| 14 Kubernetes troubleshooting commands and failure scenarios | VERIFIED | Five isolated Pod failures and separate Service, DNS and Pod networking failures were investigated and fixed; genuine before/after screenshots captured. |
+| 15 Helm commands and rollback project | VERIFIED | Chart lint passed; local revisions 1→2→3→4 include rollback to 1, and `helm-rollback.png` captures revision 4 deployed with 2/2 Pods Ready. The disposable release was uninstalled and `helm-uninstall.png` captures its absence while `homework` remains. |
 | 16 CI/CD GitHub Actions demo | IN PROGRESS | Implement test/build workflow. |
 | 17 DevSecOps scans and gates | IN PROGRESS | Bandit and pip-audit passed locally; Gitleaks, Trivy and hosted workflow run still pending. |
 | 18 Terraform S3 demo and AWS service research | USER ACTION REQUIRED | Exact S3 files including public-only `terraform.tfvars`, AWS notes, fmt/init/validate passed; plan/apply/show/output/destroy require AWS credentials. |

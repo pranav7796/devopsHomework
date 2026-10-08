@@ -9,4 +9,4 @@ spec:
       command: ["sh", "-c", "echo 'Init container running'; sleep 10; echo 'Init complete'"]
   containers:
     - name: app
-      image: nginx:1.27
+      image: nginx:1.27-alpine

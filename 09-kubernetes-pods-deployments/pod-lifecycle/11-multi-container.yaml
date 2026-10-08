@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
     - name: app
-      image: nginx:1.27
+      image: nginx:1.27-alpine
     - name: sidecar
       image: busybox:1.36
       command: ["sh", "-c", "while true; do echo 'Sidecar is running'; sleep 10; done"]

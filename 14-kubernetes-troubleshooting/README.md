@@ -55,3 +55,19 @@ After replacing only these five Pods using `fixed-pods.yaml`, `kubectl wait --fo
 [After screenshot](session14.png) captures the five Ready Pods and both successful checks.
 
 Reproducible broken examples are also in `../09-kubernetes-pods-deployments/troubleshooting/` and `../10-kubernetes-services/troubleshooting/`; do not apply them to a production namespace.
+
+## Isolated Service, DNS and Pod networking drill
+
+[`network-broken.yaml`](network-broken.yaml) creates three independent problems in `session14-debug`:
+
+| Problem | Before output and investigation | Root cause | Intended fix |
+|---|---|---|---|
+| Service connectivity | `kubectl get endpoints session14-web` showed `<none>`; requests to the Service IP were refused | Service selector `app=wrong-label` does not match the ready `session14-web` Pod | Apply the matching selector from [`network-fixed.yaml`](network-fixed.yaml) and request the Service again |
+| DNS | `nslookup session14-wbe.session14-debug.svc.cluster.local` returned `NXDOMAIN`; `session14-web.session14-debug.svc.cluster.local` resolved to `10.98.188.51` | Misspelled Service name (`wbe` instead of `web`) | Use the correct FQDN and confirm resolution |
+| Pod networking | `wget http://10.244.0.59:8080` from another Pod returned `Connection refused`; `wget http://127.0.0.1:8080` inside `loopback-only` returned `session14-network-ok` | The app binds only to loopback, so the Pod IP cannot accept connections | Recreate the disposable Pod bound to `0.0.0.0:8080` and retry by Pod IP |
+
+Actual troubleshooting commands include `kubectl get pods,svc,endpoints -n session14-debug`, `kubectl describe svc session14-web -n session14-debug`, `kubectl exec network-client -- nslookup ...`, `kubectl exec network-client -- wget ...`, and `kubectl exec loopback-only -- wget ...`. The main `homework` release is unaffected.
+
+[Before screenshot](session14troubleshooting.png) captures all three real failures. After applying `network-fixed.yaml`, the Service endpoint was `10.244.0.58:80`; the correct FQDN resolved to `10.98.188.51`; a request to `http://session14-web` returned the Nginx page. The recreated `loopback-only` Pod had IP `10.244.0.61`, and a request from `network-client` to port 8080 returned `session14-network-ok`.
+
+[After screenshot](networkafter.png) captures the repaired endpoint, DNS, Service HTTP and direct Pod-IP response.
