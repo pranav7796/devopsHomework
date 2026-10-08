@@ -4,5 +4,5 @@ metadata:
   name: {{ .Release.Name }}
 spec:
   type: {{ .Values.service.type }}
-  selector: {app.kubernetes.io/instance: {{ .Release.Name }}}
+  selector: {app.kubernetes.io/instance: {{ .Release.Name }}, app.kubernetes.io/name: {{ include "homework-api.name" . }}}
   ports: [{name: http, port: {{ .Values.service.port }}, targetPort: http}]
