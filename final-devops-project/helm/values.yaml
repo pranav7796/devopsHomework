@@ -1,7 +1,7 @@
 replicaCount: 2
 image:
   repository: ghcr.io/pranav7796/devopshomework/homework-api
-  tag: c01d2da27ecd0661487815a406b434fa32b8efe2
+  tag: 2fda3b607ebaf632e5df6071e88b8ade4ec005ce
   pullPolicy: IfNotPresent
 service:
   type: ClusterIP
