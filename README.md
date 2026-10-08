@@ -87,7 +87,7 @@ Helm install, upgrade, history, rollback and uninstall practice is in `15-helm/R
 
 ## CI/CD and DevSecOps
 
-`.github/workflows/devsecops.yml` runs unit tests, Bandit SAST, pip-audit SCA, Gitleaks secret scan, Docker build and Trivy image scan. A failing gate blocks GHCR publication. On a main push, CI publishes `latest` and a commit-tagged image, then updates the Helm image tag in Git; Argo CD reconciles that desired state. The publish job uses GitHub's short-lived `GITHUB_TOKEN` and needs permission to write to `main`. Push to GitHub to run it; no remote execution is claimed from this checkout.
+`.github/workflows/devsecops.yml` runs unit tests, Bandit SAST, pip-audit SCA, Gitleaks secret scan, Docker build and Trivy image scan. A failing gate blocks GHCR publication. On a main push, CI publishes `latest` and a commit-tagged image, then updates the Helm image tag in Git; Argo CD reconciles that desired state when installed. The publish job uses GitHub's short-lived `GITHUB_TOKEN` and needs permission to write to `main`. The [8 October 2026 hosted run](https://github.com/pranav7796/devopsHomework/actions/runs/37801718339) passed both jobs.
 
 ## Terraform and AWS
 

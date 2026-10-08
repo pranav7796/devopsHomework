@@ -1,0 +1,30 @@
+# Local Minikube verification of the chart tracked by GitHub Actions.
+# Load the locally built API image into Minikube and create
+# homework-api-secret in homework-gitops before applying this Application.
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: homework-api-local
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/pranav7796/devopsHomework.git
+    targetRevision: main
+    path: final-devops-project/helm
+    helm:
+      releaseName: homework-gitops
+      parameters:
+        - {name: ingress.enabled, value: "false"}
+        - {name: autoscaling.enabled, value: "false"}
+        - {name: image.repository, value: devops-homework-final-api}
+        - {name: image.tag, value: latest}
+        - {name: image.pullPolicy, value: Never}
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: homework-gitops
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions: [CreateNamespace=true]

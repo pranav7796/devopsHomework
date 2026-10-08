@@ -1,23 +1,43 @@
 # Final troubleshooting challenge
 
-Use a disposable namespace such as `homework-drill`. Keep the healthy `homework` release intact. The sample YAML files intentionally fail and are excluded from Helm/Argo CD.
+The two faults below were reproduced and repaired in the disposable `homework-drill` namespace on 8 October 2026. The healthy `homework` release was left intact. The broken manifests are excluded from Helm and Argo CD.
 
-## ImagePullBackOff
+## Problems, investigation and root causes
 
-1. **Problem:** `bad-image.yaml` references a nonexistent image tag.
-2. **Symptoms:** Pod reports `ErrImagePull`, then `ImagePullBackOff`.
-3. **Investigation:** `kubectl apply -n homework-drill -f bad-image.yaml`; `kubectl get pods -n homework-drill`; `kubectl describe pod -n homework-drill -l app=broken-image-demo` (use actual Pod name for `describe`).
-4. **Root cause:** Registry cannot serve that tag.
-5. **Fix:** Change to an available image tag, then reapply in the drill namespace.
-6. **Verification:** `kubectl rollout status deployment/broken-image-demo -n homework-drill`; check Pod Ready and logs.
+| Problem | Before output | Investigation and root cause | Fix |
+|---|---|---|---|
+| API image cannot start | `broken-image-demo` Deployment `0/1`; Pod `ErrImagePull`, followed by `ImagePullBackOff` | `kubectl describe pods -l app=broken-image-demo -n homework-drill` showed an attempt to pull `devops-homework-final-api:tag-that-does-not-exist`. The tag is deliberately invalid; the local cluster also could not resolve Docker Hub. | Apply [`fixed-image.yaml`](fixed-image.yaml), which uses the locally loaded `devops-homework-final-api:latest` image with `imagePullPolicy: Never`. |
+| Service has no backend | `broken-service-demo` endpoints `<none>` | `kubectl describe svc broken-service-demo -n homework-drill` showed selector `app=no-such-pod`; the Deployment's Pod label is `app=broken-image-demo`. | Apply [`fixed-service.yaml`](fixed-service.yaml) with the matching selector. |
 
-## Empty Service endpoints
+## Reproduce and repair
 
-1. **Problem:** `bad-service.yaml` selects `app: no-such-pod`.
-2. **Symptoms:** `kubectl get endpoints -n homework-drill broken-service-demo` has no addresses; traffic fails.
-3. **Investigation:** `kubectl describe svc -n homework-drill broken-service-demo`; `kubectl get pods -n homework-drill --show-labels`.
-4. **Root cause:** Service selector and Pod labels differ.
-5. **Fix:** Change Service selector to the label on an existing Ready Pod and reapply.
-6. **Verification:** EndpointSlice includes the Pod IP; a request through the Service returns HTTP 200.
+From the repository root, with the final API image loaded into Minikube:
 
-For CrashLoopBackOff, Pending, DNS, probes and configuration issues see `../../14-kubernetes-troubleshooting/README.md`. Capture before/after output only after running each drill; no success is claimed here. Cleanup drill resources with `kubectl delete namespace homework-drill` after confirming it contains only the exercise.
+```sh
+kubectl create namespace homework-drill
+kubectl apply -n homework-drill \
+  -f final-devops-project/troubleshooting/bad-image.yaml \
+  -f final-devops-project/troubleshooting/bad-service.yaml
+kubectl get deploy,pods,svc,endpoints -n homework-drill -o wide
+kubectl describe pods -l app=broken-image-demo -n homework-drill
+kubectl describe svc broken-service-demo -n homework-drill
+
+kubectl apply -n homework-drill \
+  -f final-devops-project/troubleshooting/fixed-image.yaml \
+  -f final-devops-project/troubleshooting/fixed-service.yaml
+kubectl rollout status deployment/broken-image-demo -n homework-drill
+kubectl run drill-client -n homework-drill --image=busybox:1.36 \
+  --image-pull-policy=Never --restart=Never --command -- sleep 3600
+kubectl wait --for=condition=Ready pod/drill-client -n homework-drill --timeout=60s
+kubectl get deploy,pods,svc,endpoints -n homework-drill -o wide
+kubectl get endpointslice -n homework-drill \
+  -l kubernetes.io/service-name=broken-service-demo -o wide
+kubectl exec drill-client -n homework-drill -- wget -qO- http://broken-service-demo/health
+kubectl logs deployment/broken-image-demo -n homework-drill --tail=5
+```
+
+## Observed verification
+
+Before repair, the API Deployment was `0/1`, its Pod was in `ErrImagePull`, and the Service had no endpoints. After repair, the rollout completed, the Deployment and API Pod were `1/1 Ready`, and the Service endpoint was `10.244.0.78:8000`. Its EndpointSlice listed the same Pod IP. The separate `drill-client` Pod received `{"status":"healthy"}` through the Service; API logs recorded `GET /health` with HTTP 200.
+
+The fixed image manifest is for this local Minikube exercise. On another cluster, replace the image with an accessible published tag and choose an appropriate pull policy. The drill namespace can be removed after reviewing its resources with `kubectl delete namespace homework-drill`.

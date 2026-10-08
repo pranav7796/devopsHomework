@@ -61,7 +61,7 @@ Run `helm lint final-devops-project/helm` and `helm template homework final-devo
 
 ## CI/CD pipeline
 
-The executable workflow is at repository root `../.github/workflows/devsecops.yml`, with a submission copy in `.github/workflows/`. It tests, scans and builds for pushes and pull requests. On a main push with all gates green, it publishes the image to GHCR and commits the SHA image tag into the Helm values. Argo CD watches the Git chart and deploys the change. Hosted success requires GitHub access and a cluster with Argo CD; no remote run is claimed here.
+The executable workflow is at repository root `../.github/workflows/devsecops.yml`, with a submission copy in `.github/workflows/`. It tests, scans and builds for pushes and pull requests. On a main push with all gates green, it publishes the image to GHCR and commits the SHA image tag into the Helm values. The [hosted run on 8 October 2026](https://github.com/pranav7796/devopsHomework/actions/runs/37801718339) passed both `test-and-security` and `publish`; [screenshot evidence](evidence/github-actions.png) is included.
 
 ## DevSecOps implementation
 
@@ -73,15 +73,15 @@ The API exposes `/metrics` and structured request logs. `monitoring/` runs Prome
 
 ## GitOps
 
-`gitops/application.yaml` declares an Argo CD Application watching this chart on the public GitHub repository. The controller needs installation, a readable GHCR package or pull Secret, and a real Kubernetes cluster. The main-branch CI job advances the image tag in Git for reconciliation. No Synced/Healthy result is claimed without observing Argo CD.
+`gitops/application.yaml` declares the normal Argo CD Application watching this chart on the public GitHub repository; the main-branch CI job advances its image tag in Git. `gitops/application-local.yaml` is the verified Minikube variant. It watches the same chart in Git but uses the locally built API image with `Never` pull policy because Minikube could not import the CI image archive. On 8 October 2026, Argo CD reported `homework-api-local` **Synced** and **Healthy** at revision `bbcbd01`; the API Deployment was `2/2`, PostgreSQL was `1/1`, `/health` returned healthy JSON, and `/` wrote visit ID 1. See the [Argo CD screenshot](evidence/argocd-sync.png). This verifies local chart reconciliation; deployment of the published GHCR image through the normal Application remains unverified.
 
 ## Troubleshooting
 
-`troubleshooting/` contains isolated broken-image and bad-selector drills with symptoms, investigation, root cause, fix and verification steps. Existing sessions also contain failure examples. The healthy Helm chart does not include these files.
+`troubleshooting/` contains isolated broken-image and bad-selector drills with symptoms, investigation, root cause, fix and observed verification. Both issues were reproduced and repaired in `homework-drill`; the healthy Helm chart does not include these files. See the [troubleshooting record](troubleshooting/README.md).
 
 ## Screenshots and evidence
 
-Historical screenshots are linked from the earlier session READMEs. New captures still required are listed with exact commands and destinations in `../SCREENSHOT_CHECKLIST.md`. No image has been fabricated. Actual local checks and remaining external work are recorded in `../PROGRESS.md`.
+The [GitHub Actions](evidence/github-actions.png) and [Argo CD](evidence/argocd-sync.png) screenshots document the final-project pipeline and local GitOps deployment. The [monitoring screenshot](../20-monitoring-gitops/evidence/monitoring-grafana.png) and earlier session evidence are linked from their READMEs. The remaining AWS screenshot is listed in `../SCREENSHOT_CHECKLIST.md`. Actual local checks and external work are recorded in `../PROGRESS.md`.
 
 ## Lessons learned
 
