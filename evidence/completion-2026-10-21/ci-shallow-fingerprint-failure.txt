@@ -1,0 +1,64 @@
+test-and-security	Secret scan (Gitleaks)	﻿2026-10-20T21:22:59.7718665Z ##[group]Run gitleaks/gitleaks-action@v2
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:22:59.7718848Z env:
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:22:59.7719002Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:22:59.7719252Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:22:59.7719515Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:22:59.7719725Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:22:59.7719935Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:22:59.7720149Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:22:59.7721727Z   GITHUB_TOKEN: ***
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:22:59.7721849Z ##[endgroup]
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:22:59.8905802Z (node:2276) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:22:59.8906236Z (Use `node --trace-deprecation ...` to show where the warning was created)
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:22:59.8987387Z (node:2276) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:00.1783722Z [pranav7796] is an individual user. No license key is required.
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:00.1784177Z gitleaks version: 8.24.3
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:00.1784671Z Version to install: 8.24.3 (target directory: /tmp/gitleaks-8.24.3)
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:00.3177627Z Cache hit for: gitleaks-cache-8.24.3-linux-x64
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:00.9221448Z Received 5717369 of 5717369 (100.0%), 12.7 MBs/sec
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:00.9222265Z Cache Size: ~5 MB (5717369 B)
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:00.9241221Z [command]/usr/bin/tar -xf /home/runner/work/_temp/3ca18e7b-52f6-4272-bc54-20c9e6e798ef/cache.tzst -P -C /home/runner/work/devopsHomework/devopsHomework --use-compress-program unzstd
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:00.9511870Z Cache restored successfully
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:00.9515842Z Gitleaks restored from cache
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:00.9517742Z event type: push
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:00.9518935Z gitleaks cmd: gitleaks detect --redact -v --exit-code=2 --report-format=sarif --report-path=results.sarif --log-level=debug --log-opts=-1
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:00.9528257Z [command]/tmp/gitleaks-8.24.3/gitleaks detect --redact -v --exit-code=2 --report-format=sarif --report-path=results.sarif --log-level=debug --log-opts=-1
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.1311835Z 
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.1312285Z     ○
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.1312520Z     │╲
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.1312782Z     │ ○
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.1312996Z     ○ ░
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.1313129Z     ░    gitleaks
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.1313266Z 
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.1313568Z ^[[90m9:23PM^[[0m DBG using github.com/wasilibs/go-re2 regex engine
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.1313918Z ^[[90m9:23PM^[[0m DBG no gitleaks config found in path .gitleaks.toml, using default gitleaks config
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.2104775Z ^[[90m9:23PM^[[0m DBG found .gitleaksignore file: .gitleaksignore
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.2105408Z ^[[90m9:23PM^[[0m DBG found .gitleaksignore file: .gitleaksignore
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.2105887Z ^[[90m9:23PM^[[0m DBG executing: /usr/bin/git -C . log -p -U0 -1
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.2145736Z ^[[90m9:23PM^[[0m DBG SCM platform parsed from host ^[[36mhost=^[[0mgithub.com ^[[36mplatform=^[[0mgithub
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.2686557Z Finding:     ...7796/devopshomework/homework-api:^[[1;3;mREDACTED^[[0m"
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.2693628Z Secret:      ^[[1;3;mREDACTED^[[0m
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.2694005Z RuleID:      generic-api-key
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.2694237Z Entropy:     3.770951
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.2694529Z File:        evidence/completion-2026-10-21/helm-render.txt
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.2694866Z Line:        48
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.2695211Z Commit:      b011d83f291d6d911d3a7e2f103b555ee72f3c11
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.2695505Z Author:      Pranav
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.2695742Z Email:       pranav.24bcs10006@sst.scaler.com
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.2696030Z Date:        2026-10-20T21:22:34Z
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.2696581Z Fingerprint: b011d83f291d6d911d3a7e2f103b555ee72f3c11:evidence/completion-2026-10-21/helm-render.txt:generic-api-key:48
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.2698018Z Link:        https://github.com/pranav7796/devopsHomework/blob/b011d83f291d6d911d3a7e2f103b555ee72f3c11/evidence/completion-2026-10-21/helm-render.txt#L48
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.2698585Z 
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.2797280Z ^[[90m9:23PM^[[0m ^[[32mINF^[[0m ^[[1m1 commits scanned.^[[0m
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.2797838Z ^[[90m9:23PM^[[0m DBG Note: this number might be smaller than expected due to commits with no additions
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.2798392Z ^[[90m9:23PM^[[0m ^[[32mINF^[[0m ^[[1mscanned ~900598 bytes (900.60 KB) in 149ms^[[0m
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.2798796Z ^[[90m9:23PM^[[0m ^[[33mWRN^[[0m ^[[1mleaks found: 1^[[0m
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.2852279Z Artifact name is valid!
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.2852810Z Root directory input is valid!
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.5597719Z Beginning upload of artifact content to blob storage
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.7294518Z Uploaded bytes 7172
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.8039431Z Finished uploading artifact content to blob storage!
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.8040119Z SHA256 digest of uploaded artifact zip is 72b6c4e40bcf0a7c1c2bbda80b21a6b37f1c75cec280ccf47d844699c6b7e5c5
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:01.8040980Z Finalizing artifact upload
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:02.1466049Z Artifact gitleaks-results.sarif.zip successfully finalized. Artifact ID 12298294165
+test-and-security	Secret scan (Gitleaks)	2026-10-20T21:23:02.1495505Z ##[warning]🛑 Leaks detected, see job summary for details

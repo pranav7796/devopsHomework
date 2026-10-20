@@ -740,6 +740,16 @@
       "path": "evidence/completion-2026-10-21/gitleaks-exception-check.json",
       "bytes": 431,
       "sha256": "83c33ca41663548909f794a8c28c9b77f95a62071185751f6ab5664d5f8b059e"
+    },
+    {
+      "path": "evidence/completion-2026-10-21/gitleaks-scope-check.json",
+      "bytes": 698,
+      "sha256": "3e6fd10903b8266407ca53de64c145576821d849c3fba6b7678565958b48746e"
+    },
+    {
+      "path": "evidence/completion-2026-10-21/ci-shallow-fingerprint-failure.txt",
+      "bytes": 8160,
+      "sha256": "8272163be9af78402e4c967e00e0def15b2951d20a2b801a481375efa0a3caf8"
     }
   ],
   "scope": "Public planning, execution and validation artifacts; private inputs/state/plan binaries excluded."

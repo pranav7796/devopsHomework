@@ -1,0 +1,29 @@
+{
+  "verified_at_utc": "2026-10-20T21:25:37.745521+00:00",
+  "version": "8.24.3",
+  "configuration": ".gitleaks.toml",
+  "default_rules_inherited": true,
+  "cases": [
+    {
+      "case": "exact-public-line",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "case": "other-value",
+      "exit_code": 1,
+      "expected_exit_code": 1
+    },
+    {
+      "case": "other-path",
+      "exit_code": 1,
+      "expected_exit_code": 1
+    },
+    {
+      "case": "extra-text",
+      "exit_code": 1,
+      "expected_exit_code": 1
+    }
+  ],
+  "scope": "Git root-commit fixtures emulate CI shallow history. AND of exact path and complete public image line; no rule/directory exclusion."
+}
