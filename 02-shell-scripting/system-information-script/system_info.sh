@@ -15,7 +15,9 @@ user_name=$(whoami)
 
 mkdir -p "$report_dir"
 touch "$process_file"
-ps aux > "$process_file"
+# Record process names and usage without copying full command-line arguments,
+# which can contain credentials or other private values.
+ps -eo pid,ppid,comm,%cpu,%mem --sort=-%cpu > "$process_file"
 
 echo
 echo "Name: $name"

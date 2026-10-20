@@ -1,0 +1,953 @@
+[
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "get",
+      "nodes",
+      "-o",
+      "json"
+    ],
+    "started_at_utc": "2026-10-20T20:42:16.223469+00:00",
+    "finished_at_utc": "2026-10-20T20:42:16.431304+00:00",
+    "exit_code": 0,
+    "stdout": "{\n    \"apiVersion\": \"v1\",\n    \"items\": [\n        {\n            \"apiVersion\": \"v1\",\n            \"kind\": \"Node\",\n            \"metadata\": {\n                \"annotations\": {\n                    \"node.alpha.kubernetes.io/ttl\": \"0\",\n                    \"volumes.kubernetes.io/controller-managed-attach-detach\": \"true\"\n                },\n                \"creationTimestamp\": \"2026-10-07T16:50:39Z\",\n                \"labels\": {\n                    \"beta.kubernetes.io/arch\": \"amd64\",\n                    \"beta.kubernetes.io/os\": \"linux\",\n                    \"kubernetes.io/arch\": \"amd64\",\n                    \"kubernetes.io/hostname\": \"minikube\",\n                    \"kubernetes.io/os\": \"linux\",\n                    \"minikube.k8s.io/commit\": \"7a9f6a841470a207de8cf4bafcccee0969d8ba10\",\n                    \"minikube.k8s.io/name\": \"minikube\",\n                    \"minikube.k8s.io/primary\": \"true\",\n                    \"minikube.k8s.io/updated_at\": \"2026_10_07T22_20_43_0700\",\n                    \"minikube.k8s.io/version\": \"v1.39.0\",\n                    \"node-role.kubernetes.io/control-plane\": \"\",\n                    \"node.kubernetes.io/exclude-from-external-load-balancers\": \"\"\n                },\n                \"name\": \"minikube\",\n                \"resourceVersion\": \"131344\",\n                \"uid\": \"fc1d8ee7-9dba-441f-a684-69944438b97d\"\n            },\n            \"spec\": {\n                \"podCIDR\": \"10.244.0.0/24\",\n                \"podCIDRs\": [\n                    \"10.244.0.0/24\"\n                ]\n            },\n            \"status\": {\n                \"addresses\": [\n                    {\n                        \"address\": \"192.168.49.2\",\n                        \"type\": \"InternalIP\"\n                    },\n                    {\n                        \"address\": \"minikube\",\n                        \"type\": \"Hostname\"\n                    }\n                ],\n                \"allocatable\": {\n                    \"cpu\": \"8\",\n                    \"ephemeral-storage\": \"509943480320\",\n                    \"hugepages-1Gi\": \"0\",\n                    \"hugepages-2Mi\": \"0\",\n                    \"memory\": \"16043280Ki\",\n                    \"pods\": \"110\"\n                },\n                \"capacity\": {\n                    \"cpu\": \"8\",\n                    \"ephemeral-storage\": \"509943480320\",\n                    \"hugepages-1Gi\": \"0\",\n                    \"hugepages-2Mi\": \"0\",\n                    \"memory\": \"16043280Ki\",\n                    \"pods\": \"110\"\n                },\n                \"conditions\": [\n                    {\n                        \"lastHeartbeatTime\": \"2026-10-20T20:41:05Z\",\n                        \"lastTransitionTime\": \"2026-10-07T16:50:37Z\",\n                        \"message\": \"kubelet has sufficient memory available\",\n                        \"reason\": \"KubeletHasSufficientMemory\",\n                        \"status\": \"False\",\n                        \"type\": \"MemoryPressure\"\n                    },\n                    {\n                        \"lastHeartbeatTime\": \"2026-10-20T20:41:05Z\",\n                        \"lastTransitionTime\": \"2026-10-07T16:50:37Z\",\n                        \"message\": \"kubelet has no disk pressure\",\n                        \"reason\": \"KubeletHasNoDiskPressure\",\n                        \"status\": \"False\",\n                        \"type\": \"DiskPressure\"\n                    },\n                    {\n                        \"lastHeartbeatTime\": \"2026-10-20T20:41:05Z\",\n                        \"lastTransitionTime\": \"2026-10-07T16:50:37Z\",\n                        \"message\": \"kubelet has sufficient PID available\",\n                        \"reason\": \"KubeletHasSufficientPID\",\n                        \"status\": \"False\",\n                        \"type\": \"PIDPressure\"\n                    },\n                    {\n                        \"lastHeartbeatTime\": \"2026-10-20T20:41:05Z\",\n                        \"lastTransitionTime\": \"2026-10-07T16:53:35Z\",\n                        \"message\": \"kubelet is posting ready status\",\n                        \"reason\": \"KubeletReady\",\n                        \"status\": \"True\",\n                        \"type\": \"Ready\"\n                    }\n                ],\n                \"daemonEndpoints\": {\n                    \"kubeletEndpoint\": {\n                        \"Port\": 10250\n                    }\n                },\n                \"declaredFeatures\": [\n                    \"ExtendWebSocketsToKubelet\",\n                    \"InPlacePodLevelResourcesVerticalScaling\",\n                    \"InPlacePodVerticalScalingInitContainers\",\n                    \"RestartAllContainersOnContainerExits\"\n                ],\n                \"features\": {\n                    \"supplementalGroupsPolicy\": true\n                },\n                \"images\": [\n                    {\n                        \"names\": [\n                            \"quay.io/argoproj/argocd:v3.5.4\"\n                        ],\n                        \"sizeBytes\": 221282680\n                    },\n                    {\n                        \"names\": [\n                            \"docker.io/library/postgres:16-alpine\"\n                        ],\n                        \"sizeBytes\": 116073496\n                    },\n                    {\n                        \"names\": [\n                            \"registry.k8s.io/ingress-nginx/controller@sha256:594ceea76b01c592858f803f9ff4d2cb40542cae2060410b2c95f75907d659e1\",\n                            \"registry.k8s.io/ingress-nginx/controller:v1.15.1\"\n                        ],\n                        \"sizeBytes\": 115975561\n                    },\n                    {\n                        \"names\": [\n                            \"ghcr.io/pranav7796/devopshomework/homework-api@sha256:821338800d7a0fa55bcab73db4a1e4f575f8f820f09616407064c48b70fd43b4\",\n                            \"ghcr.io/pranav7796/devopshomework/homework-api:c01d2da27ecd0661487815a406b434fa32b8efe2\"\n                        ],\n                        \"sizeBytes\": 50341327\n                    },\n                    {\n                        \"names\": [\n                            \"ghcr.io/pranav7796/devopshomework/homework-api@sha256:634445867be1c5eaf34a3a5789269244db1a7bbf6fc5156485950af643098a2f\",\n                            \"ghcr.io/pranav7796/devopshomework/homework-api:2fda3b607ebaf632e5df6071e88b8ade4ec005ce\"\n                        ],\n                        \"sizeBytes\": 50341261\n                    },\n                    {\n                        \"names\": [\n                            \"docker.io/library/devops-homework-final-api:latest\"\n                        ],\n                        \"sizeBytes\": 48306915\n                    },\n                    {\n                        \"names\": [\n                            \"ghcr.io/dexidp/dex:v2.45.1\"\n                        ],\n                        \"sizeBytes\": 48088912\n                    },\n                    {\n                        \"names\": [\n                            \"docker.io/kindest/kindnetd@sha256:07a4b3fe0077a0ae606cc0a200fc25a28fa64dcc30b8d311b461089969449f9a\",\n                            \"docker.io/kindest/kindnetd:v20250512-df8de77b\"\n                        ],\n                        \"sizeBytes\": 44375501\n                    },\n                    {\n                        \"names\": [\n                            \"docker.io/kindest/kindnetd:v20260820-69b56db7\"\n                        ],\n                        \"sizeBytes\": 39742509\n                    },\n                    {\n                        \"names\": [\n                            \"registry.k8s.io/kube-apiserver@sha256:d1045e5c6d2f016797d22143eba7502e1bb712a4681836a7c35763a9c192dd70\",\n                            \"registry.k8s.io/kube-apiserver:v1.37.0\"\n                        ],\n                        \"sizeBytes\": 31171933\n                    },\n                    {\n                        \"names\": [\n                            \"registry.k8s.io/kube-proxy@sha256:77bf2b08ff8ac1a4a446cffaa85e79e87379c8cb54fcf60f2cb6c62c966829c8\",\n                            \"registry.k8s.io/kube-proxy:v1.37.0\"\n                        ],\n                        \"sizeBytes\": 30200433\n                    },\n                    {\n                        \"names\": [\n                            \"public.ecr.aws/docker/library/redis:8.2.3-alpine\"\n                        ],\n                        \"sizeBytes\": 27499218\n                    },\n                    {\n                        \"names\": [\n                            \"registry.k8s.io/kube-controller-manager@sha256:997c997924eb8574f63f204a0b0af133aaf33c10df84009c32d34037f4e0e077\",\n                            \"registry.k8s.io/kube-controller-manager:v1.37.0\"\n                        ],\n                        \"sizeBytes\": 27291057\n                    },\n                    {\n                        \"names\": [\n                            \"registry.k8s.io/ingress-nginx/kube-webhook-certgen@sha256:01038e7de14b78d702d2849c3aad72fd25903c4765af63cf16aa3398f5d5f2dd\",\n                            \"registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.6.9\"\n                        ],\n                        \"sizeBytes\": 26540730\n                    },\n                    {\n                        \"names\": [\n                            \"registry.k8s.io/coredns/coredns@sha256:900f9c109f7a33545d3c811516e8376df9019147b750f5ce3e254468769176ea\",\n                            \"registry.k8s.io/coredns/coredns:v1.14.6\"\n                        ],\n                        \"sizeBytes\": 23758055\n                    },\n                    {\n                        \"names\": [\n                            \"registry.k8s.io/metrics-server/metrics-server@sha256:d9862115e7c7881280d3d75ca26bda8ffc0fc213315979575bf23ce9826205c0\",\n                            \"registry.k8s.io/metrics-server/metrics-server:v0.9.0\"\n                        ],\n                        \"sizeBytes\": 23258428\n                    },\n                    {\n                        \"names\": [\n                            \"registry.k8s.io/etcd@sha256:6ecefbe2510c4a30573a62a4d6dd175acf881ca67003fcd91849a16df7a724d5\",\n                            \"registry.k8s.io/etcd:3.7.0-0\"\n                        ],\n                        \"sizeBytes\": 22342384\n                    },\n                    {\n                        \"names\": [\n                            \"docker.io/library/nginx:1.27-alpine\"\n                        ],\n                        \"sizeBytes\": 20972976\n                    },\n                    {\n                        \"names\": [\n                            \"registry.k8s.io/kube-scheduler@sha256:a27622f132aa09cf2461ba077894a070c0186ec607366d14e805912d4804d11f\",\n                            \"registry.k8s.io/kube-scheduler:v1.37.0\"\n                        ],\n                        \"sizeBytes\": 20845306\n                    },\n                    {\n                        \"names\": [\n                            \"gcr.io/k8s-minikube/storage-provisioner@sha256:18eb69d1418e854ad5a19e399310e52808a8321e4c441c1dddad8977a0d7a944\",\n                            \"gcr.io/k8s-minikube/storage-provisioner:v5\"\n                        ],\n                        \"sizeBytes\": 9058936\n                    },\n                    {\n                        \"names\": [\n                            \"docker.io/library/busybox:1.36\"\n                        ],\n                        \"sizeBytes\": 2207288\n                    },\n                    {\n                        \"names\": [\n                            \"registry.k8s.io/pause@sha256:f548e0e8e3dc1896ca956272154dde3314e8cc4fde0a57577ee9fa1c63f5baf4\",\n                            \"registry.k8s.io/pause:3.10.2\"\n                        ],\n                        \"sizeBytes\": 320805\n                    }\n                ],\n                \"nodeInfo\": {\n                    \"architecture\": \"amd64\",\n                    \"bootID\": \"4ddc1800-8cf8-42b4-9a65-3cbe3d13c690\",\n                    \"containerRuntimeVersion\": \"containerd://2.3.4\",\n                    \"kernelVersion\": \"7.2.5-3-omarchy\",\n                    \"kubeProxyVersion\": \"\",\n                    \"kubeletVersion\": \"v1.37.0\",\n                    \"machineID\": \"b7566eefbea02b7ce85821e86a97158b\",\n                    \"operatingSystem\": \"linux\",\n                    \"osImage\": \"Debian GNU/Linux 12 (bookworm)\",\n                    \"runningInUserNamespace\": false,\n                    \"swap\": {\n                        \"capacity\": 32857137152\n                    },\n                    \"systemUUID\": \"dec0b568-4008-4bf8-9594-d1bb99a0893d\"\n                },\n                \"runtimeHandlers\": [\n                    {\n                        \"features\": {\n                            \"recursiveReadOnlyMounts\": true,\n                            \"userNamespaces\": true\n                        },\n                        \"name\": \"\"\n                    },\n                    {\n                        \"features\": {\n                            \"recursiveReadOnlyMounts\": true,\n                            \"userNamespaces\": true\n                        },\n                        \"name\": \"runc\"\n                    }\n                ]\n            }\n        }\n    ],\n    \"kind\": \"List\",\n    \"metadata\": {\n        \"resourceVersion\": \"\"\n    }\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "create",
+      "namespace",
+      "homework-strategy-check",
+      "-o",
+      "json"
+    ],
+    "started_at_utc": "2026-10-20T20:42:16.431746+00:00",
+    "finished_at_utc": "2026-10-20T20:42:16.550021+00:00",
+    "exit_code": 0,
+    "stdout": "{\n    \"kind\": \"Namespace\",\n    \"apiVersion\": \"v1\",\n    \"metadata\": {\n        \"name\": \"homework-strategy-check\",\n        \"uid\": \"96a09d78-651b-46b0-bea7-9eff4b310854\",\n        \"resourceVersion\": \"131433\",\n        \"creationTimestamp\": \"2026-10-20T20:42:16Z\",\n        \"labels\": {\n            \"kubernetes.io/metadata.name\": \"homework-strategy-check\"\n        }\n    },\n    \"spec\": {\n        \"finalizers\": [\n            \"kubernetes\"\n        ]\n    },\n    \"status\": {\n        \"phase\": \"Active\"\n    }\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "apply",
+      "-f",
+      "/home/pranav/Projects/devopsHomework/09-kubernetes-pods-deployments/01-rolling-update/deployment-v1.yaml"
+    ],
+    "started_at_utc": "2026-10-20T20:42:16.550697+00:00",
+    "finished_at_utc": "2026-10-20T20:42:16.735477+00:00",
+    "exit_code": 0,
+    "stdout": "deployment.apps/app-rolling created\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "apply",
+      "-f",
+      "-"
+    ],
+    "started_at_utc": "2026-10-20T20:42:16.736174+00:00",
+    "finished_at_utc": "2026-10-20T20:42:17.048373+00:00",
+    "exit_code": 0,
+    "stdout": "service/app-rolling-service created\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "rollout",
+      "status",
+      "deployment/app-rolling",
+      "--timeout=150s"
+    ],
+    "started_at_utc": "2026-10-20T20:42:17.048808+00:00",
+    "finished_at_utc": "2026-10-20T20:42:38.124847+00:00",
+    "exit_code": 0,
+    "stdout": "Waiting for deployment \"app-rolling\" rollout to finish: 0 of 4 updated replicas are available...\nWaiting for deployment \"app-rolling\" rollout to finish: 1 of 4 updated replicas are available...\nWaiting for deployment \"app-rolling\" rollout to finish: 2 of 4 updated replicas are available...\nWaiting for deployment \"app-rolling\" rollout to finish: 3 of 4 updated replicas are available...\ndeployment \"app-rolling\" successfully rolled out\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "exec",
+      "deploy/app-rolling",
+      "--",
+      "wget",
+      "-q",
+      "-O",
+      "-",
+      "http://app-rolling-service"
+    ],
+    "started_at_utc": "2026-10-20T20:42:38.125750+00:00",
+    "finished_at_utc": "2026-10-20T20:42:38.440802+00:00",
+    "exit_code": 0,
+    "stdout": "<html><body style=\"background:#1a1a2e;color:#e94560;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>VERSION: v1</p><p style=\"font-size:0.5em;color:#16213e\">Rolling Update Demo</p></body></html>\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "apply",
+      "-f",
+      "/home/pranav/Projects/devopsHomework/09-kubernetes-pods-deployments/01-rolling-update/deployment-v2.yaml"
+    ],
+    "started_at_utc": "2026-10-20T20:42:38.441910+00:00",
+    "finished_at_utc": "2026-10-20T20:42:38.870901+00:00",
+    "exit_code": 0,
+    "stdout": "deployment.apps/app-rolling configured\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "rollout",
+      "status",
+      "deployment/app-rolling",
+      "--timeout=150s"
+    ],
+    "started_at_utc": "2026-10-20T20:42:38.872789+00:00",
+    "finished_at_utc": "2026-10-20T20:43:17.565853+00:00",
+    "exit_code": 0,
+    "stdout": "Waiting for deployment \"app-rolling\" rollout to finish: 1 out of 4 new replicas have been updated...\nWaiting for deployment \"app-rolling\" rollout to finish: 1 out of 4 new replicas have been updated...\nWaiting for deployment \"app-rolling\" rollout to finish: 1 out of 4 new replicas have been updated...\nWaiting for deployment \"app-rolling\" rollout to finish: 2 out of 4 new replicas have been updated...\nWaiting for deployment \"app-rolling\" rollout to finish: 2 out of 4 new replicas have been updated...\nWaiting for deployment \"app-rolling\" rollout to finish: 2 out of 4 new replicas have been updated...\nWaiting for deployment \"app-rolling\" rollout to finish: 2 out of 4 new replicas have been updated...\nWaiting for deployment \"app-rolling\" rollout to finish: 3 out of 4 new replicas have been updated...\nWaiting for deployment \"app-rolling\" rollout to finish: 3 out of 4 new replicas have been updated...\nWaiting for deployment \"app-rolling\" rollout to finish: 3 out of 4 new replicas have been updated...\nWaiting for deployment \"app-rolling\" rollout to finish: 3 out of 4 new replicas have been updated...\nWaiting for deployment \"app-rolling\" rollout to finish: 1 old replicas are pending termination...\nWaiting for deployment \"app-rolling\" rollout to finish: 1 old replicas are pending termination...\nWaiting for deployment \"app-rolling\" rollout to finish: 1 old replicas are pending termination...\ndeployment \"app-rolling\" successfully rolled out\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "exec",
+      "deploy/app-rolling",
+      "--",
+      "wget",
+      "-q",
+      "-O",
+      "-",
+      "http://app-rolling-service"
+    ],
+    "started_at_utc": "2026-10-20T20:43:17.566868+00:00",
+    "finished_at_utc": "2026-10-20T20:43:17.780296+00:00",
+    "exit_code": 0,
+    "stdout": "<html><body style=\"background:#0f3460;color:#e94560;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>VERSION: v2</p><p style=\"font-size:0.5em;color:#53d8fb\">Rolling Update Demo - NEW VERSION!</p></body></html>\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "get",
+      "deploy",
+      "app-rolling",
+      "-o",
+      "json"
+    ],
+    "started_at_utc": "2026-10-20T20:43:17.780988+00:00",
+    "finished_at_utc": "2026-10-20T20:43:17.875142+00:00",
+    "exit_code": 0,
+    "stdout": "{\n    \"apiVersion\": \"apps/v1\",\n    \"kind\": \"Deployment\",\n    \"metadata\": {\n        \"annotations\": {\n            \"deployment.kubernetes.io/revision\": \"2\",\n            \"kubectl.kubernetes.io/last-applied-configuration\": \"{\\\"apiVersion\\\":\\\"apps/v1\\\",\\\"kind\\\":\\\"Deployment\\\",\\\"metadata\\\":{\\\"annotations\\\":{},\\\"labels\\\":{\\\"app\\\":\\\"app-rolling\\\"},\\\"name\\\":\\\"app-rolling\\\",\\\"namespace\\\":\\\"homework-strategy-check\\\"},\\\"spec\\\":{\\\"replicas\\\":4,\\\"selector\\\":{\\\"matchLabels\\\":{\\\"app\\\":\\\"app-rolling\\\"}},\\\"strategy\\\":{\\\"rollingUpdate\\\":{\\\"maxSurge\\\":1,\\\"maxUnavailable\\\":0},\\\"type\\\":\\\"RollingUpdate\\\"},\\\"template\\\":{\\\"metadata\\\":{\\\"labels\\\":{\\\"app\\\":\\\"app-rolling\\\",\\\"version\\\":\\\"v2\\\"}},\\\"spec\\\":{\\\"containers\\\":[{\\\"image\\\":\\\"nginx:1.25-alpine\\\",\\\"lifecycle\\\":{\\\"postStart\\\":{\\\"exec\\\":{\\\"command\\\":[\\\"sh\\\",\\\"-c\\\",\\\"echo '\\\\u003chtml\\\\u003e\\\\u003cbody style=\\\\\\\"background:#0f3460;color:#e94560;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\\\\\\\"\\\\u003e\\\\n\\\\u003cp\\\\u003eVERSION: v2\\\\u003c/p\\\\u003e\\\\u003cp style=\\\\\\\"font-size:0.5em;color:#53d8fb\\\\\\\"\\\\u003eRolling Update Demo - NEW VERSION!\\\\u003c/p\\\\u003e\\\\u003c/body\\\\u003e\\\\u003c/html\\\\u003e' \\\\\\\\\\\\n\\\\u003e /usr/share/nginx/html/index.html\\\\n\\\"]}}},\\\"name\\\":\\\"web\\\",\\\"ports\\\":[{\\\"containerPort\\\":80}],\\\"readinessProbe\\\":{\\\"httpGet\\\":{\\\"path\\\":\\\"/\\\",\\\"port\\\":80},\\\"initialDelaySeconds\\\":3,\\\"periodSeconds\\\":5},\\\"resources\\\":{\\\"limits\\\":{\\\"cpu\\\":\\\"100m\\\",\\\"memory\\\":\\\"64Mi\\\"},\\\"requests\\\":{\\\"cpu\\\":\\\"30m\\\",\\\"memory\\\":\\\"32Mi\\\"}}}]}}}}\\n\"\n        },\n        \"creationTimestamp\": \"2026-10-20T20:42:16Z\",\n        \"generation\": 2,\n        \"labels\": {\n            \"app\": \"app-rolling\"\n        },\n        \"name\": \"app-rolling\",\n        \"namespace\": \"homework-strategy-check\",\n        \"resourceVersion\": \"131787\",\n        \"uid\": \"47b23c8f-c826-40d6-996f-36bd52866985\"\n    },\n    \"spec\": {\n        \"progressDeadlineSeconds\": 600,\n        \"replicas\": 4,\n        \"revisionHistoryLimit\": 10,\n        \"selector\": {\n            \"matchLabels\": {\n                \"app\": \"app-rolling\"\n            }\n        },\n        \"strategy\": {\n            \"rollingUpdate\": {\n                \"maxSurge\": 1,\n                \"maxUnavailable\": 0\n            },\n            \"type\": \"RollingUpdate\"\n        },\n        \"template\": {\n            \"metadata\": {\n                \"labels\": {\n                    \"app\": \"app-rolling\",\n                    \"version\": \"v2\"\n                }\n            },\n            \"spec\": {\n                \"containers\": [\n                    {\n                        \"image\": \"nginx:1.25-alpine\",\n                        \"imagePullPolicy\": \"IfNotPresent\",\n                        \"lifecycle\": {\n                            \"postStart\": {\n                                \"exec\": {\n                                    \"command\": [\n                                        \"sh\",\n                                        \"-c\",\n                                        \"echo '\\u003chtml\\u003e\\u003cbody style=\\\"background:#0f3460;color:#e94560;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\\\"\\u003e\\n\\u003cp\\u003eVERSION: v2\\u003c/p\\u003e\\u003cp style=\\\"font-size:0.5em;color:#53d8fb\\\"\\u003eRolling Update Demo - NEW VERSION!\\u003c/p\\u003e\\u003c/body\\u003e\\u003c/html\\u003e' \\\\\\n\\u003e /usr/share/nginx/html/index.html\\n\"\n                                    ]\n                                }\n                            }\n                        },\n                        \"name\": \"web\",\n                        \"ports\": [\n                            {\n                                \"containerPort\": 80,\n                                \"protocol\": \"TCP\"\n                            }\n                        ],\n                        \"readinessProbe\": {\n                            \"failureThreshold\": 3,\n                            \"httpGet\": {\n                                \"path\": \"/\",\n                                \"port\": 80,\n                                \"scheme\": \"HTTP\"\n                            },\n                            \"initialDelaySeconds\": 3,\n                            \"periodSeconds\": 5,\n                            \"successThreshold\": 1,\n                            \"timeoutSeconds\": 1\n                        },\n                        \"resources\": {\n                            \"limits\": {\n                                \"cpu\": \"100m\",\n                                \"memory\": \"64Mi\"\n                            },\n                            \"requests\": {\n                                \"cpu\": \"30m\",\n                                \"memory\": \"32Mi\"\n                            }\n                        },\n                        \"terminationMessagePath\": \"/dev/termination-log\",\n                        \"terminationMessagePolicy\": \"File\"\n                    }\n                ],\n                \"dnsPolicy\": \"ClusterFirst\",\n                \"restartPolicy\": \"Always\",\n                \"schedulerName\": \"default-scheduler\",\n                \"securityContext\": {},\n                \"terminationGracePeriodSeconds\": 30\n            }\n        }\n    },\n    \"status\": {\n        \"availableReplicas\": 4,\n        \"conditions\": [\n            {\n                \"lastTransitionTime\": \"2026-10-20T20:42:38Z\",\n                \"lastUpdateTime\": \"2026-10-20T20:42:38Z\",\n                \"message\": \"Deployment has minimum availability.\",\n                \"reason\": \"MinimumReplicasAvailable\",\n                \"status\": \"True\",\n                \"type\": \"Available\"\n            },\n            {\n                \"lastTransitionTime\": \"2026-10-20T20:42:16Z\",\n                \"lastUpdateTime\": \"2026-10-20T20:43:17Z\",\n                \"message\": \"ReplicaSet \\\"app-rolling-56bff6d88c\\\" has successfully progressed.\",\n                \"reason\": \"NewReplicaSetAvailable\",\n                \"status\": \"True\",\n                \"type\": \"Progressing\"\n            }\n        ],\n        \"observedGeneration\": 2,\n        \"readyReplicas\": 4,\n        \"replicas\": 4,\n        \"terminatingReplicas\": 0,\n        \"updatedReplicas\": 4\n    }\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "delete",
+      "deploy/app-rolling",
+      "svc/app-rolling-service",
+      "--wait=true"
+    ],
+    "started_at_utc": "2026-10-20T20:43:17.875957+00:00",
+    "finished_at_utc": "2026-10-20T20:43:18.008453+00:00",
+    "exit_code": 0,
+    "stdout": "deployment.apps \"app-rolling\" deleted from homework-strategy-check namespace\nservice \"app-rolling-service\" deleted from homework-strategy-check namespace\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "apply",
+      "-f",
+      "/home/pranav/Projects/devopsHomework/09-kubernetes-pods-deployments/02-blue-green/deployment-blue.yaml"
+    ],
+    "started_at_utc": "2026-10-20T20:43:18.009365+00:00",
+    "finished_at_utc": "2026-10-20T20:43:18.256317+00:00",
+    "exit_code": 0,
+    "stdout": "deployment.apps/app-blue created\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "apply",
+      "-f",
+      "/home/pranav/Projects/devopsHomework/09-kubernetes-pods-deployments/02-blue-green/deployment-green.yaml"
+    ],
+    "started_at_utc": "2026-10-20T20:43:18.257540+00:00",
+    "finished_at_utc": "2026-10-20T20:43:18.466200+00:00",
+    "exit_code": 0,
+    "stdout": "deployment.apps/app-green created\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "rollout",
+      "status",
+      "deployment/app-blue",
+      "--timeout=150s"
+    ],
+    "started_at_utc": "2026-10-20T20:43:18.467404+00:00",
+    "finished_at_utc": "2026-10-20T20:43:25.667074+00:00",
+    "exit_code": 0,
+    "stdout": "Waiting for deployment \"app-blue\" rollout to finish: 0 of 3 updated replicas are available...\nWaiting for deployment \"app-blue\" rollout to finish: 1 of 3 updated replicas are available...\nWaiting for deployment \"app-blue\" rollout to finish: 2 of 3 updated replicas are available...\ndeployment \"app-blue\" successfully rolled out\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "rollout",
+      "status",
+      "deployment/app-green",
+      "--timeout=150s"
+    ],
+    "started_at_utc": "2026-10-20T20:43:25.669425+00:00",
+    "finished_at_utc": "2026-10-20T20:43:26.679753+00:00",
+    "exit_code": 0,
+    "stdout": "Waiting for deployment \"app-green\" rollout to finish: 1 of 3 updated replicas are available...\nWaiting for deployment \"app-green\" rollout to finish: 2 of 3 updated replicas are available...\ndeployment \"app-green\" successfully rolled out\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "apply",
+      "-f",
+      "-"
+    ],
+    "started_at_utc": "2026-10-20T20:43:26.681690+00:00",
+    "finished_at_utc": "2026-10-20T20:43:26.964042+00:00",
+    "exit_code": 0,
+    "stdout": "service/myapp-service created\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "get",
+      "endpointslices",
+      "-l",
+      "kubernetes.io/service-name=myapp-service",
+      "-o",
+      "json"
+    ],
+    "started_at_utc": "2026-10-20T20:43:26.965153+00:00",
+    "finished_at_utc": "2026-10-20T20:43:27.108093+00:00",
+    "exit_code": 0,
+    "stdout": "{\n    \"apiVersion\": \"v1\",\n    \"items\": [\n        {\n            \"addressType\": \"IPv4\",\n            \"apiVersion\": \"discovery.k8s.io/v1\",\n            \"endpoints\": [\n                {\n                    \"addresses\": [\n                        \"10.244.0.61\"\n                    ],\n                    \"conditions\": {\n                        \"ready\": true,\n                        \"serving\": true,\n                        \"terminating\": false\n                    },\n                    \"nodeName\": \"minikube\",\n                    \"targetRef\": {\n                        \"kind\": \"Pod\",\n                        \"name\": \"app-blue-5c69d7785c-66mq2\",\n                        \"namespace\": \"homework-strategy-check\",\n                        \"uid\": \"396016db-869f-4bbc-9a87-4086ef7fbbe1\"\n                    }\n                },\n                {\n                    \"addresses\": [\n                        \"10.244.0.63\"\n                    ],\n                    \"conditions\": {\n                        \"ready\": true,\n                        \"serving\": true,\n                        \"terminating\": false\n                    },\n                    \"nodeName\": \"minikube\",\n                    \"targetRef\": {\n                        \"kind\": \"Pod\",\n                        \"name\": \"app-blue-5c69d7785c-l48df\",\n                        \"namespace\": \"homework-strategy-check\",\n                        \"uid\": \"14cd36b6-514d-48e1-bda8-54505b75dd24\"\n                    }\n                },\n                {\n                    \"addresses\": [\n                        \"10.244.0.62\"\n                    ],\n                    \"conditions\": {\n                        \"ready\": true,\n                        \"serving\": true,\n                        \"terminating\": false\n                    },\n                    \"nodeName\": \"minikube\",\n                    \"targetRef\": {\n                        \"kind\": \"Pod\",\n                        \"name\": \"app-blue-5c69d7785c-svb2w\",\n                        \"namespace\": \"homework-strategy-check\",\n                        \"uid\": \"5ec2f34a-18a9-44c9-8907-955c122d0f91\"\n                    }\n                }\n            ],\n            \"kind\": \"EndpointSlice\",\n            \"metadata\": {\n                \"annotations\": {\n                    \"endpoints.kubernetes.io/last-change-trigger-time\": \"2026-10-20T20:43:26Z\"\n                },\n                \"creationTimestamp\": \"2026-10-20T20:43:26Z\",\n                \"generateName\": \"myapp-service-\",\n                \"generation\": 1,\n                \"labels\": {\n                    \"app\": \"myapp\",\n                    \"endpointslice.kubernetes.io/managed-by\": \"endpointslice-controller.k8s.io\",\n                    \"kubernetes.io/service-name\": \"myapp-service\"\n                },\n                \"name\": \"myapp-service-wf4x5\",\n                \"namespace\": \"homework-strategy-check\",\n                \"ownerReferences\": [\n                    {\n                        \"apiVersion\": \"v1\",\n                        \"blockOwnerDeletion\": true,\n                        \"controller\": true,\n                        \"kind\": \"Service\",\n                        \"name\": \"myapp-service\",\n                        \"uid\": \"6b882665-541d-4f76-a906-f73918c75678\"\n                    }\n                ],\n                \"resourceVersion\": \"131938\",\n                \"uid\": \"67f1c5dc-57c6-475d-8f85-e1b5c7583a6a\"\n            },\n            \"ports\": [\n                {\n                    \"name\": \"http\",\n                    \"port\": 80,\n                    \"protocol\": \"TCP\"\n                }\n            ]\n        }\n    ],\n    \"kind\": \"List\",\n    \"metadata\": {\n        \"resourceVersion\": \"\"\n    }\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "exec",
+      "deploy/app-blue",
+      "--",
+      "wget",
+      "-q",
+      "-O",
+      "-",
+      "http://myapp-service"
+    ],
+    "started_at_utc": "2026-10-20T20:43:27.108986+00:00",
+    "finished_at_utc": "2026-10-20T20:43:28.288059+00:00",
+    "exit_code": 0,
+    "stdout": "<html><body style=\"background:#003566;color:#ffd60a;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>BLUE ENVIRONMENT</p>\n<p style=\"font-size:0.5em\">Version: v1 | Slot: BLUE (LIVE)</p>\n</body></html>\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "apply",
+      "-f",
+      "-"
+    ],
+    "started_at_utc": "2026-10-20T20:43:28.288843+00:00",
+    "finished_at_utc": "2026-10-20T20:43:28.908297+00:00",
+    "exit_code": 0,
+    "stdout": "service/myapp-service configured\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "get",
+      "endpointslices",
+      "-l",
+      "kubernetes.io/service-name=myapp-service",
+      "-o",
+      "json"
+    ],
+    "started_at_utc": "2026-10-20T20:43:28.909767+00:00",
+    "finished_at_utc": "2026-10-20T20:43:29.031468+00:00",
+    "exit_code": 0,
+    "stdout": "{\n    \"apiVersion\": \"v1\",\n    \"items\": [\n        {\n            \"addressType\": \"IPv4\",\n            \"apiVersion\": \"discovery.k8s.io/v1\",\n            \"endpoints\": [\n                {\n                    \"addresses\": [\n                        \"10.244.0.64\"\n                    ],\n                    \"conditions\": {\n                        \"ready\": true,\n                        \"serving\": true,\n                        \"terminating\": false\n                    },\n                    \"nodeName\": \"minikube\",\n                    \"targetRef\": {\n                        \"kind\": \"Pod\",\n                        \"name\": \"app-green-84df7f978-ftjm6\",\n                        \"namespace\": \"homework-strategy-check\",\n                        \"uid\": \"814e3ff7-dbf2-4109-9ac3-b3db6734d23b\"\n                    }\n                },\n                {\n                    \"addresses\": [\n                        \"10.244.0.65\"\n                    ],\n                    \"conditions\": {\n                        \"ready\": true,\n                        \"serving\": true,\n                        \"terminating\": false\n                    },\n                    \"nodeName\": \"minikube\",\n                    \"targetRef\": {\n                        \"kind\": \"Pod\",\n                        \"name\": \"app-green-84df7f978-6kvzj\",\n                        \"namespace\": \"homework-strategy-check\",\n                        \"uid\": \"2a3d1262-08ec-4ca9-8ee4-01c950df840c\"\n                    }\n                },\n                {\n                    \"addresses\": [\n                        \"10.244.0.66\"\n                    ],\n                    \"conditions\": {\n                        \"ready\": true,\n                        \"serving\": true,\n                        \"terminating\": false\n                    },\n                    \"nodeName\": \"minikube\",\n                    \"targetRef\": {\n                        \"kind\": \"Pod\",\n                        \"name\": \"app-green-84df7f978-qkzql\",\n                        \"namespace\": \"homework-strategy-check\",\n                        \"uid\": \"e340193e-5060-4d94-ab8e-4f52f60b135c\"\n                    }\n                }\n            ],\n            \"kind\": \"EndpointSlice\",\n            \"metadata\": {\n                \"annotations\": {\n                    \"endpoints.kubernetes.io/last-change-trigger-time\": \"2026-10-20T20:43:25Z\"\n                },\n                \"creationTimestamp\": \"2026-10-20T20:43:26Z\",\n                \"generateName\": \"myapp-service-\",\n                \"generation\": 2,\n                \"labels\": {\n                    \"app\": \"myapp\",\n                    \"endpointslice.kubernetes.io/managed-by\": \"endpointslice-controller.k8s.io\",\n                    \"kubernetes.io/service-name\": \"myapp-service\"\n                },\n                \"name\": \"myapp-service-wf4x5\",\n                \"namespace\": \"homework-strategy-check\",\n                \"ownerReferences\": [\n                    {\n                        \"apiVersion\": \"v1\",\n                        \"blockOwnerDeletion\": true,\n                        \"controller\": true,\n                        \"kind\": \"Service\",\n                        \"name\": \"myapp-service\",\n                        \"uid\": \"6b882665-541d-4f76-a906-f73918c75678\"\n                    }\n                ],\n                \"resourceVersion\": \"131945\",\n                \"uid\": \"67f1c5dc-57c6-475d-8f85-e1b5c7583a6a\"\n            },\n            \"ports\": [\n                {\n                    \"name\": \"http\",\n                    \"port\": 80,\n                    \"protocol\": \"TCP\"\n                }\n            ]\n        }\n    ],\n    \"kind\": \"List\",\n    \"metadata\": {\n        \"resourceVersion\": \"\"\n    }\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "exec",
+      "deploy/app-green",
+      "--",
+      "wget",
+      "-q",
+      "-O",
+      "-",
+      "http://myapp-service"
+    ],
+    "started_at_utc": "2026-10-20T20:43:29.032243+00:00",
+    "finished_at_utc": "2026-10-20T20:43:29.173053+00:00",
+    "exit_code": 0,
+    "stdout": "<html><body style=\"background:#1b4332;color:#95d5b2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>GREEN ENVIRONMENT</p>\n<p style=\"font-size:0.5em\">Version: v2 | Slot: GREEN (STANDBY -> PROMOTED)</p>\n</body></html>\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "apply",
+      "-f",
+      "-"
+    ],
+    "started_at_utc": "2026-10-20T20:43:29.174053+00:00",
+    "finished_at_utc": "2026-10-20T20:43:29.702675+00:00",
+    "exit_code": 0,
+    "stdout": "service/myapp-service configured\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "get",
+      "endpointslices",
+      "-l",
+      "kubernetes.io/service-name=myapp-service",
+      "-o",
+      "json"
+    ],
+    "started_at_utc": "2026-10-20T20:43:29.703859+00:00",
+    "finished_at_utc": "2026-10-20T20:43:29.879440+00:00",
+    "exit_code": 0,
+    "stdout": "{\n    \"apiVersion\": \"v1\",\n    \"items\": [\n        {\n            \"addressType\": \"IPv4\",\n            \"apiVersion\": \"discovery.k8s.io/v1\",\n            \"endpoints\": [\n                {\n                    \"addresses\": [\n                        \"10.244.0.61\"\n                    ],\n                    \"conditions\": {\n                        \"ready\": true,\n                        \"serving\": true,\n                        \"terminating\": false\n                    },\n                    \"nodeName\": \"minikube\",\n                    \"targetRef\": {\n                        \"kind\": \"Pod\",\n                        \"name\": \"app-blue-5c69d7785c-66mq2\",\n                        \"namespace\": \"homework-strategy-check\",\n                        \"uid\": \"396016db-869f-4bbc-9a87-4086ef7fbbe1\"\n                    }\n                },\n                {\n                    \"addresses\": [\n                        \"10.244.0.63\"\n                    ],\n                    \"conditions\": {\n                        \"ready\": true,\n                        \"serving\": true,\n                        \"terminating\": false\n                    },\n                    \"nodeName\": \"minikube\",\n                    \"targetRef\": {\n                        \"kind\": \"Pod\",\n                        \"name\": \"app-blue-5c69d7785c-l48df\",\n                        \"namespace\": \"homework-strategy-check\",\n                        \"uid\": \"14cd36b6-514d-48e1-bda8-54505b75dd24\"\n                    }\n                },\n                {\n                    \"addresses\": [\n                        \"10.244.0.62\"\n                    ],\n                    \"conditions\": {\n                        \"ready\": true,\n                        \"serving\": true,\n                        \"terminating\": false\n                    },\n                    \"nodeName\": \"minikube\",\n                    \"targetRef\": {\n                        \"kind\": \"Pod\",\n                        \"name\": \"app-blue-5c69d7785c-svb2w\",\n                        \"namespace\": \"homework-strategy-check\",\n                        \"uid\": \"5ec2f34a-18a9-44c9-8907-955c122d0f91\"\n                    }\n                }\n            ],\n            \"kind\": \"EndpointSlice\",\n            \"metadata\": {\n                \"annotations\": {\n                    \"endpoints.kubernetes.io/last-change-trigger-time\": \"2026-10-20T20:43:25Z\"\n                },\n                \"creationTimestamp\": \"2026-10-20T20:43:26Z\",\n                \"generateName\": \"myapp-service-\",\n                \"generation\": 3,\n                \"labels\": {\n                    \"app\": \"myapp\",\n                    \"endpointslice.kubernetes.io/managed-by\": \"endpointslice-controller.k8s.io\",\n                    \"kubernetes.io/service-name\": \"myapp-service\"\n                },\n                \"name\": \"myapp-service-wf4x5\",\n                \"namespace\": \"homework-strategy-check\",\n                \"ownerReferences\": [\n                    {\n                        \"apiVersion\": \"v1\",\n                        \"blockOwnerDeletion\": true,\n                        \"controller\": true,\n                        \"kind\": \"Service\",\n                        \"name\": \"myapp-service\",\n                        \"uid\": \"6b882665-541d-4f76-a906-f73918c75678\"\n                    }\n                ],\n                \"resourceVersion\": \"131947\",\n                \"uid\": \"67f1c5dc-57c6-475d-8f85-e1b5c7583a6a\"\n            },\n            \"ports\": [\n                {\n                    \"name\": \"http\",\n                    \"port\": 80,\n                    \"protocol\": \"TCP\"\n                }\n            ]\n        }\n    ],\n    \"kind\": \"List\",\n    \"metadata\": {\n        \"resourceVersion\": \"\"\n    }\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "exec",
+      "deploy/app-blue",
+      "--",
+      "wget",
+      "-q",
+      "-O",
+      "-",
+      "http://myapp-service"
+    ],
+    "started_at_utc": "2026-10-20T20:43:29.880912+00:00",
+    "finished_at_utc": "2026-10-20T20:43:30.194619+00:00",
+    "exit_code": 0,
+    "stdout": "<html><body style=\"background:#003566;color:#ffd60a;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>BLUE ENVIRONMENT</p>\n<p style=\"font-size:0.5em\">Version: v1 | Slot: BLUE (LIVE)</p>\n</body></html>\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "delete",
+      "deploy/app-blue",
+      "deploy/app-green",
+      "svc/myapp-service",
+      "--wait=true"
+    ],
+    "started_at_utc": "2026-10-20T20:43:30.196210+00:00",
+    "finished_at_utc": "2026-10-20T20:43:30.420616+00:00",
+    "exit_code": 0,
+    "stdout": "deployment.apps \"app-blue\" deleted from homework-strategy-check namespace\ndeployment.apps \"app-green\" deleted from homework-strategy-check namespace\nservice \"myapp-service\" deleted from homework-strategy-check namespace\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "apply",
+      "-f",
+      "/home/pranav/Projects/devopsHomework/09-kubernetes-pods-deployments/03-canary/deployment-stable.yaml"
+    ],
+    "started_at_utc": "2026-10-20T20:43:30.423081+00:00",
+    "finished_at_utc": "2026-10-20T20:43:30.751918+00:00",
+    "exit_code": 0,
+    "stdout": "deployment.apps/app-stable created\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "apply",
+      "-f",
+      "/home/pranav/Projects/devopsHomework/09-kubernetes-pods-deployments/03-canary/deployment-canary.yaml"
+    ],
+    "started_at_utc": "2026-10-20T20:43:30.753494+00:00",
+    "finished_at_utc": "2026-10-20T20:43:30.994672+00:00",
+    "exit_code": 0,
+    "stdout": "deployment.apps/app-canary created\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "apply",
+      "-f",
+      "-"
+    ],
+    "started_at_utc": "2026-10-20T20:43:30.995954+00:00",
+    "finished_at_utc": "2026-10-20T20:43:31.272753+00:00",
+    "exit_code": 0,
+    "stdout": "service/myapp-canary-service created\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "rollout",
+      "status",
+      "deployment/app-stable",
+      "--timeout=150s"
+    ],
+    "started_at_utc": "2026-10-20T20:43:31.273399+00:00",
+    "finished_at_utc": "2026-10-20T20:43:39.972922+00:00",
+    "exit_code": 0,
+    "stdout": "Waiting for deployment \"app-stable\" rollout to finish: 0 of 9 updated replicas are available...\nWaiting for deployment \"app-stable\" rollout to finish: 1 of 9 updated replicas are available...\nWaiting for deployment \"app-stable\" rollout to finish: 2 of 9 updated replicas are available...\nWaiting for deployment \"app-stable\" rollout to finish: 3 of 9 updated replicas are available...\nWaiting for deployment \"app-stable\" rollout to finish: 4 of 9 updated replicas are available...\nWaiting for deployment \"app-stable\" rollout to finish: 5 of 9 updated replicas are available...\nWaiting for deployment \"app-stable\" rollout to finish: 6 of 9 updated replicas are available...\nWaiting for deployment \"app-stable\" rollout to finish: 7 of 9 updated replicas are available...\nWaiting for deployment \"app-stable\" rollout to finish: 8 of 9 updated replicas are available...\ndeployment \"app-stable\" successfully rolled out\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "rollout",
+      "status",
+      "deployment/app-canary",
+      "--timeout=150s"
+    ],
+    "started_at_utc": "2026-10-20T20:43:39.973827+00:00",
+    "finished_at_utc": "2026-10-20T20:43:40.104868+00:00",
+    "exit_code": 0,
+    "stdout": "deployment \"app-canary\" successfully rolled out\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "get",
+      "endpointslices",
+      "-l",
+      "kubernetes.io/service-name=myapp-canary-service",
+      "-o",
+      "json"
+    ],
+    "started_at_utc": "2026-10-20T20:43:40.105642+00:00",
+    "finished_at_utc": "2026-10-20T20:43:40.195461+00:00",
+    "exit_code": 0,
+    "stdout": "{\n    \"apiVersion\": \"v1\",\n    \"items\": [\n        {\n            \"addressType\": \"IPv4\",\n            \"apiVersion\": \"discovery.k8s.io/v1\",\n            \"endpoints\": [\n                {\n                    \"addresses\": [\n                        \"10.244.0.68\"\n                    ],\n                    \"conditions\": {\n                        \"ready\": true,\n                        \"serving\": true,\n                        \"terminating\": false\n                    },\n                    \"nodeName\": \"minikube\",\n                    \"targetRef\": {\n                        \"kind\": \"Pod\",\n                        \"name\": \"app-stable-654fbcbb6c-tq6gx\",\n                        \"namespace\": \"homework-strategy-check\",\n                        \"uid\": \"7268217c-37f4-448d-ad26-0b5e25f3dc4a\"\n                    }\n                },\n                {\n                    \"addresses\": [\n                        \"10.244.0.67\"\n                    ],\n                    \"conditions\": {\n                        \"ready\": true,\n                        \"serving\": true,\n                        \"terminating\": false\n                    },\n                    \"nodeName\": \"minikube\",\n                    \"targetRef\": {\n                        \"kind\": \"Pod\",\n                        \"name\": \"app-stable-654fbcbb6c-llw9s\",\n                        \"namespace\": \"homework-strategy-check\",\n                        \"uid\": \"173f181a-efd7-4eba-a0b8-08d67955035a\"\n                    }\n                },\n                {\n                    \"addresses\": [\n                        \"10.244.0.70\"\n                    ],\n                    \"conditions\": {\n                        \"ready\": true,\n                        \"serving\": true,\n                        \"terminating\": false\n                    },\n                    \"nodeName\": \"minikube\",\n                    \"targetRef\": {\n                        \"kind\": \"Pod\",\n                        \"name\": \"app-stable-654fbcbb6c-8m8vt\",\n                        \"namespace\": \"homework-strategy-check\",\n                        \"uid\": \"0070f014-707e-4470-83fa-19dc0494baf9\"\n                    }\n                },\n                {\n                    \"addresses\": [\n                        \"10.244.0.69\"\n                    ],\n                    \"conditions\": {\n                        \"ready\": true,\n                        \"serving\": true,\n                        \"terminating\": false\n                    },\n                    \"nodeName\": \"minikube\",\n                    \"targetRef\": {\n                        \"kind\": \"Pod\",\n                        \"name\": \"app-stable-654fbcbb6c-t86jq\",\n                        \"namespace\": \"homework-strategy-check\",\n                        \"uid\": \"e2c8c711-7ab9-4d85-bf33-7e102f9a2c58\"\n                    }\n                },\n                {\n                    \"addresses\": [\n                        \"10.244.0.74\"\n                    ],\n                    \"conditions\": {\n                        \"ready\": true,\n                        \"serving\": true,\n                        \"terminating\": false\n                    },\n                    \"nodeName\": \"minikube\",\n                    \"targetRef\": {\n                        \"kind\": \"Pod\",\n                        \"name\": \"app-stable-654fbcbb6c-6ng4x\",\n                        \"namespace\": \"homework-strategy-check\",\n                        \"uid\": \"3326d151-ae51-4c55-8fb3-4bbb568588b4\"\n                    }\n                },\n                {\n                    \"addresses\": [\n                        \"10.244.0.76\"\n                    ],\n                    \"conditions\": {\n                        \"ready\": true,\n                        \"serving\": true,\n                        \"terminating\": false\n                    },\n                    \"nodeName\": \"minikube\",\n                    \"targetRef\": {\n                        \"kind\": \"Pod\",\n                        \"name\": \"app-canary-5f7cfbbc9d-8rssb\",\n                        \"namespace\": \"homework-strategy-check\",\n                        \"uid\": \"8c57aab1-3ad3-48e6-8363-87d45837ee3a\"\n                    }\n                },\n                {\n                    \"addresses\": [\n                        \"10.244.0.73\"\n                    ],\n                    \"conditions\": {\n                        \"ready\": true,\n                        \"serving\": true,\n                        \"terminating\": false\n                    },\n                    \"nodeName\": \"minikube\",\n                    \"targetRef\": {\n                        \"kind\": \"Pod\",\n                        \"name\": \"app-stable-654fbcbb6c-nbsq5\",\n                        \"namespace\": \"homework-strategy-check\",\n                        \"uid\": \"25106883-345b-4c9a-acf7-2555eb8eaddb\"\n                    }\n                },\n                {\n                    \"addresses\": [\n                        \"10.244.0.75\"\n                    ],\n                    \"conditions\": {\n                        \"ready\": true,\n                        \"serving\": true,\n                        \"terminating\": false\n                    },\n                    \"nodeName\": \"minikube\",\n                    \"targetRef\": {\n                        \"kind\": \"Pod\",\n                        \"name\": \"app-stable-654fbcbb6c-7hfld\",\n                        \"namespace\": \"homework-strategy-check\",\n                        \"uid\": \"4365a68a-52e2-4742-8890-8ec95306aa9e\"\n                    }\n                },\n                {\n                    \"addresses\": [\n                        \"10.244.0.72\"\n                    ],\n                    \"conditions\": {\n                        \"ready\": true,\n                        \"serving\": true,\n                        \"terminating\": false\n                    },\n                    \"nodeName\": \"minikube\",\n                    \"targetRef\": {\n                        \"kind\": \"Pod\",\n                        \"name\": \"app-stable-654fbcbb6c-rvxhc\",\n                        \"namespace\": \"homework-strategy-check\",\n                        \"uid\": \"dbbe707c-a551-462e-afaa-f17b9895bcdb\"\n                    }\n                },\n                {\n                    \"addresses\": [\n                        \"10.244.0.71\"\n                    ],\n                    \"conditions\": {\n                        \"ready\": true,\n                        \"serving\": true,\n                        \"terminating\": false\n                    },\n                    \"nodeName\": \"minikube\",\n                    \"targetRef\": {\n                        \"kind\": \"Pod\",\n                        \"name\": \"app-stable-654fbcbb6c-jrp7g\",\n                        \"namespace\": \"homework-strategy-check\",\n                        \"uid\": \"9507c123-dde2-4322-8d4c-5180c8b5eb5d\"\n                    }\n                }\n            ],\n            \"kind\": \"EndpointSlice\",\n            \"metadata\": {\n                \"annotations\": {\n                    \"endpoints.kubernetes.io/last-change-trigger-time\": \"2026-10-20T20:43:39Z\"\n                },\n                \"creationTimestamp\": \"2026-10-20T20:43:31Z\",\n                \"generateName\": \"myapp-canary-service-\",\n                \"generation\": 21,\n                \"labels\": {\n                    \"app\": \"myapp-canary\",\n                    \"endpointslice.kubernetes.io/managed-by\": \"endpointslice-controller.k8s.io\",\n                    \"kubernetes.io/service-name\": \"myapp-canary-service\"\n                },\n                \"name\": \"myapp-canary-service-274rm\",\n                \"namespace\": \"homework-strategy-check\",\n                \"ownerReferences\": [\n                    {\n                        \"apiVersion\": \"v1\",\n                        \"blockOwnerDeletion\": true,\n                        \"controller\": true,\n                        \"kind\": \"Service\",\n                        \"name\": \"myapp-canary-service\",\n                        \"uid\": \"2018183c-8d47-4847-8ea3-eb998b3f4209\"\n                    }\n                ],\n                \"resourceVersion\": \"132209\",\n                \"uid\": \"4b249e31-4a2f-4b3a-af27-89e465f78850\"\n            },\n            \"ports\": [\n                {\n                    \"name\": \"http\",\n                    \"port\": 80,\n                    \"protocol\": \"TCP\"\n                }\n            ]\n        }\n    ],\n    \"kind\": \"List\",\n    \"metadata\": {\n        \"resourceVersion\": \"\"\n    }\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "exec",
+      "deploy/app-stable",
+      "--",
+      "sh",
+      "-c",
+      "i=0; while [ \"$i\" -lt 100 ]; do wget -q -O - http://myapp-canary-service || exit 1; i=$((i+1)); done"
+    ],
+    "started_at_utc": "2026-10-20T20:43:40.196660+00:00",
+    "finished_at_utc": "2026-10-20T20:43:41.707609+00:00",
+    "exit_code": 0,
+    "stdout": "<html><body style=\"background:#7b2d00;color:#ffd60a;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>CANARY v2</p>\n<p style=\"font-size:0.4em;color:#ff9f1c\">Track: canary | 1 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#7b2d00;color:#ffd60a;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>CANARY v2</p>\n<p style=\"font-size:0.4em;color:#ff9f1c\">Track: canary | 1 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#7b2d00;color:#ffd60a;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>CANARY v2</p>\n<p style=\"font-size:0.4em;color:#ff9f1c\">Track: canary | 1 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#7b2d00;color:#ffd60a;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>CANARY v2</p>\n<p style=\"font-size:0.4em;color:#ff9f1c\">Track: canary | 1 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#7b2d00;color:#ffd60a;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>CANARY v2</p>\n<p style=\"font-size:0.4em;color:#ff9f1c\">Track: canary | 1 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#7b2d00;color:#ffd60a;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>CANARY v2</p>\n<p style=\"font-size:0.4em;color:#ff9f1c\">Track: canary | 1 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#7b2d00;color:#ffd60a;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>CANARY v2</p>\n<p style=\"font-size:0.4em;color:#ff9f1c\">Track: canary | 1 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#7b2d00;color:#ffd60a;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>CANARY v2</p>\n<p style=\"font-size:0.4em;color:#ff9f1c\">Track: canary | 1 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#7b2d00;color:#ffd60a;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>CANARY v2</p>\n<p style=\"font-size:0.4em;color:#ff9f1c\">Track: canary | 1 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#7b2d00;color:#ffd60a;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>CANARY v2</p>\n<p style=\"font-size:0.4em;color:#ff9f1c\">Track: canary | 1 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#7b2d00;color:#ffd60a;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>CANARY v2</p>\n<p style=\"font-size:0.4em;color:#ff9f1c\">Track: canary | 1 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#7b2d00;color:#ffd60a;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>CANARY v2</p>\n<p style=\"font-size:0.4em;color:#ff9f1c\">Track: canary | 1 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#7b2d00;color:#ffd60a;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>CANARY v2</p>\n<p style=\"font-size:0.4em;color:#ff9f1c\">Track: canary | 1 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#7b2d00;color:#ffd60a;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>CANARY v2</p>\n<p style=\"font-size:0.4em;color:#ff9f1c\">Track: canary | 1 of 10 endpoints</p>\n</body></html>\n<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "scale",
+      "deployment/app-canary",
+      "--replicas=0"
+    ],
+    "started_at_utc": "2026-10-20T20:43:41.708819+00:00",
+    "finished_at_utc": "2026-10-20T20:43:41.837044+00:00",
+    "exit_code": 0,
+    "stdout": "deployment.apps/app-canary scaled\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "get",
+      "endpointslices",
+      "-l",
+      "kubernetes.io/service-name=myapp-canary-service",
+      "-o",
+      "json"
+    ],
+    "started_at_utc": "2026-10-20T20:43:41.838340+00:00",
+    "finished_at_utc": "2026-10-20T20:43:42.018667+00:00",
+    "exit_code": 0,
+    "stdout": "{\n    \"apiVersion\": \"v1\",\n    \"items\": [\n        {\n            \"addressType\": \"IPv4\",\n            \"apiVersion\": \"discovery.k8s.io/v1\",\n            \"endpoints\": [\n                {\n                    \"addresses\": [\n                        \"10.244.0.68\"\n                    ],\n                    \"conditions\": {\n                        \"ready\": true,\n                        \"serving\": true,\n                        \"terminating\": false\n                    },\n                    \"nodeName\": \"minikube\",\n                    \"targetRef\": {\n                        \"kind\": \"Pod\",\n                        \"name\": \"app-stable-654fbcbb6c-tq6gx\",\n                        \"namespace\": \"homework-strategy-check\",\n                        \"uid\": \"7268217c-37f4-448d-ad26-0b5e25f3dc4a\"\n                    }\n                },\n                {\n                    \"addresses\": [\n                        \"10.244.0.67\"\n                    ],\n                    \"conditions\": {\n                        \"ready\": true,\n                        \"serving\": true,\n                        \"terminating\": false\n                    },\n                    \"nodeName\": \"minikube\",\n                    \"targetRef\": {\n                        \"kind\": \"Pod\",\n                        \"name\": \"app-stable-654fbcbb6c-llw9s\",\n                        \"namespace\": \"homework-strategy-check\",\n                        \"uid\": \"173f181a-efd7-4eba-a0b8-08d67955035a\"\n                    }\n                },\n                {\n                    \"addresses\": [\n                        \"10.244.0.70\"\n                    ],\n                    \"conditions\": {\n                        \"ready\": true,\n                        \"serving\": true,\n                        \"terminating\": false\n                    },\n                    \"nodeName\": \"minikube\",\n                    \"targetRef\": {\n                        \"kind\": \"Pod\",\n                        \"name\": \"app-stable-654fbcbb6c-8m8vt\",\n                        \"namespace\": \"homework-strategy-check\",\n                        \"uid\": \"0070f014-707e-4470-83fa-19dc0494baf9\"\n                    }\n                },\n                {\n                    \"addresses\": [\n                        \"10.244.0.69\"\n                    ],\n                    \"conditions\": {\n                        \"ready\": true,\n                        \"serving\": true,\n                        \"terminating\": false\n                    },\n                    \"nodeName\": \"minikube\",\n                    \"targetRef\": {\n                        \"kind\": \"Pod\",\n                        \"name\": \"app-stable-654fbcbb6c-t86jq\",\n                        \"namespace\": \"homework-strategy-check\",\n                        \"uid\": \"e2c8c711-7ab9-4d85-bf33-7e102f9a2c58\"\n                    }\n                },\n                {\n                    \"addresses\": [\n                        \"10.244.0.74\"\n                    ],\n                    \"conditions\": {\n                        \"ready\": true,\n                        \"serving\": true,\n                        \"terminating\": false\n                    },\n                    \"nodeName\": \"minikube\",\n                    \"targetRef\": {\n                        \"kind\": \"Pod\",\n                        \"name\": \"app-stable-654fbcbb6c-6ng4x\",\n                        \"namespace\": \"homework-strategy-check\",\n                        \"uid\": \"3326d151-ae51-4c55-8fb3-4bbb568588b4\"\n                    }\n                },\n                {\n                    \"addresses\": [\n                        \"10.244.0.76\"\n                    ],\n                    \"conditions\": {\n                        \"ready\": false,\n                        \"serving\": true,\n                        \"terminating\": true\n                    },\n                    \"nodeName\": \"minikube\",\n                    \"targetRef\": {\n                        \"kind\": \"Pod\",\n                        \"name\": \"app-canary-5f7cfbbc9d-8rssb\",\n                        \"namespace\": \"homework-strategy-check\",\n                        \"uid\": \"8c57aab1-3ad3-48e6-8363-87d45837ee3a\"\n                    }\n                },\n                {\n                    \"addresses\": [\n                        \"10.244.0.73\"\n                    ],\n                    \"conditions\": {\n                        \"ready\": true,\n                        \"serving\": true,\n                        \"terminating\": false\n                    },\n                    \"nodeName\": \"minikube\",\n                    \"targetRef\": {\n                        \"kind\": \"Pod\",\n                        \"name\": \"app-stable-654fbcbb6c-nbsq5\",\n                        \"namespace\": \"homework-strategy-check\",\n                        \"uid\": \"25106883-345b-4c9a-acf7-2555eb8eaddb\"\n                    }\n                },\n                {\n                    \"addresses\": [\n                        \"10.244.0.75\"\n                    ],\n                    \"conditions\": {\n                        \"ready\": true,\n                        \"serving\": true,\n                        \"terminating\": false\n                    },\n                    \"nodeName\": \"minikube\",\n                    \"targetRef\": {\n                        \"kind\": \"Pod\",\n                        \"name\": \"app-stable-654fbcbb6c-7hfld\",\n                        \"namespace\": \"homework-strategy-check\",\n                        \"uid\": \"4365a68a-52e2-4742-8890-8ec95306aa9e\"\n                    }\n                },\n                {\n                    \"addresses\": [\n                        \"10.244.0.72\"\n                    ],\n                    \"conditions\": {\n                        \"ready\": true,\n                        \"serving\": true,\n                        \"terminating\": false\n                    },\n                    \"nodeName\": \"minikube\",\n                    \"targetRef\": {\n                        \"kind\": \"Pod\",\n                        \"name\": \"app-stable-654fbcbb6c-rvxhc\",\n                        \"namespace\": \"homework-strategy-check\",\n                        \"uid\": \"dbbe707c-a551-462e-afaa-f17b9895bcdb\"\n                    }\n                },\n                {\n                    \"addresses\": [\n                        \"10.244.0.71\"\n                    ],\n                    \"conditions\": {\n                        \"ready\": true,\n                        \"serving\": true,\n                        \"terminating\": false\n                    },\n                    \"nodeName\": \"minikube\",\n                    \"targetRef\": {\n                        \"kind\": \"Pod\",\n                        \"name\": \"app-stable-654fbcbb6c-jrp7g\",\n                        \"namespace\": \"homework-strategy-check\",\n                        \"uid\": \"9507c123-dde2-4322-8d4c-5180c8b5eb5d\"\n                    }\n                }\n            ],\n            \"kind\": \"EndpointSlice\",\n            \"metadata\": {\n                \"creationTimestamp\": \"2026-10-20T20:43:31Z\",\n                \"generateName\": \"myapp-canary-service-\",\n                \"generation\": 22,\n                \"labels\": {\n                    \"app\": \"myapp-canary\",\n                    \"endpointslice.kubernetes.io/managed-by\": \"endpointslice-controller.k8s.io\",\n                    \"kubernetes.io/service-name\": \"myapp-canary-service\"\n                },\n                \"name\": \"myapp-canary-service-274rm\",\n                \"namespace\": \"homework-strategy-check\",\n                \"ownerReferences\": [\n                    {\n                        \"apiVersion\": \"v1\",\n                        \"blockOwnerDeletion\": true,\n                        \"controller\": true,\n                        \"kind\": \"Service\",\n                        \"name\": \"myapp-canary-service\",\n                        \"uid\": \"2018183c-8d47-4847-8ea3-eb998b3f4209\"\n                    }\n                ],\n                \"resourceVersion\": \"132219\",\n                \"uid\": \"4b249e31-4a2f-4b3a-af27-89e465f78850\"\n            },\n            \"ports\": [\n                {\n                    \"name\": \"http\",\n                    \"port\": 80,\n                    \"protocol\": \"TCP\"\n                }\n            ]\n        }\n    ],\n    \"kind\": \"List\",\n    \"metadata\": {\n        \"resourceVersion\": \"\"\n    }\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "exec",
+      "deploy/app-stable",
+      "--",
+      "wget",
+      "-q",
+      "-O",
+      "-",
+      "http://myapp-canary-service"
+    ],
+    "started_at_utc": "2026-10-20T20:43:42.019985+00:00",
+    "finished_at_utc": "2026-10-20T20:43:42.226750+00:00",
+    "exit_code": 0,
+    "stdout": "<html><body style=\"background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh\">\n<p>STABLE v1</p>\n<p style=\"font-size:0.4em;color:#888\">Track: stable | 9 of 10 endpoints</p>\n</body></html>\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "delete",
+      "deploy/app-stable",
+      "deploy/app-canary",
+      "svc/myapp-canary-service",
+      "--wait=true"
+    ],
+    "started_at_utc": "2026-10-20T20:43:42.227793+00:00",
+    "finished_at_utc": "2026-10-20T20:43:42.453028+00:00",
+    "exit_code": 0,
+    "stdout": "deployment.apps \"app-stable\" deleted from homework-strategy-check namespace\ndeployment.apps \"app-canary\" deleted from homework-strategy-check namespace\nservice \"myapp-canary-service\" deleted from homework-strategy-check namespace\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "apply",
+      "-f",
+      "/home/pranav/Projects/devopsHomework/09-kubernetes-pods-deployments/04-recreate/deployment-v1.yaml"
+    ],
+    "started_at_utc": "2026-10-20T20:43:42.455340+00:00",
+    "finished_at_utc": "2026-10-20T20:43:42.779196+00:00",
+    "exit_code": 0,
+    "stdout": "deployment.apps/app-recreate created\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "apply",
+      "-f",
+      "-"
+    ],
+    "started_at_utc": "2026-10-20T20:43:42.781846+00:00",
+    "finished_at_utc": "2026-10-20T20:43:43.164873+00:00",
+    "exit_code": 0,
+    "stdout": "service/app-recreate-service created\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "rollout",
+      "status",
+      "deployment/app-recreate",
+      "--timeout=150s"
+    ],
+    "started_at_utc": "2026-10-20T20:43:43.165852+00:00",
+    "finished_at_utc": "2026-10-20T20:43:44.977938+00:00",
+    "exit_code": 0,
+    "stdout": "Waiting for deployment \"app-recreate\" rollout to finish: 0 of 3 updated replicas are available...\nWaiting for deployment \"app-recreate\" rollout to finish: 1 of 3 updated replicas are available...\nWaiting for deployment \"app-recreate\" rollout to finish: 2 of 3 updated replicas are available...\ndeployment \"app-recreate\" successfully rolled out\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "exec",
+      "deploy/app-recreate",
+      "--",
+      "wget",
+      "-q",
+      "-O",
+      "-",
+      "http://app-recreate-service"
+    ],
+    "started_at_utc": "2026-10-20T20:43:44.978937+00:00",
+    "finished_at_utc": "2026-10-20T20:43:45.121859+00:00",
+    "exit_code": 0,
+    "stdout": "<html><body style=\"background:#1b262c;color:#0f4c81;font-family:monospace;font-size:2.5em;text-align:center;padding-top:20vh\">\n<p style=\"color:#bbe1fa\">STRATEGY: RECREATE</p>\n<p style=\"color:#3282b8\">VERSION: v1</p>\n<p style=\"font-size:0.4em;color:#bbe1fa\">All v1 pods will be killed before v2 starts</p>\n</body></html>\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "get",
+      "pods",
+      "-l",
+      "app=app-recreate",
+      "-o",
+      "json"
+    ],
+    "started_at_utc": "2026-10-20T20:43:45.122879+00:00",
+    "finished_at_utc": "2026-10-20T20:43:45.246232+00:00",
+    "exit_code": 0,
+    "stdout": "{\n    \"apiVersion\": \"v1\",\n    \"items\": [\n        {\n            \"apiVersion\": \"v1\",\n            \"kind\": \"Pod\",\n            \"metadata\": {\n                \"creationTimestamp\": \"2026-10-20T20:43:42Z\",\n                \"generateName\": \"app-recreate-6c78cb55bb-\",\n                \"generation\": 1,\n                \"labels\": {\n                    \"app\": \"app-recreate\",\n                    \"pod-template-hash\": \"6c78cb55bb\",\n                    \"version\": \"v1\"\n                },\n                \"name\": \"app-recreate-6c78cb55bb-f75b7\",\n                \"namespace\": \"homework-strategy-check\",\n                \"ownerReferences\": [\n                    {\n                        \"apiVersion\": \"apps/v1\",\n                        \"blockOwnerDeletion\": true,\n                        \"controller\": true,\n                        \"kind\": \"ReplicaSet\",\n                        \"name\": \"app-recreate-6c78cb55bb\",\n                        \"uid\": \"cfac61c5-986c-49d8-a1c7-acc6a38da2f8\"\n                    }\n                ],\n                \"resourceVersion\": \"132355\",\n                \"uid\": \"26962e65-6b9e-4caf-a11c-70fa959c9d77\"\n            },\n            \"spec\": {\n                \"containers\": [\n                    {\n                        \"image\": \"nginx:1.24-alpine\",\n                        \"imagePullPolicy\": \"IfNotPresent\",\n                        \"lifecycle\": {\n                            \"postStart\": {\n                                \"exec\": {\n                                    \"command\": [\n                                        \"sh\",\n                                        \"-c\",\n                                        \"echo '\\u003chtml\\u003e\\u003cbody style=\\\"background:#1b262c;color:#0f4c81;font-family:monospace;font-size:2.5em;text-align:center;padding-top:20vh\\\"\\u003e\\n\\u003cp style=\\\"color:#bbe1fa\\\"\\u003eSTRATEGY: RECREATE\\u003c/p\\u003e\\n\\u003cp style=\\\"color:#3282b8\\\"\\u003eVERSION: v1\\u003c/p\\u003e\\n\\u003cp style=\\\"font-size:0.4em;color:#bbe1fa\\\"\\u003eAll v1 pods will be killed before v2 starts\\u003c/p\\u003e\\n\\u003c/body\\u003e\\u003c/html\\u003e' \\u003e /usr/share/nginx/html/index.html\\n\"\n                                    ]\n                                }\n                            }\n                        },\n                        \"name\": \"web\",\n                        \"ports\": [\n                            {\n                                \"containerPort\": 80,\n                                \"protocol\": \"TCP\"\n                            }\n                        ],\n                        \"resources\": {\n                            \"limits\": {\n                                \"cpu\": \"100m\",\n                                \"memory\": \"64Mi\"\n                            },\n                            \"requests\": {\n                                \"cpu\": \"30m\",\n                                \"memory\": \"32Mi\"\n                            }\n                        },\n                        \"terminationMessagePath\": \"/dev/termination-log\",\n                        \"terminationMessagePolicy\": \"File\",\n                        \"volumeMounts\": [\n                            {\n                                \"mountPath\": \"/var/run/secrets/kubernetes.io/serviceaccount\",\n                                \"name\": \"kube-api-access-8b4lm\",\n                                \"readOnly\": true\n                            }\n                        ]\n                    }\n                ],\n                \"dnsPolicy\": \"ClusterFirst\",\n                \"enableServiceLinks\": true,\n                \"nodeName\": \"minikube\",\n                \"preemptionPolicy\": \"PreemptLowerPriority\",\n                \"priority\": 0,\n                \"restartPolicy\": \"Always\",\n                \"schedulerName\": \"default-scheduler\",\n                \"securityContext\": {},\n                \"serviceAccount\": \"default\",\n                \"serviceAccountName\": \"default\",\n                \"terminationGracePeriodSeconds\": 30,\n                \"tolerations\": [\n                    {\n                        \"effect\": \"NoExecute\",\n                        \"key\": \"node.kubernetes.io/not-ready\",\n                        \"operator\": \"Exists\",\n                        \"tolerationSeconds\": 300\n                    },\n                    {\n                        \"effect\": \"NoExecute\",\n                        \"key\": \"node.kubernetes.io/unreachable\",\n                        \"operator\": \"Exists\",\n                        \"tolerationSeconds\": 300\n                    }\n                ],\n                \"volumes\": [\n                    {\n                        \"name\": \"kube-api-access-8b4lm\",\n                        \"projected\": {\n                            \"defaultMode\": 420,\n                            \"sources\": [\n                                {\n                                    \"serviceAccountToken\": {\n                                        \"expirationSeconds\": 3607,\n                                        \"path\": \"token\"\n                                    }\n                                },\n                                {\n                                    \"configMap\": {\n                                        \"items\": [\n                                            {\n                                                \"key\": \"ca.crt\",\n                                                \"path\": \"ca.crt\"\n                                            }\n                                        ],\n                                        \"name\": \"kube-root-ca.crt\"\n                                    }\n                                },\n                                {\n                                    \"downwardAPI\": {\n                                        \"items\": [\n                                            {\n                                                \"fieldRef\": {\n                                                    \"apiVersion\": \"v1\",\n                                                    \"fieldPath\": \"metadata.namespace\"\n                                                },\n                                                \"path\": \"namespace\"\n                                            }\n                                        ]\n                                    }\n                                }\n                            ]\n                        }\n                    }\n                ]\n            },\n            \"status\": {\n                \"allocatedResources\": {\n                    \"cpu\": \"30m\",\n                    \"memory\": \"32Mi\"\n                },\n                \"conditions\": [\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-10-20T20:43:44Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"PodReadyToStartContainers\"\n                    },\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-10-20T20:43:42Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"Initialized\"\n                    },\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-10-20T20:43:44Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"Ready\"\n                    },\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-10-20T20:43:44Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"ContainersReady\"\n                    },\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-10-20T20:43:42Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"PodScheduled\"\n                    }\n                ],\n                \"containerStatuses\": [\n                    {\n                        \"allocatedResources\": {\n                            \"cpu\": \"30m\",\n                            \"memory\": \"32Mi\"\n                        },\n                        \"containerID\": \"containerd://b52ec26304e49978bb4e07424f3b0f1f5a4edc943778e7aa22711d472723ab30\",\n                        \"image\": \"docker.io/library/nginx:1.24-alpine\",\n                        \"imageID\": \"docker.io/library/nginx@sha256:77e5d4a6ad906c5d3793764085706577fa705b1dc6f244ea0241c4b5e2155385\",\n                        \"lastState\": {},\n                        \"name\": \"web\",\n                        \"ready\": true,\n                        \"resources\": {\n                            \"limits\": {\n                                \"cpu\": \"100m\",\n                                \"memory\": \"64Mi\"\n                            },\n                            \"requests\": {\n                                \"cpu\": \"30m\",\n                                \"memory\": \"32Mi\"\n                            }\n                        },\n                        \"restartCount\": 0,\n                        \"started\": true,\n                        \"state\": {\n                            \"running\": {\n                                \"startedAt\": \"2026-10-20T20:43:44Z\"\n                            }\n                        },\n                        \"user\": {\n                            \"linux\": {\n                                \"gid\": 0,\n                                \"supplementalGroups\": [\n                                    0,\n                                    1,\n                                    2,\n                                    3,\n                                    4,\n                                    6,\n                                    10,\n                                    11,\n                                    20,\n                                    26,\n                                    27\n                                ],\n                                \"uid\": 0\n                            }\n                        },\n                        \"volumeMounts\": [\n                            {\n                                \"mountPath\": \"/var/run/secrets/kubernetes.io/serviceaccount\",\n                                \"name\": \"kube-api-access-8b4lm\",\n                                \"readOnly\": true,\n                                \"recursiveReadOnly\": \"Disabled\"\n                            }\n                        ]\n                    }\n                ],\n                \"hostIP\": \"192.168.49.2\",\n                \"hostIPs\": [\n                    {\n                        \"ip\": \"192.168.49.2\"\n                    }\n                ],\n                \"observedGeneration\": 1,\n                \"phase\": \"Running\",\n                \"podIP\": \"10.244.0.79\",\n                \"podIPs\": [\n                    {\n                        \"ip\": \"10.244.0.79\"\n                    }\n                ],\n                \"qosClass\": \"Burstable\",\n                \"resources\": {\n                    \"limits\": {\n                        \"cpu\": \"100m\",\n                        \"memory\": \"64Mi\"\n                    },\n                    \"requests\": {\n                        \"cpu\": \"30m\",\n                        \"memory\": \"32Mi\"\n                    }\n                },\n                \"startTime\": \"2026-10-20T20:43:42Z\"\n            }\n        },\n        {\n            \"apiVersion\": \"v1\",\n            \"kind\": \"Pod\",\n            \"metadata\": {\n                \"creationTimestamp\": \"2026-10-20T20:43:42Z\",\n                \"generateName\": \"app-recreate-6c78cb55bb-\",\n                \"generation\": 1,\n                \"labels\": {\n                    \"app\": \"app-recreate\",\n                    \"pod-template-hash\": \"6c78cb55bb\",\n                    \"version\": \"v1\"\n                },\n                \"name\": \"app-recreate-6c78cb55bb-q5kcw\",\n                \"namespace\": \"homework-strategy-check\",\n                \"ownerReferences\": [\n                    {\n                        \"apiVersion\": \"apps/v1\",\n                        \"blockOwnerDeletion\": true,\n                        \"controller\": true,\n                        \"kind\": \"ReplicaSet\",\n                        \"name\": \"app-recreate-6c78cb55bb\",\n                        \"uid\": \"cfac61c5-986c-49d8-a1c7-acc6a38da2f8\"\n                    }\n                ],\n                \"resourceVersion\": \"132360\",\n                \"uid\": \"c5bb91a1-a91d-4f9c-93fa-cb57eb6e125a\"\n            },\n            \"spec\": {\n                \"containers\": [\n                    {\n                        \"image\": \"nginx:1.24-alpine\",\n                        \"imagePullPolicy\": \"IfNotPresent\",\n                        \"lifecycle\": {\n                            \"postStart\": {\n                                \"exec\": {\n                                    \"command\": [\n                                        \"sh\",\n                                        \"-c\",\n                                        \"echo '\\u003chtml\\u003e\\u003cbody style=\\\"background:#1b262c;color:#0f4c81;font-family:monospace;font-size:2.5em;text-align:center;padding-top:20vh\\\"\\u003e\\n\\u003cp style=\\\"color:#bbe1fa\\\"\\u003eSTRATEGY: RECREATE\\u003c/p\\u003e\\n\\u003cp style=\\\"color:#3282b8\\\"\\u003eVERSION: v1\\u003c/p\\u003e\\n\\u003cp style=\\\"font-size:0.4em;color:#bbe1fa\\\"\\u003eAll v1 pods will be killed before v2 starts\\u003c/p\\u003e\\n\\u003c/body\\u003e\\u003c/html\\u003e' \\u003e /usr/share/nginx/html/index.html\\n\"\n                                    ]\n                                }\n                            }\n                        },\n                        \"name\": \"web\",\n                        \"ports\": [\n                            {\n                                \"containerPort\": 80,\n                                \"protocol\": \"TCP\"\n                            }\n                        ],\n                        \"resources\": {\n                            \"limits\": {\n                                \"cpu\": \"100m\",\n                                \"memory\": \"64Mi\"\n                            },\n                            \"requests\": {\n                                \"cpu\": \"30m\",\n                                \"memory\": \"32Mi\"\n                            }\n                        },\n                        \"terminationMessagePath\": \"/dev/termination-log\",\n                        \"terminationMessagePolicy\": \"File\",\n                        \"volumeMounts\": [\n                            {\n                                \"mountPath\": \"/var/run/secrets/kubernetes.io/serviceaccount\",\n                                \"name\": \"kube-api-access-jcg5x\",\n                                \"readOnly\": true\n                            }\n                        ]\n                    }\n                ],\n                \"dnsPolicy\": \"ClusterFirst\",\n                \"enableServiceLinks\": true,\n                \"nodeName\": \"minikube\",\n                \"preemptionPolicy\": \"PreemptLowerPriority\",\n                \"priority\": 0,\n                \"restartPolicy\": \"Always\",\n                \"schedulerName\": \"default-scheduler\",\n                \"securityContext\": {},\n                \"serviceAccount\": \"default\",\n                \"serviceAccountName\": \"default\",\n                \"terminationGracePeriodSeconds\": 30,\n                \"tolerations\": [\n                    {\n                        \"effect\": \"NoExecute\",\n                        \"key\": \"node.kubernetes.io/not-ready\",\n                        \"operator\": \"Exists\",\n                        \"tolerationSeconds\": 300\n                    },\n                    {\n                        \"effect\": \"NoExecute\",\n                        \"key\": \"node.kubernetes.io/unreachable\",\n                        \"operator\": \"Exists\",\n                        \"tolerationSeconds\": 300\n                    }\n                ],\n                \"volumes\": [\n                    {\n                        \"name\": \"kube-api-access-jcg5x\",\n                        \"projected\": {\n                            \"defaultMode\": 420,\n                            \"sources\": [\n                                {\n                                    \"serviceAccountToken\": {\n                                        \"expirationSeconds\": 3607,\n                                        \"path\": \"token\"\n                                    }\n                                },\n                                {\n                                    \"configMap\": {\n                                        \"items\": [\n                                            {\n                                                \"key\": \"ca.crt\",\n                                                \"path\": \"ca.crt\"\n                                            }\n                                        ],\n                                        \"name\": \"kube-root-ca.crt\"\n                                    }\n                                },\n                                {\n                                    \"downwardAPI\": {\n                                        \"items\": [\n                                            {\n                                                \"fieldRef\": {\n                                                    \"apiVersion\": \"v1\",\n                                                    \"fieldPath\": \"metadata.namespace\"\n                                                },\n                                                \"path\": \"namespace\"\n                                            }\n                                        ]\n                                    }\n                                }\n                            ]\n                        }\n                    }\n                ]\n            },\n            \"status\": {\n                \"allocatedResources\": {\n                    \"cpu\": \"30m\",\n                    \"memory\": \"32Mi\"\n                },\n                \"conditions\": [\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-10-20T20:43:44Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"PodReadyToStartContainers\"\n                    },\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-10-20T20:43:42Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"Initialized\"\n                    },\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-10-20T20:43:44Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"Ready\"\n                    },\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-10-20T20:43:44Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"ContainersReady\"\n                    },\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-10-20T20:43:42Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"PodScheduled\"\n                    }\n                ],\n                \"containerStatuses\": [\n                    {\n                        \"allocatedResources\": {\n                            \"cpu\": \"30m\",\n                            \"memory\": \"32Mi\"\n                        },\n                        \"containerID\": \"containerd://e7c15e7936a884b4f3877b6ac15f7312ea83a27b3b407539a9b5663cc753d21c\",\n                        \"image\": \"docker.io/library/nginx:1.24-alpine\",\n                        \"imageID\": \"docker.io/library/nginx@sha256:77e5d4a6ad906c5d3793764085706577fa705b1dc6f244ea0241c4b5e2155385\",\n                        \"lastState\": {},\n                        \"name\": \"web\",\n                        \"ready\": true,\n                        \"resources\": {\n                            \"limits\": {\n                                \"cpu\": \"100m\",\n                                \"memory\": \"64Mi\"\n                            },\n                            \"requests\": {\n                                \"cpu\": \"30m\",\n                                \"memory\": \"32Mi\"\n                            }\n                        },\n                        \"restartCount\": 0,\n                        \"started\": true,\n                        \"state\": {\n                            \"running\": {\n                                \"startedAt\": \"2026-10-20T20:43:44Z\"\n                            }\n                        },\n                        \"user\": {\n                            \"linux\": {\n                                \"gid\": 0,\n                                \"supplementalGroups\": [\n                                    0,\n                                    1,\n                                    2,\n                                    3,\n                                    4,\n                                    6,\n                                    10,\n                                    11,\n                                    20,\n                                    26,\n                                    27\n                                ],\n                                \"uid\": 0\n                            }\n                        },\n                        \"volumeMounts\": [\n                            {\n                                \"mountPath\": \"/var/run/secrets/kubernetes.io/serviceaccount\",\n                                \"name\": \"kube-api-access-jcg5x\",\n                                \"readOnly\": true,\n                                \"recursiveReadOnly\": \"Disabled\"\n                            }\n                        ]\n                    }\n                ],\n                \"hostIP\": \"192.168.49.2\",\n                \"hostIPs\": [\n                    {\n                        \"ip\": \"192.168.49.2\"\n                    }\n                ],\n                \"observedGeneration\": 1,\n                \"phase\": \"Running\",\n                \"podIP\": \"10.244.0.77\",\n                \"podIPs\": [\n                    {\n                        \"ip\": \"10.244.0.77\"\n                    }\n                ],\n                \"qosClass\": \"Burstable\",\n                \"resources\": {\n                    \"limits\": {\n                        \"cpu\": \"100m\",\n                        \"memory\": \"64Mi\"\n                    },\n                    \"requests\": {\n                        \"cpu\": \"30m\",\n                        \"memory\": \"32Mi\"\n                    }\n                },\n                \"startTime\": \"2026-10-20T20:43:42Z\"\n            }\n        },\n        {\n            \"apiVersion\": \"v1\",\n            \"kind\": \"Pod\",\n            \"metadata\": {\n                \"creationTimestamp\": \"2026-10-20T20:43:42Z\",\n                \"generateName\": \"app-recreate-6c78cb55bb-\",\n                \"generation\": 1,\n                \"labels\": {\n                    \"app\": \"app-recreate\",\n                    \"pod-template-hash\": \"6c78cb55bb\",\n                    \"version\": \"v1\"\n                },\n                \"name\": \"app-recreate-6c78cb55bb-wkbz4\",\n                \"namespace\": \"homework-strategy-check\",\n                \"ownerReferences\": [\n                    {\n                        \"apiVersion\": \"apps/v1\",\n                        \"blockOwnerDeletion\": true,\n                        \"controller\": true,\n                        \"kind\": \"ReplicaSet\",\n                        \"name\": \"app-recreate-6c78cb55bb\",\n                        \"uid\": \"cfac61c5-986c-49d8-a1c7-acc6a38da2f8\"\n                    }\n                ],\n                \"resourceVersion\": \"132350\",\n                \"uid\": \"e0673450-4d5f-47b2-b2d3-932f685ccf60\"\n            },\n            \"spec\": {\n                \"containers\": [\n                    {\n                        \"image\": \"nginx:1.24-alpine\",\n                        \"imagePullPolicy\": \"IfNotPresent\",\n                        \"lifecycle\": {\n                            \"postStart\": {\n                                \"exec\": {\n                                    \"command\": [\n                                        \"sh\",\n                                        \"-c\",\n                                        \"echo '\\u003chtml\\u003e\\u003cbody style=\\\"background:#1b262c;color:#0f4c81;font-family:monospace;font-size:2.5em;text-align:center;padding-top:20vh\\\"\\u003e\\n\\u003cp style=\\\"color:#bbe1fa\\\"\\u003eSTRATEGY: RECREATE\\u003c/p\\u003e\\n\\u003cp style=\\\"color:#3282b8\\\"\\u003eVERSION: v1\\u003c/p\\u003e\\n\\u003cp style=\\\"font-size:0.4em;color:#bbe1fa\\\"\\u003eAll v1 pods will be killed before v2 starts\\u003c/p\\u003e\\n\\u003c/body\\u003e\\u003c/html\\u003e' \\u003e /usr/share/nginx/html/index.html\\n\"\n                                    ]\n                                }\n                            }\n                        },\n                        \"name\": \"web\",\n                        \"ports\": [\n                            {\n                                \"containerPort\": 80,\n                                \"protocol\": \"TCP\"\n                            }\n                        ],\n                        \"resources\": {\n                            \"limits\": {\n                                \"cpu\": \"100m\",\n                                \"memory\": \"64Mi\"\n                            },\n                            \"requests\": {\n                                \"cpu\": \"30m\",\n                                \"memory\": \"32Mi\"\n                            }\n                        },\n                        \"terminationMessagePath\": \"/dev/termination-log\",\n                        \"terminationMessagePolicy\": \"File\",\n                        \"volumeMounts\": [\n                            {\n                                \"mountPath\": \"/var/run/secrets/kubernetes.io/serviceaccount\",\n                                \"name\": \"kube-api-access-ztprf\",\n                                \"readOnly\": true\n                            }\n                        ]\n                    }\n                ],\n                \"dnsPolicy\": \"ClusterFirst\",\n                \"enableServiceLinks\": true,\n                \"nodeName\": \"minikube\",\n                \"preemptionPolicy\": \"PreemptLowerPriority\",\n                \"priority\": 0,\n                \"restartPolicy\": \"Always\",\n                \"schedulerName\": \"default-scheduler\",\n                \"securityContext\": {},\n                \"serviceAccount\": \"default\",\n                \"serviceAccountName\": \"default\",\n                \"terminationGracePeriodSeconds\": 30,\n                \"tolerations\": [\n                    {\n                        \"effect\": \"NoExecute\",\n                        \"key\": \"node.kubernetes.io/not-ready\",\n                        \"operator\": \"Exists\",\n                        \"tolerationSeconds\": 300\n                    },\n                    {\n                        \"effect\": \"NoExecute\",\n                        \"key\": \"node.kubernetes.io/unreachable\",\n                        \"operator\": \"Exists\",\n                        \"tolerationSeconds\": 300\n                    }\n                ],\n                \"volumes\": [\n                    {\n                        \"name\": \"kube-api-access-ztprf\",\n                        \"projected\": {\n                            \"defaultMode\": 420,\n                            \"sources\": [\n                                {\n                                    \"serviceAccountToken\": {\n                                        \"expirationSeconds\": 3607,\n                                        \"path\": \"token\"\n                                    }\n                                },\n                                {\n                                    \"configMap\": {\n                                        \"items\": [\n                                            {\n                                                \"key\": \"ca.crt\",\n                                                \"path\": \"ca.crt\"\n                                            }\n                                        ],\n                                        \"name\": \"kube-root-ca.crt\"\n                                    }\n                                },\n                                {\n                                    \"downwardAPI\": {\n                                        \"items\": [\n                                            {\n                                                \"fieldRef\": {\n                                                    \"apiVersion\": \"v1\",\n                                                    \"fieldPath\": \"metadata.namespace\"\n                                                },\n                                                \"path\": \"namespace\"\n                                            }\n                                        ]\n                                    }\n                                }\n                            ]\n                        }\n                    }\n                ]\n            },\n            \"status\": {\n                \"allocatedResources\": {\n                    \"cpu\": \"30m\",\n                    \"memory\": \"32Mi\"\n                },\n                \"conditions\": [\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-10-20T20:43:44Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"PodReadyToStartContainers\"\n                    },\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-10-20T20:43:42Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"Initialized\"\n                    },\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-10-20T20:43:44Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"Ready\"\n                    },\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-10-20T20:43:44Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"ContainersReady\"\n                    },\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-10-20T20:43:42Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"PodScheduled\"\n                    }\n                ],\n                \"containerStatuses\": [\n                    {\n                        \"allocatedResources\": {\n                            \"cpu\": \"30m\",\n                            \"memory\": \"32Mi\"\n                        },\n                        \"containerID\": \"containerd://15a94b10c38726e42425d27f30b15fe3135f7e2f2156b2625de0407231351aee\",\n                        \"image\": \"docker.io/library/nginx:1.24-alpine\",\n                        \"imageID\": \"docker.io/library/nginx@sha256:77e5d4a6ad906c5d3793764085706577fa705b1dc6f244ea0241c4b5e2155385\",\n                        \"lastState\": {},\n                        \"name\": \"web\",\n                        \"ready\": true,\n                        \"resources\": {\n                            \"limits\": {\n                                \"cpu\": \"100m\",\n                                \"memory\": \"64Mi\"\n                            },\n                            \"requests\": {\n                                \"cpu\": \"30m\",\n                                \"memory\": \"32Mi\"\n                            }\n                        },\n                        \"restartCount\": 0,\n                        \"started\": true,\n                        \"state\": {\n                            \"running\": {\n                                \"startedAt\": \"2026-10-20T20:43:44Z\"\n                            }\n                        },\n                        \"user\": {\n                            \"linux\": {\n                                \"gid\": 0,\n                                \"supplementalGroups\": [\n                                    0,\n                                    1,\n                                    2,\n                                    3,\n                                    4,\n                                    6,\n                                    10,\n                                    11,\n                                    20,\n                                    26,\n                                    27\n                                ],\n                                \"uid\": 0\n                            }\n                        },\n                        \"volumeMounts\": [\n                            {\n                                \"mountPath\": \"/var/run/secrets/kubernetes.io/serviceaccount\",\n                                \"name\": \"kube-api-access-ztprf\",\n                                \"readOnly\": true,\n                                \"recursiveReadOnly\": \"Disabled\"\n                            }\n                        ]\n                    }\n                ],\n                \"hostIP\": \"192.168.49.2\",\n                \"hostIPs\": [\n                    {\n                        \"ip\": \"192.168.49.2\"\n                    }\n                ],\n                \"observedGeneration\": 1,\n                \"phase\": \"Running\",\n                \"podIP\": \"10.244.0.78\",\n                \"podIPs\": [\n                    {\n                        \"ip\": \"10.244.0.78\"\n                    }\n                ],\n                \"qosClass\": \"Burstable\",\n                \"resources\": {\n                    \"limits\": {\n                        \"cpu\": \"100m\",\n                        \"memory\": \"64Mi\"\n                    },\n                    \"requests\": {\n                        \"cpu\": \"30m\",\n                        \"memory\": \"32Mi\"\n                    }\n                },\n                \"startTime\": \"2026-10-20T20:43:42Z\"\n            }\n        }\n    ],\n    \"kind\": \"List\",\n    \"metadata\": {\n        \"resourceVersion\": \"\"\n    }\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "apply",
+      "-f",
+      "/home/pranav/Projects/devopsHomework/09-kubernetes-pods-deployments/04-recreate/deployment-v2.yaml"
+    ],
+    "started_at_utc": "2026-10-20T20:43:45.248474+00:00",
+    "finished_at_utc": "2026-10-20T20:43:45.501865+00:00",
+    "exit_code": 0,
+    "stdout": "deployment.apps/app-recreate configured\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "rollout",
+      "status",
+      "deployment/app-recreate",
+      "--timeout=150s"
+    ],
+    "started_at_utc": "2026-10-20T20:43:45.503188+00:00",
+    "finished_at_utc": "2026-10-20T20:43:48.009420+00:00",
+    "exit_code": 0,
+    "stdout": "Waiting for deployment \"app-recreate\" rollout to finish: 0 out of 3 new replicas have been updated...\nWaiting for deployment \"app-recreate\" rollout to finish: 0 out of 3 new replicas have been updated...\nWaiting for deployment \"app-recreate\" rollout to finish: 0 out of 3 new replicas have been updated...\nWaiting for deployment \"app-recreate\" rollout to finish: 0 out of 3 new replicas have been updated...\nWaiting for deployment \"app-recreate\" rollout to finish: 0 out of 3 new replicas have been updated...\nWaiting for deployment \"app-recreate\" rollout to finish: 0 of 3 updated replicas are available...\nWaiting for deployment \"app-recreate\" rollout to finish: 1 of 3 updated replicas are available...\nWaiting for deployment \"app-recreate\" rollout to finish: 2 of 3 updated replicas are available...\ndeployment \"app-recreate\" successfully rolled out\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "exec",
+      "deploy/app-recreate",
+      "--",
+      "wget",
+      "-q",
+      "-O",
+      "-",
+      "http://app-recreate-service"
+    ],
+    "started_at_utc": "2026-10-20T20:43:48.012447+00:00",
+    "finished_at_utc": "2026-10-20T20:43:48.340752+00:00",
+    "exit_code": 0,
+    "stdout": "<html><body style=\"background:#0f4c81;color:#ffffff;font-family:monospace;font-size:2.5em;text-align:center;padding-top:20vh\">\n<p style=\"color:#bbe1fa\">STRATEGY: RECREATE</p>\n<p style=\"color:#00ffcc\">VERSION: v2 (UPGRADED)</p>\n<p style=\"font-size:0.4em;color:#ffffff\">Successfully replaced after full shutdown</p>\n</body></html>\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "get",
+      "pods",
+      "-l",
+      "app=app-recreate",
+      "-o",
+      "json"
+    ],
+    "started_at_utc": "2026-10-20T20:43:48.342668+00:00",
+    "finished_at_utc": "2026-10-20T20:43:48.445826+00:00",
+    "exit_code": 0,
+    "stdout": "{\n    \"apiVersion\": \"v1\",\n    \"items\": [\n        {\n            \"apiVersion\": \"v1\",\n            \"kind\": \"Pod\",\n            \"metadata\": {\n                \"creationTimestamp\": \"2026-10-20T20:43:45Z\",\n                \"generateName\": \"app-recreate-7bd8d89b8b-\",\n                \"generation\": 1,\n                \"labels\": {\n                    \"app\": \"app-recreate\",\n                    \"pod-template-hash\": \"7bd8d89b8b\",\n                    \"version\": \"v2\"\n                },\n                \"name\": \"app-recreate-7bd8d89b8b-5zcvz\",\n                \"namespace\": \"homework-strategy-check\",\n                \"ownerReferences\": [\n                    {\n                        \"apiVersion\": \"apps/v1\",\n                        \"blockOwnerDeletion\": true,\n                        \"controller\": true,\n                        \"kind\": \"ReplicaSet\",\n                        \"name\": \"app-recreate-7bd8d89b8b\",\n                        \"uid\": \"ce255ff3-60a0-44a4-ae27-175836da90d6\"\n                    }\n                ],\n                \"resourceVersion\": \"132443\",\n                \"uid\": \"f6c8b493-e56b-47da-b248-020d1a421005\"\n            },\n            \"spec\": {\n                \"containers\": [\n                    {\n                        \"image\": \"nginx:1.25-alpine\",\n                        \"imagePullPolicy\": \"IfNotPresent\",\n                        \"lifecycle\": {\n                            \"postStart\": {\n                                \"exec\": {\n                                    \"command\": [\n                                        \"sh\",\n                                        \"-c\",\n                                        \"echo '\\u003chtml\\u003e\\u003cbody style=\\\"background:#0f4c81;color:#ffffff;font-family:monospace;font-size:2.5em;text-align:center;padding-top:20vh\\\"\\u003e\\n\\u003cp style=\\\"color:#bbe1fa\\\"\\u003eSTRATEGY: RECREATE\\u003c/p\\u003e\\n\\u003cp style=\\\"color:#00ffcc\\\"\\u003eVERSION: v2 (UPGRADED)\\u003c/p\\u003e\\n\\u003cp style=\\\"font-size:0.4em;color:#ffffff\\\"\\u003eSuccessfully replaced after full shutdown\\u003c/p\\u003e\\n\\u003c/body\\u003e\\u003c/html\\u003e' \\u003e /usr/share/nginx/html/index.html\\n\"\n                                    ]\n                                }\n                            }\n                        },\n                        \"name\": \"web\",\n                        \"ports\": [\n                            {\n                                \"containerPort\": 80,\n                                \"protocol\": \"TCP\"\n                            }\n                        ],\n                        \"resources\": {\n                            \"limits\": {\n                                \"cpu\": \"100m\",\n                                \"memory\": \"64Mi\"\n                            },\n                            \"requests\": {\n                                \"cpu\": \"30m\",\n                                \"memory\": \"32Mi\"\n                            }\n                        },\n                        \"terminationMessagePath\": \"/dev/termination-log\",\n                        \"terminationMessagePolicy\": \"File\",\n                        \"volumeMounts\": [\n                            {\n                                \"mountPath\": \"/var/run/secrets/kubernetes.io/serviceaccount\",\n                                \"name\": \"kube-api-access-qgh7t\",\n                                \"readOnly\": true\n                            }\n                        ]\n                    }\n                ],\n                \"dnsPolicy\": \"ClusterFirst\",\n                \"enableServiceLinks\": true,\n                \"nodeName\": \"minikube\",\n                \"preemptionPolicy\": \"PreemptLowerPriority\",\n                \"priority\": 0,\n                \"restartPolicy\": \"Always\",\n                \"schedulerName\": \"default-scheduler\",\n                \"securityContext\": {},\n                \"serviceAccount\": \"default\",\n                \"serviceAccountName\": \"default\",\n                \"terminationGracePeriodSeconds\": 30,\n                \"tolerations\": [\n                    {\n                        \"effect\": \"NoExecute\",\n                        \"key\": \"node.kubernetes.io/not-ready\",\n                        \"operator\": \"Exists\",\n                        \"tolerationSeconds\": 300\n                    },\n                    {\n                        \"effect\": \"NoExecute\",\n                        \"key\": \"node.kubernetes.io/unreachable\",\n                        \"operator\": \"Exists\",\n                        \"tolerationSeconds\": 300\n                    }\n                ],\n                \"volumes\": [\n                    {\n                        \"name\": \"kube-api-access-qgh7t\",\n                        \"projected\": {\n                            \"defaultMode\": 420,\n                            \"sources\": [\n                                {\n                                    \"serviceAccountToken\": {\n                                        \"expirationSeconds\": 3607,\n                                        \"path\": \"token\"\n                                    }\n                                },\n                                {\n                                    \"configMap\": {\n                                        \"items\": [\n                                            {\n                                                \"key\": \"ca.crt\",\n                                                \"path\": \"ca.crt\"\n                                            }\n                                        ],\n                                        \"name\": \"kube-root-ca.crt\"\n                                    }\n                                },\n                                {\n                                    \"downwardAPI\": {\n                                        \"items\": [\n                                            {\n                                                \"fieldRef\": {\n                                                    \"apiVersion\": \"v1\",\n                                                    \"fieldPath\": \"metadata.namespace\"\n                                                },\n                                                \"path\": \"namespace\"\n                                            }\n                                        ]\n                                    }\n                                }\n                            ]\n                        }\n                    }\n                ]\n            },\n            \"status\": {\n                \"allocatedResources\": {\n                    \"cpu\": \"30m\",\n                    \"memory\": \"32Mi\"\n                },\n                \"conditions\": [\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-10-20T20:43:47Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"PodReadyToStartContainers\"\n                    },\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-10-20T20:43:46Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"Initialized\"\n                    },\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-10-20T20:43:47Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"Ready\"\n                    },\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-10-20T20:43:47Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"ContainersReady\"\n                    },\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-10-20T20:43:45Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"PodScheduled\"\n                    }\n                ],\n                \"containerStatuses\": [\n                    {\n                        \"allocatedResources\": {\n                            \"cpu\": \"30m\",\n                            \"memory\": \"32Mi\"\n                        },\n                        \"containerID\": \"containerd://b0e7c3ac615e32251561baa1b4dfe8514d86ca75d533f29b1931b24a1ce64962\",\n                        \"image\": \"docker.io/library/nginx:1.25-alpine\",\n                        \"imageID\": \"docker.io/library/nginx@sha256:516475cc129da42866742567714ddc681e5eed7b9ee0b9e9c015e464b4221a00\",\n                        \"lastState\": {},\n                        \"name\": \"web\",\n                        \"ready\": true,\n                        \"resources\": {\n                            \"limits\": {\n                                \"cpu\": \"100m\",\n                                \"memory\": \"64Mi\"\n                            },\n                            \"requests\": {\n                                \"cpu\": \"30m\",\n                                \"memory\": \"32Mi\"\n                            }\n                        },\n                        \"restartCount\": 0,\n                        \"started\": true,\n                        \"state\": {\n                            \"running\": {\n                                \"startedAt\": \"2026-10-20T20:43:47Z\"\n                            }\n                        },\n                        \"user\": {\n                            \"linux\": {\n                                \"gid\": 0,\n                                \"supplementalGroups\": [\n                                    0,\n                                    1,\n                                    2,\n                                    3,\n                                    4,\n                                    6,\n                                    10,\n                                    11,\n                                    20,\n                                    26,\n                                    27\n                                ],\n                                \"uid\": 0\n                            }\n                        },\n                        \"volumeMounts\": [\n                            {\n                                \"mountPath\": \"/var/run/secrets/kubernetes.io/serviceaccount\",\n                                \"name\": \"kube-api-access-qgh7t\",\n                                \"readOnly\": true,\n                                \"recursiveReadOnly\": \"Disabled\"\n                            }\n                        ]\n                    }\n                ],\n                \"hostIP\": \"192.168.49.2\",\n                \"hostIPs\": [\n                    {\n                        \"ip\": \"192.168.49.2\"\n                    }\n                ],\n                \"observedGeneration\": 1,\n                \"phase\": \"Running\",\n                \"podIP\": \"10.244.0.82\",\n                \"podIPs\": [\n                    {\n                        \"ip\": \"10.244.0.82\"\n                    }\n                ],\n                \"qosClass\": \"Burstable\",\n                \"resources\": {\n                    \"limits\": {\n                        \"cpu\": \"100m\",\n                        \"memory\": \"64Mi\"\n                    },\n                    \"requests\": {\n                        \"cpu\": \"30m\",\n                        \"memory\": \"32Mi\"\n                    }\n                },\n                \"startTime\": \"2026-10-20T20:43:46Z\"\n            }\n        },\n        {\n            \"apiVersion\": \"v1\",\n            \"kind\": \"Pod\",\n            \"metadata\": {\n                \"creationTimestamp\": \"2026-10-20T20:43:45Z\",\n                \"generateName\": \"app-recreate-7bd8d89b8b-\",\n                \"generation\": 1,\n                \"labels\": {\n                    \"app\": \"app-recreate\",\n                    \"pod-template-hash\": \"7bd8d89b8b\",\n                    \"version\": \"v2\"\n                },\n                \"name\": \"app-recreate-7bd8d89b8b-f4lcj\",\n                \"namespace\": \"homework-strategy-check\",\n                \"ownerReferences\": [\n                    {\n                        \"apiVersion\": \"apps/v1\",\n                        \"blockOwnerDeletion\": true,\n                        \"controller\": true,\n                        \"kind\": \"ReplicaSet\",\n                        \"name\": \"app-recreate-7bd8d89b8b\",\n                        \"uid\": \"ce255ff3-60a0-44a4-ae27-175836da90d6\"\n                    }\n                ],\n                \"resourceVersion\": \"132453\",\n                \"uid\": \"fef7e3ed-3b22-49ef-b6ea-d22508a91565\"\n            },\n            \"spec\": {\n                \"containers\": [\n                    {\n                        \"image\": \"nginx:1.25-alpine\",\n                        \"imagePullPolicy\": \"IfNotPresent\",\n                        \"lifecycle\": {\n                            \"postStart\": {\n                                \"exec\": {\n                                    \"command\": [\n                                        \"sh\",\n                                        \"-c\",\n                                        \"echo '\\u003chtml\\u003e\\u003cbody style=\\\"background:#0f4c81;color:#ffffff;font-family:monospace;font-size:2.5em;text-align:center;padding-top:20vh\\\"\\u003e\\n\\u003cp style=\\\"color:#bbe1fa\\\"\\u003eSTRATEGY: RECREATE\\u003c/p\\u003e\\n\\u003cp style=\\\"color:#00ffcc\\\"\\u003eVERSION: v2 (UPGRADED)\\u003c/p\\u003e\\n\\u003cp style=\\\"font-size:0.4em;color:#ffffff\\\"\\u003eSuccessfully replaced after full shutdown\\u003c/p\\u003e\\n\\u003c/body\\u003e\\u003c/html\\u003e' \\u003e /usr/share/nginx/html/index.html\\n\"\n                                    ]\n                                }\n                            }\n                        },\n                        \"name\": \"web\",\n                        \"ports\": [\n                            {\n                                \"containerPort\": 80,\n                                \"protocol\": \"TCP\"\n                            }\n                        ],\n                        \"resources\": {\n                            \"limits\": {\n                                \"cpu\": \"100m\",\n                                \"memory\": \"64Mi\"\n                            },\n                            \"requests\": {\n                                \"cpu\": \"30m\",\n                                \"memory\": \"32Mi\"\n                            }\n                        },\n                        \"terminationMessagePath\": \"/dev/termination-log\",\n                        \"terminationMessagePolicy\": \"File\",\n                        \"volumeMounts\": [\n                            {\n                                \"mountPath\": \"/var/run/secrets/kubernetes.io/serviceaccount\",\n                                \"name\": \"kube-api-access-f59gs\",\n                                \"readOnly\": true\n                            }\n                        ]\n                    }\n                ],\n                \"dnsPolicy\": \"ClusterFirst\",\n                \"enableServiceLinks\": true,\n                \"nodeName\": \"minikube\",\n                \"preemptionPolicy\": \"PreemptLowerPriority\",\n                \"priority\": 0,\n                \"restartPolicy\": \"Always\",\n                \"schedulerName\": \"default-scheduler\",\n                \"securityContext\": {},\n                \"serviceAccount\": \"default\",\n                \"serviceAccountName\": \"default\",\n                \"terminationGracePeriodSeconds\": 30,\n                \"tolerations\": [\n                    {\n                        \"effect\": \"NoExecute\",\n                        \"key\": \"node.kubernetes.io/not-ready\",\n                        \"operator\": \"Exists\",\n                        \"tolerationSeconds\": 300\n                    },\n                    {\n                        \"effect\": \"NoExecute\",\n                        \"key\": \"node.kubernetes.io/unreachable\",\n                        \"operator\": \"Exists\",\n                        \"tolerationSeconds\": 300\n                    }\n                ],\n                \"volumes\": [\n                    {\n                        \"name\": \"kube-api-access-f59gs\",\n                        \"projected\": {\n                            \"defaultMode\": 420,\n                            \"sources\": [\n                                {\n                                    \"serviceAccountToken\": {\n                                        \"expirationSeconds\": 3607,\n                                        \"path\": \"token\"\n                                    }\n                                },\n                                {\n                                    \"configMap\": {\n                                        \"items\": [\n                                            {\n                                                \"key\": \"ca.crt\",\n                                                \"path\": \"ca.crt\"\n                                            }\n                                        ],\n                                        \"name\": \"kube-root-ca.crt\"\n                                    }\n                                },\n                                {\n                                    \"downwardAPI\": {\n                                        \"items\": [\n                                            {\n                                                \"fieldRef\": {\n                                                    \"apiVersion\": \"v1\",\n                                                    \"fieldPath\": \"metadata.namespace\"\n                                                },\n                                                \"path\": \"namespace\"\n                                            }\n                                        ]\n                                    }\n                                }\n                            ]\n                        }\n                    }\n                ]\n            },\n            \"status\": {\n                \"allocatedResources\": {\n                    \"cpu\": \"30m\",\n                    \"memory\": \"32Mi\"\n                },\n                \"conditions\": [\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-10-20T20:43:47Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"PodReadyToStartContainers\"\n                    },\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-10-20T20:43:46Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"Initialized\"\n                    },\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-10-20T20:43:47Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"Ready\"\n                    },\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-10-20T20:43:47Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"ContainersReady\"\n                    },\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-10-20T20:43:45Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"PodScheduled\"\n                    }\n                ],\n                \"containerStatuses\": [\n                    {\n                        \"allocatedResources\": {\n                            \"cpu\": \"30m\",\n                            \"memory\": \"32Mi\"\n                        },\n                        \"containerID\": \"containerd://e648d9d97b7728874635bd6607a40bafaa79aadb57947da62239d0987a156f48\",\n                        \"image\": \"docker.io/library/nginx:1.25-alpine\",\n                        \"imageID\": \"docker.io/library/nginx@sha256:516475cc129da42866742567714ddc681e5eed7b9ee0b9e9c015e464b4221a00\",\n                        \"lastState\": {},\n                        \"name\": \"web\",\n                        \"ready\": true,\n                        \"resources\": {\n                            \"limits\": {\n                                \"cpu\": \"100m\",\n                                \"memory\": \"64Mi\"\n                            },\n                            \"requests\": {\n                                \"cpu\": \"30m\",\n                                \"memory\": \"32Mi\"\n                            }\n                        },\n                        \"restartCount\": 0,\n                        \"started\": true,\n                        \"state\": {\n                            \"running\": {\n                                \"startedAt\": \"2026-10-20T20:43:47Z\"\n                            }\n                        },\n                        \"user\": {\n                            \"linux\": {\n                                \"gid\": 0,\n                                \"supplementalGroups\": [\n                                    0,\n                                    1,\n                                    2,\n                                    3,\n                                    4,\n                                    6,\n                                    10,\n                                    11,\n                                    20,\n                                    26,\n                                    27\n                                ],\n                                \"uid\": 0\n                            }\n                        },\n                        \"volumeMounts\": [\n                            {\n                                \"mountPath\": \"/var/run/secrets/kubernetes.io/serviceaccount\",\n                                \"name\": \"kube-api-access-f59gs\",\n                                \"readOnly\": true,\n                                \"recursiveReadOnly\": \"Disabled\"\n                            }\n                        ]\n                    }\n                ],\n                \"hostIP\": \"192.168.49.2\",\n                \"hostIPs\": [\n                    {\n                        \"ip\": \"192.168.49.2\"\n                    }\n                ],\n                \"observedGeneration\": 1,\n                \"phase\": \"Running\",\n                \"podIP\": \"10.244.0.80\",\n                \"podIPs\": [\n                    {\n                        \"ip\": \"10.244.0.80\"\n                    }\n                ],\n                \"qosClass\": \"Burstable\",\n                \"resources\": {\n                    \"limits\": {\n                        \"cpu\": \"100m\",\n                        \"memory\": \"64Mi\"\n                    },\n                    \"requests\": {\n                        \"cpu\": \"30m\",\n                        \"memory\": \"32Mi\"\n                    }\n                },\n                \"startTime\": \"2026-10-20T20:43:46Z\"\n            }\n        },\n        {\n            \"apiVersion\": \"v1\",\n            \"kind\": \"Pod\",\n            \"metadata\": {\n                \"creationTimestamp\": \"2026-10-20T20:43:45Z\",\n                \"generateName\": \"app-recreate-7bd8d89b8b-\",\n                \"generation\": 1,\n                \"labels\": {\n                    \"app\": \"app-recreate\",\n                    \"pod-template-hash\": \"7bd8d89b8b\",\n                    \"version\": \"v2\"\n                },\n                \"name\": \"app-recreate-7bd8d89b8b-l5bcm\",\n                \"namespace\": \"homework-strategy-check\",\n                \"ownerReferences\": [\n                    {\n                        \"apiVersion\": \"apps/v1\",\n                        \"blockOwnerDeletion\": true,\n                        \"controller\": true,\n                        \"kind\": \"ReplicaSet\",\n                        \"name\": \"app-recreate-7bd8d89b8b\",\n                        \"uid\": \"ce255ff3-60a0-44a4-ae27-175836da90d6\"\n                    }\n                ],\n                \"resourceVersion\": \"132448\",\n                \"uid\": \"bf1f3adb-dacf-4063-94b1-7a200c80b15e\"\n            },\n            \"spec\": {\n                \"containers\": [\n                    {\n                        \"image\": \"nginx:1.25-alpine\",\n                        \"imagePullPolicy\": \"IfNotPresent\",\n                        \"lifecycle\": {\n                            \"postStart\": {\n                                \"exec\": {\n                                    \"command\": [\n                                        \"sh\",\n                                        \"-c\",\n                                        \"echo '\\u003chtml\\u003e\\u003cbody style=\\\"background:#0f4c81;color:#ffffff;font-family:monospace;font-size:2.5em;text-align:center;padding-top:20vh\\\"\\u003e\\n\\u003cp style=\\\"color:#bbe1fa\\\"\\u003eSTRATEGY: RECREATE\\u003c/p\\u003e\\n\\u003cp style=\\\"color:#00ffcc\\\"\\u003eVERSION: v2 (UPGRADED)\\u003c/p\\u003e\\n\\u003cp style=\\\"font-size:0.4em;color:#ffffff\\\"\\u003eSuccessfully replaced after full shutdown\\u003c/p\\u003e\\n\\u003c/body\\u003e\\u003c/html\\u003e' \\u003e /usr/share/nginx/html/index.html\\n\"\n                                    ]\n                                }\n                            }\n                        },\n                        \"name\": \"web\",\n                        \"ports\": [\n                            {\n                                \"containerPort\": 80,\n                                \"protocol\": \"TCP\"\n                            }\n                        ],\n                        \"resources\": {\n                            \"limits\": {\n                                \"cpu\": \"100m\",\n                                \"memory\": \"64Mi\"\n                            },\n                            \"requests\": {\n                                \"cpu\": \"30m\",\n                                \"memory\": \"32Mi\"\n                            }\n                        },\n                        \"terminationMessagePath\": \"/dev/termination-log\",\n                        \"terminationMessagePolicy\": \"File\",\n                        \"volumeMounts\": [\n                            {\n                                \"mountPath\": \"/var/run/secrets/kubernetes.io/serviceaccount\",\n                                \"name\": \"kube-api-access-cq469\",\n                                \"readOnly\": true\n                            }\n                        ]\n                    }\n                ],\n                \"dnsPolicy\": \"ClusterFirst\",\n                \"enableServiceLinks\": true,\n                \"nodeName\": \"minikube\",\n                \"preemptionPolicy\": \"PreemptLowerPriority\",\n                \"priority\": 0,\n                \"restartPolicy\": \"Always\",\n                \"schedulerName\": \"default-scheduler\",\n                \"securityContext\": {},\n                \"serviceAccount\": \"default\",\n                \"serviceAccountName\": \"default\",\n                \"terminationGracePeriodSeconds\": 30,\n                \"tolerations\": [\n                    {\n                        \"effect\": \"NoExecute\",\n                        \"key\": \"node.kubernetes.io/not-ready\",\n                        \"operator\": \"Exists\",\n                        \"tolerationSeconds\": 300\n                    },\n                    {\n                        \"effect\": \"NoExecute\",\n                        \"key\": \"node.kubernetes.io/unreachable\",\n                        \"operator\": \"Exists\",\n                        \"tolerationSeconds\": 300\n                    }\n                ],\n                \"volumes\": [\n                    {\n                        \"name\": \"kube-api-access-cq469\",\n                        \"projected\": {\n                            \"defaultMode\": 420,\n                            \"sources\": [\n                                {\n                                    \"serviceAccountToken\": {\n                                        \"expirationSeconds\": 3607,\n                                        \"path\": \"token\"\n                                    }\n                                },\n                                {\n                                    \"configMap\": {\n                                        \"items\": [\n                                            {\n                                                \"key\": \"ca.crt\",\n                                                \"path\": \"ca.crt\"\n                                            }\n                                        ],\n                                        \"name\": \"kube-root-ca.crt\"\n                                    }\n                                },\n                                {\n                                    \"downwardAPI\": {\n                                        \"items\": [\n                                            {\n                                                \"fieldRef\": {\n                                                    \"apiVersion\": \"v1\",\n                                                    \"fieldPath\": \"metadata.namespace\"\n                                                },\n                                                \"path\": \"namespace\"\n                                            }\n                                        ]\n                                    }\n                                }\n                            ]\n                        }\n                    }\n                ]\n            },\n            \"status\": {\n                \"allocatedResources\": {\n                    \"cpu\": \"30m\",\n                    \"memory\": \"32Mi\"\n                },\n                \"conditions\": [\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-10-20T20:43:47Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"PodReadyToStartContainers\"\n                    },\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-10-20T20:43:46Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"Initialized\"\n                    },\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-10-20T20:43:47Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"Ready\"\n                    },\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-10-20T20:43:47Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"ContainersReady\"\n                    },\n                    {\n                        \"lastProbeTime\": null,\n                        \"lastTransitionTime\": \"2026-10-20T20:43:45Z\",\n                        \"observedGeneration\": 1,\n                        \"status\": \"True\",\n                        \"type\": \"PodScheduled\"\n                    }\n                ],\n                \"containerStatuses\": [\n                    {\n                        \"allocatedResources\": {\n                            \"cpu\": \"30m\",\n                            \"memory\": \"32Mi\"\n                        },\n                        \"containerID\": \"containerd://cac930ce4e1dfa25eda8155aebdaef587a2178be5a62f332ead57ba759747d63\",\n                        \"image\": \"docker.io/library/nginx:1.25-alpine\",\n                        \"imageID\": \"docker.io/library/nginx@sha256:516475cc129da42866742567714ddc681e5eed7b9ee0b9e9c015e464b4221a00\",\n                        \"lastState\": {},\n                        \"name\": \"web\",\n                        \"ready\": true,\n                        \"resources\": {\n                            \"limits\": {\n                                \"cpu\": \"100m\",\n                                \"memory\": \"64Mi\"\n                            },\n                            \"requests\": {\n                                \"cpu\": \"30m\",\n                                \"memory\": \"32Mi\"\n                            }\n                        },\n                        \"restartCount\": 0,\n                        \"started\": true,\n                        \"state\": {\n                            \"running\": {\n                                \"startedAt\": \"2026-10-20T20:43:47Z\"\n                            }\n                        },\n                        \"user\": {\n                            \"linux\": {\n                                \"gid\": 0,\n                                \"supplementalGroups\": [\n                                    0,\n                                    1,\n                                    2,\n                                    3,\n                                    4,\n                                    6,\n                                    10,\n                                    11,\n                                    20,\n                                    26,\n                                    27\n                                ],\n                                \"uid\": 0\n                            }\n                        },\n                        \"volumeMounts\": [\n                            {\n                                \"mountPath\": \"/var/run/secrets/kubernetes.io/serviceaccount\",\n                                \"name\": \"kube-api-access-cq469\",\n                                \"readOnly\": true,\n                                \"recursiveReadOnly\": \"Disabled\"\n                            }\n                        ]\n                    }\n                ],\n                \"hostIP\": \"192.168.49.2\",\n                \"hostIPs\": [\n                    {\n                        \"ip\": \"192.168.49.2\"\n                    }\n                ],\n                \"observedGeneration\": 1,\n                \"phase\": \"Running\",\n                \"podIP\": \"10.244.0.81\",\n                \"podIPs\": [\n                    {\n                        \"ip\": \"10.244.0.81\"\n                    }\n                ],\n                \"qosClass\": \"Burstable\",\n                \"resources\": {\n                    \"limits\": {\n                        \"cpu\": \"100m\",\n                        \"memory\": \"64Mi\"\n                    },\n                    \"requests\": {\n                        \"cpu\": \"30m\",\n                        \"memory\": \"32Mi\"\n                    }\n                },\n                \"startTime\": \"2026-10-20T20:43:46Z\"\n            }\n        }\n    ],\n    \"kind\": \"List\",\n    \"metadata\": {\n        \"resourceVersion\": \"\"\n    }\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "get",
+      "pods,deploy,svc",
+      "-o",
+      "wide"
+    ],
+    "started_at_utc": "2026-10-20T20:43:48.447620+00:00",
+    "finished_at_utc": "2026-10-20T20:43:48.561029+00:00",
+    "exit_code": 0,
+    "stdout": "NAME                                READY   STATUS    RESTARTS   AGE   IP            NODE       NOMINATED NODE   READINESS GATES\npod/app-recreate-7bd8d89b8b-5zcvz   1/1     Running   0          3s    10.244.0.82   minikube   <none>           <none>\npod/app-recreate-7bd8d89b8b-f4lcj   1/1     Running   0          3s    10.244.0.80   minikube   <none>           <none>\npod/app-recreate-7bd8d89b8b-l5bcm   1/1     Running   0          3s    10.244.0.81   minikube   <none>           <none>\n\nNAME                           READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES              SELECTOR\ndeployment.apps/app-recreate   3/3     3            3           6s    web          nginx:1.25-alpine   app=app-recreate\n\nNAME                           TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE   SELECTOR\nservice/app-recreate-service   ClusterIP   10.107.143.246   <none>        80/TCP    5s    app=app-recreate\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "get",
+      "namespace",
+      "homework-strategy-check",
+      "-o",
+      "json"
+    ],
+    "started_at_utc": "2026-10-20T20:43:48.563260+00:00",
+    "finished_at_utc": "2026-10-20T20:43:48.666947+00:00",
+    "exit_code": 0,
+    "stdout": "{\n    \"apiVersion\": \"v1\",\n    \"kind\": \"Namespace\",\n    \"metadata\": {\n        \"creationTimestamp\": \"2026-10-20T20:42:16Z\",\n        \"labels\": {\n            \"kubernetes.io/metadata.name\": \"homework-strategy-check\"\n        },\n        \"name\": \"homework-strategy-check\",\n        \"resourceVersion\": \"131433\",\n        \"uid\": \"96a09d78-651b-46b0-bea7-9eff4b310854\"\n    },\n    \"spec\": {\n        \"finalizers\": [\n            \"kubernetes\"\n        ]\n    },\n    \"status\": {\n        \"phase\": \"Active\"\n    }\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "kubectl",
+      "--context",
+      "minikube",
+      "--request-timeout=15s",
+      "-n",
+      "homework-strategy-check",
+      "delete",
+      "namespace",
+      "homework-strategy-check",
+      "--wait=true",
+      "--timeout=120s"
+    ],
+    "started_at_utc": "2026-10-20T20:43:48.668805+00:00",
+    "finished_at_utc": "2026-10-20T20:44:00.919523+00:00",
+    "exit_code": 0,
+    "stdout": "namespace \"homework-strategy-check\" deleted\n",
+    "stderr": "Warning: deleting cluster-scoped resources, not scoped to the provided namespace\n"
+  }
+]

@@ -57,7 +57,7 @@ Run `helm lint final-devops-project/helm` and `helm template homework final-devo
 
 ## Terraform infrastructure
 
-`terraform/` contains the final project's AWS VPC, public subnet, route, restricted security group, EC2 demo and private S3 bucket. `../terraform-s3-demo/` is the separate Session 18 exercise. Both validate locally. AWS `plan`, `apply`, `show`, `output` and `destroy` require credentials and have not been claimed as executed.
+`terraform/` contains the final project's AWS VPC, public subnet, route, restricted security group, EC2 demo and private S3 bucket. `../terraform-s3-demo/` is the separate Session 18 exercise. All three homework Terraform projects passed authenticated init/fmt/validate/plan on 21 October 2026 (IST). This final-project copy planned 11 additions, was separately applied and verified through EC2 HTTP/S3 APIs, and its deployed state/output were captured. Destroy passed and its new resources were independently confirmed removed. See [the concrete homework plan and cleanup scope](../AWS-HOMEWORK.md).
 
 ## CI/CD pipeline
 

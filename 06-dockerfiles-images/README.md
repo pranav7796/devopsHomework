@@ -1,5 +1,8 @@
 # Dockerfiles and Images
 
+The multi-stage build and all three application deployments were freshly
+built and checked on 9 October 2026. See the [commands and output](evidence/README.md).
+
 ## Run All
 
 ```bash

@@ -1,6 +1,6 @@
 # Docker Networking and Volumes
 
-Name: Pranav  BHaradwaj
+Name: Pranav Bharadwaj
 Roll number: **24bcs10006**
 
 ## Container Networking

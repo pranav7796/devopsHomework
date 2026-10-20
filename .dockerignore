@@ -8,5 +8,8 @@
 **/.terraform
 **/terraform.tfstate*
 **/terraform.tfvars
+**/*.tfvars.json
+**/tfplan*
+**/*.tfplan
 **/.env
 **/evidence

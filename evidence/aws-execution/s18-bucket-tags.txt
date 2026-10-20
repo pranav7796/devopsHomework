@@ -1,0 +1,24 @@
+{
+    "TagSet": [
+        {
+            "Key": "Project",
+            "Value": "devopsHomework"
+        },
+        {
+            "Key": "Environment",
+            "Value": "homework"
+        },
+        {
+            "Key": "Exercise",
+            "Value": "session18"
+        },
+        {
+            "Key": "ManagedBy",
+            "Value": "Terraform"
+        },
+        {
+            "Key": "Name",
+            "Value": "devops-homework-24bcs10006-s18-525426877661"
+        }
+    ]
+}

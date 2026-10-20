@@ -1,10 +1,10 @@
 variable "aws_region" {
   type    = string
-  default = "ap-south-1"
+  default = "ap-southeast-2"
 }
 variable "ami_id" {
   type        = string
-  description = "Region-specific Linux AMI ID"
+  description = "Region-specific Amazon Linux 2023 AMI ID"
 }
 variable "bucket_name" {
   type        = string

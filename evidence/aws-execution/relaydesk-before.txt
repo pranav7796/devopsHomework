@@ -1,0 +1,6 @@
+{
+    "arn": "arn:aws:eks:ap-southeast-2:525426877661:cluster/relaydesk-capstone",
+    "status": "ACTIVE",
+    "version": "1.35",
+    "vpc": "vpc-0f1334a144012db46"
+}

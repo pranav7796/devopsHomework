@@ -292,7 +292,7 @@ kubectl logs lifecycle-multi-container -c app
 kubectl logs lifecycle-multi-container -c sidecar
 ```
 
-The local Pod reached `2/2 Running`; `kubectl describe` showed both `app` and `sidecar` containers running and ready. [Live output screenshot](11-multi-container.png).
+The local Pod reached `2/2 Running`; `kubectl describe` showed both `app` and `sidecar` containers running and ready. [Live output screenshot](11-multi-container.png). [Additional describe capture from 8 October 2026](11-multi-container-describe-2026-10-08.png) shows both containers and their readiness conditions; it is historical evidence, not a new runtime check.
 
 Teaching point:
 

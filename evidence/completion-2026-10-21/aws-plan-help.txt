@@ -1,0 +1,9 @@
+usage: prepare-aws-plans.py [-h] [--admin-cidr ADMIN_CIDR]
+
+Prepare real homework plans and evidence; never apply or destroy resources.
+
+options:
+  -h, --help            show this help message and exit
+  --admin-cidr ADMIN_CIDR
+                        Trusted public IPv4 /32; defaults to current egress
+                        via checkip.amazonaws.com

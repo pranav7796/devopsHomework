@@ -1,0 +1,39 @@
+{
+    "Vpcs": [
+        {
+            "OwnerId": "525426877661",
+            "InstanceTenancy": "default",
+            "CidrBlockAssociationSet": [
+                {
+                    "AssociationId": "vpc-cidr-assoc-09ac681009656c73f",
+                    "CidrBlock": "10.42.0.0/16",
+                    "CidrBlockState": {
+                        "State": "associated"
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Tags": [
+                {
+                    "Key": "Project",
+                    "Value": "devopsHomework"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "homework-vpc"
+                },
+                {
+                    "Key": "Exercise",
+                    "Value": "final-project"
+                }
+            ],
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "VpcId": "vpc-036751fa507980bb8",
+            "State": "available",
+            "CidrBlock": "10.42.0.0/16",
+            "DhcpOptionsId": "dopt-080dcad61eb4a884d"
+        }
+    ]
+}

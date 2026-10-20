@@ -1,0 +1,17 @@
+{
+  "bucket_name": {
+    "sensitive": false,
+    "type": "string",
+    "value": "devops-homework-24bcs10006-final-525426877661"
+  },
+  "instance_public_ip": {
+    "sensitive": false,
+    "type": "string",
+    "value": "13.54.2.174"
+  },
+  "vpc_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "vpc-036751fa507980bb8"
+  }
+}

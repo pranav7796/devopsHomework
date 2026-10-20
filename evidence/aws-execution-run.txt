@@ -1,0 +1,191 @@
+START identity-before
+END identity-before 0
+START relaydesk-before
+END relaydesk-before 0
+START s18-state-before
+END s18-state-before 1
+START s18-review-plan
+END s18-review-plan 0
+START s18-apply
+END s18-apply 0
+START s18-show
+END s18-show 0
+START s18-output
+END s18-output 0
+START s18-state-values
+END s18-state-values 0
+START s18-bucket-tags
+END s18-bucket-tags 0
+START s18-bucket-public-access
+END s18-bucket-public-access 0
+START s18-bucket-versioning
+END s18-bucket-versioning 0
+START s18-bucket-encryption
+END s18-bucket-encryption 0
+START s18-bucket-location
+END s18-bucket-location 0
+START s18-state-before-cleanup
+END s18-state-before-cleanup 0
+START s18-destroy-plan
+END s18-destroy-plan 0
+START s18-review-destroy
+END s18-review-destroy 0
+START s18-destroy
+END s18-destroy 0
+START s18-state-after-cleanup
+END s18-state-after-cleanup 0
+START s18-bucket-after-cleanup
+END s18-bucket-after-cleanup 254
+START s19-state-before
+END s19-state-before 1
+START s19-review-plan
+END s19-review-plan 0
+START s19-apply
+END s19-apply 0
+START s19-show
+END s19-show 0
+START s19-output
+END s19-output 0
+START s19-state-values
+END s19-state-values 0
+START s19-bucket-tags
+END s19-bucket-tags 0
+START s19-bucket-public-access
+END s19-bucket-public-access 0
+START s19-bucket-versioning
+END s19-bucket-versioning 0
+START s19-bucket-encryption
+END s19-bucket-encryption 0
+START s19-bucket-location
+END s19-bucket-location 0
+START s19-instance-status-wait
+END s19-instance-status-wait 0
+START s19-instance
+END s19-instance 0
+START s19-vpc
+END s19-vpc 0
+START s19-routes
+END s19-routes 0
+START s19-security
+END s19-security 0
+START s19-state-before-cleanup
+END s19-state-before-cleanup 0
+Traceback (most recent call last):
+  File "/tmp/execute-homework-aws.py", line 119, in <module>
+    (OUT/(tag+'-http.txt')).write_text('GET '+url+'\nHTTP '+str(status)+'\n'+body)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+START identity-before
+END identity-before 0
+START relaydesk-before
+END relaydesk-before 0
+START s18-state-before
+END s18-state-before 0
+SKIP verified and cleaned project s18
+START s19-state-before
+END s19-state-before 0
+START s19-resume-state-values
+END s19-resume-state-values 0
+START s19-review-plan
+END s19-review-plan 0
+START s19-show
+END s19-show 0
+START s19-output
+END s19-output 0
+START s19-state-values
+END s19-state-values 0
+START s19-bucket-tags
+END s19-bucket-tags 0
+START s19-bucket-public-access
+END s19-bucket-public-access 0
+START s19-bucket-versioning
+END s19-bucket-versioning 0
+START s19-bucket-encryption
+END s19-bucket-encryption 0
+START s19-bucket-location
+END s19-bucket-location 0
+START s19-instance-status-wait
+END s19-instance-status-wait 0
+START s19-instance
+END s19-instance 0
+START s19-vpc
+END s19-vpc 0
+START s19-routes
+END s19-routes 0
+START s19-security
+END s19-security 0
+START s19-state-before-cleanup
+END s19-state-before-cleanup 0
+START s19-destroy-plan
+END s19-destroy-plan 0
+START s19-review-destroy
+END s19-review-destroy 0
+START s19-destroy
+END s19-destroy 0
+START s19-state-after-cleanup
+END s19-state-after-cleanup 0
+START s19-bucket-after-cleanup
+END s19-bucket-after-cleanup 254
+START s19-terminated-wait
+END s19-terminated-wait 0
+START s19-instance-after-cleanup
+END s19-instance-after-cleanup 0
+START s19-vpc-after-cleanup
+END s19-vpc-after-cleanup 254
+START s19-volume-after-cleanup-vol-017b0b8da7a576465
+END s19-volume-after-cleanup-vol-017b0b8da7a576465 254
+START final-state-before
+END final-state-before 1
+START final-review-plan
+END final-review-plan 0
+START final-apply
+END final-apply 0
+START final-show
+END final-show 0
+START final-output
+END final-output 0
+START final-state-values
+END final-state-values 0
+START final-bucket-tags
+END final-bucket-tags 0
+START final-bucket-public-access
+END final-bucket-public-access 0
+START final-bucket-versioning
+END final-bucket-versioning 0
+START final-bucket-encryption
+END final-bucket-encryption 0
+START final-bucket-location
+END final-bucket-location 0
+START final-instance-status-wait
+END final-instance-status-wait 0
+START final-instance
+END final-instance 0
+START final-vpc
+END final-vpc 0
+START final-routes
+END final-routes 0
+START final-security
+END final-security 0
+START final-state-before-cleanup
+END final-state-before-cleanup 0
+START final-destroy-plan
+END final-destroy-plan 0
+START final-review-destroy
+END final-review-destroy 0
+START final-destroy
+END final-destroy 0
+START final-state-after-cleanup
+END final-state-after-cleanup 0
+START final-bucket-after-cleanup
+END final-bucket-after-cleanup 254
+START final-terminated-wait
+END final-terminated-wait 0
+START final-instance-after-cleanup
+END final-instance-after-cleanup 0
+START final-vpc-after-cleanup
+END final-vpc-after-cleanup 254
+START final-volume-after-cleanup-vol-0b3b4ff465efd44ea
+END final-volume-after-cleanup-vol-0b3b4ff465efd44ea 254
+START relaydesk-after
+END relaydesk-after 0
+PASS: all homework plans applied, verified and cleaned; RelayDesk cluster unchanged and ACTIVE.

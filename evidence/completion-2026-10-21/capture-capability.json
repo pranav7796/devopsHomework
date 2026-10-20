@@ -1,0 +1,9 @@
+{
+  "observed_at_utc": "2026-10-20T21:15:00.068304+00:00",
+  "computer_use_inventory": {
+    "apps": [],
+    "browsers": []
+  },
+  "new_screenshots": 0,
+  "result": "BLOCKED: no capture surface; actual CLI/HTTP logs published instead. No screenshot was fabricated."
+}

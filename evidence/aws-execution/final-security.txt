@@ -1,0 +1,63 @@
+{
+    "SecurityGroups": [
+        {
+            "GroupId": "sg-09f38c34bed96ffd4",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "Exercise",
+                    "Value": "final-project"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "devopsHomework"
+                }
+            ],
+            "VpcId": "vpc-036751fa507980bb8",
+            "SecurityGroupArn": "arn:aws:ec2:ap-southeast-2:525426877661:security-group/sg-09f38c34bed96ffd4",
+            "OwnerId": "525426877661",
+            "GroupName": "homework-web",
+            "Description": "Managed by Terraform",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 80,
+                    "ToPort": 80,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "202.131.146.146/32"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                },
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 22,
+                    "ToPort": 22,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "202.131.146.146/32"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        }
+    ]
+}

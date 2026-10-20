@@ -1,0 +1,44 @@
+{
+  "rolling": {
+    "status": "PASS",
+    "ready_replicas": 4,
+    "strategy": {
+      "rollingUpdate": {
+        "maxSurge": 1,
+        "maxUnavailable": 0
+      },
+      "type": "RollingUpdate"
+    },
+    "limits": "Versions and readiness verified; continuous zero-downtime HTTP availability was not measured."
+  },
+  "blue_green": {
+    "status": "PASS",
+    "ready_replicas_per_version": 3,
+    "routing": "blue -> green -> blue verified with Ready endpoints and HTTP"
+  },
+  "canary": {
+    "status": "PASS",
+    "ready_endpoints_before_rollback": {
+      "app-stable": 9,
+      "app-canary": 1
+    },
+    "observed_100_new_requests": {
+      "stable": 86,
+      "canary": 14
+    },
+    "rollback": "stable-only endpoints and response verified; endpoint ratio does not guarantee exact request percentages"
+  },
+  "recreate": {
+    "status": "PASS",
+    "ready_replicas": 3,
+    "old_pods_replaced": true,
+    "limits": "Replacement/response verified; downtime duration not measured."
+  },
+  "scope": {
+    "context": "minikube",
+    "namespace": "homework-strategy-check",
+    "cleanup": "Only this newly created namespace was deleted",
+    "service_adaptation": "NodePort -> ClusterIP and nodePort removed to avoid collisions with preexisting labs; selectors/targetPorts preserved",
+    "verified_at_utc": "2026-10-20T20:44:00.922707+00:00"
+  }
+}

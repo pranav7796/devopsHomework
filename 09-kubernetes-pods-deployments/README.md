@@ -24,7 +24,7 @@ Gradually replaces instances of previous versions with new versions without down
   kubectl apply -f 01-rolling-update/deployment-v2.yaml
   kubectl rollout status deployment/app-rolling
   ```
-- **Observed Behavior:** Kubernetes spun up v2 replicas, verified readiness probes, and only terminated v1 pods after v2 pods were ready. Service capacity never dropped below desired 4 replicas.
+- **Verified behavior (21 Oct 2026 IST):** v1 and v2 HTTP responses and the completed four-replica rollout were checked. The manifest sets `maxUnavailable: 0`; continuous request availability was not measured.
 
 ---
 
@@ -39,21 +39,21 @@ Maintains two separate environments: Blue (current live version) and Green (new 
   # Switch traffic to Green:
   kubectl apply -f 02-blue-green/service-green.yaml
   ```
-- **Observed Behavior:** Zero downtime cutover with instant rollback capability if an issue is discovered in Green.
+- **Verified behavior (21 Oct 2026 IST):** blue → green → blue selector changes produced the expected Ready endpoints and HTTP responses. Existing-connection draining and cutover downtime were not measured.
 
 ---
 
 ### 3. Canary Deployment
 Routes a small percentage of production traffic to a new version (canary) alongside the stable version to validate behavior under real traffic before full release.
 
-- **Traffic Split:** 90% Stable (9 pods) / 10% Canary (1 pod) via single service selector `app: myapp-canary`
+- **Endpoint ratio:** 9 stable Pods / 1 canary Pod selected by `app: myapp-canary`. The canary has approximately 10% of Ready endpoints; a Service does not guarantee an exact request percentage.
 - **Manifests:** `03-canary/deployment-stable.yaml`, `03-canary/deployment-canary.yaml`, `03-canary/service.yaml`
 - **Key Commands:**
   ```bash
   kubectl apply -f 03-canary/deployment-stable.yaml -f 03-canary/deployment-canary.yaml -f 03-canary/service.yaml
   kubectl get pods -l app=myapp-canary -L track -L version
   ```
-- **Observed Behavior:** 9 stable pods and 1 canary pod concurrently handled incoming requests proportionally.
+- **Expected behavior:** Both versions can receive new connections. Actual request shares vary with connection reuse, readiness and client behavior; measure the responses rather than assuming an exact 90/10 split.
 
 ---
 
@@ -67,7 +67,7 @@ All existing pods are terminated before new pods are created. Useful when two ve
   kubectl apply -f 04-recreate/deployment-v1.yaml -f 04-recreate/service.yaml
   kubectl apply -f 04-recreate/deployment-v2.yaml
   ```
-- **Observed Behavior:** All v1 pods showed `Terminating` simultaneously, and only after termination were v2 pods scheduled and created.
+- **Verified behavior (21 Oct 2026 IST):** the Recreate rollout completed with three replacement Pod UIDs and v2 HTTP output; downtime duration was not measured.
 
 ---
 
@@ -116,3 +116,7 @@ lifecycle-termination       1/1     Running            0             24s   10.24
 ## Submission Evidence
 
 ![Kubernetes Deployments & Lifecycle](k8s-deployments-lifecycle_24bcs10006.png)
+
+## Fresh isolated strategy verification — 21 October 2026 (IST)
+
+[Results](../evidence/completion-2026-10-21/strategy-results.json) and [actual commands/output](../evidence/completion-2026-10-21/strategy-commands.json) cover all four strategies. The test used a newly created namespace in the `minikube` context, adapted only Service type/NodePort fields to avoid conflicts with existing labs, and deleted only that namespace afterward. Canary responses were 86 stable / 14 canary over 100 new requests with 9:1 Ready endpoints. This supports approximate exposure, not exact traffic weighting. The reusable check is `python3 scripts/verify-deployment-strategies.py` from the repository root; it refuses to reuse an existing test namespace.

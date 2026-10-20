@@ -1,0 +1,70 @@
+{
+    "RouteTables": [
+        {
+            "Associations": [
+                {
+                    "Main": false,
+                    "RouteTableAssociationId": "rtbassoc-0691c0dc88dca4927",
+                    "RouteTableId": "rtb-09787dab6e4df3894",
+                    "SubnetId": "subnet-0c2a40ebc2e9130eb",
+                    "AssociationState": {
+                        "State": "associated"
+                    }
+                }
+            ],
+            "PropagatingVgws": [],
+            "RouteTableId": "rtb-09787dab6e4df3894",
+            "Routes": [
+                {
+                    "DestinationCidrBlock": "10.42.0.0/16",
+                    "GatewayId": "local",
+                    "Origin": "CreateRouteTable",
+                    "State": "active"
+                },
+                {
+                    "DestinationCidrBlock": "0.0.0.0/0",
+                    "GatewayId": "igw-028301ec4c0a66755",
+                    "Origin": "CreateRoute",
+                    "State": "active"
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "Exercise",
+                    "Value": "session19"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "devopsHomework"
+                }
+            ],
+            "VpcId": "vpc-0dee40a401c0a5954",
+            "OwnerId": "525426877661"
+        },
+        {
+            "Associations": [
+                {
+                    "Main": true,
+                    "RouteTableAssociationId": "rtbassoc-07399ad2010692edb",
+                    "RouteTableId": "rtb-08664c951e05f2d9d",
+                    "AssociationState": {
+                        "State": "associated"
+                    }
+                }
+            ],
+            "PropagatingVgws": [],
+            "RouteTableId": "rtb-08664c951e05f2d9d",
+            "Routes": [
+                {
+                    "DestinationCidrBlock": "10.42.0.0/16",
+                    "GatewayId": "local",
+                    "Origin": "CreateRouteTable",
+                    "State": "active"
+                }
+            ],
+            "Tags": [],
+            "VpcId": "vpc-0dee40a401c0a5954",
+            "OwnerId": "525426877661"
+        }
+    ]
+}

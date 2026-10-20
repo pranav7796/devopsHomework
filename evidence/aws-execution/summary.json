@@ -1,0 +1,85 @@
+{
+  "account": "525426877661",
+  "region": "ap-southeast-2",
+  "updated_at_utc": "2026-10-20T21:13:18.134108+00:00",
+  "scope": "Only three reviewed homework plans; no preexisting AWS resource or RelayDesk mutation authorized",
+  "projects": [
+    {
+      "project": "terraform-s3-demo",
+      "exercise": "s18",
+      "reviewed_plan_sha256": "9259cc497c56c649e35bfd5eaefe1f4a57f456a68014f11f2f25a18d25192c67",
+      "started_at_utc": "2026-10-20T20:57:32.263811+00:00",
+      "bucket": "devops-homework-24bcs10006-s18-525426877661",
+      "apply": "PASS",
+      "verification": "PASS",
+      "cleanup": "PASS",
+      "created_ids": {
+        "aws_s3_bucket.homework": "devops-homework-24bcs10006-s18-525426877661",
+        "aws_s3_bucket_public_access_block.homework": "devops-homework-24bcs10006-s18-525426877661",
+        "aws_s3_bucket_server_side_encryption_configuration.homework": "devops-homework-24bcs10006-s18-525426877661",
+        "aws_s3_bucket_versioning.homework": "devops-homework-24bcs10006-s18-525426877661"
+      },
+      "finished_at_utc": "2026-10-20T20:59:19.461749+00:00"
+    },
+    {
+      "project": "terraform-cloud",
+      "exercise": "s19",
+      "reviewed_plan_sha256": "fe23433a02d411c03cd6798377e97e4daf9b947abdb5ea67cd5b26e36ad3974d",
+      "started_at_utc": "2026-10-20T20:59:24.786246+00:00",
+      "bucket": "devops-homework-24bcs10006-s19-525426877661",
+      "apply": "PASS",
+      "verification": "PASS",
+      "cleanup": "PASS",
+      "created_ids": {
+        "aws_instance.demo": "i-0ead9c11a3e0b0c7a",
+        "aws_internet_gateway.project": "igw-028301ec4c0a66755",
+        "aws_route_table.public": "rtb-09787dab6e4df3894",
+        "aws_route_table_association.public": "rtbassoc-0691c0dc88dca4927",
+        "aws_s3_bucket.artifacts": "devops-homework-24bcs10006-s19-525426877661",
+        "aws_s3_bucket_public_access_block.artifacts": "devops-homework-24bcs10006-s19-525426877661",
+        "aws_s3_bucket_server_side_encryption_configuration.artifacts": "devops-homework-24bcs10006-s19-525426877661",
+        "aws_s3_bucket_versioning.artifacts": "devops-homework-24bcs10006-s19-525426877661",
+        "aws_security_group.web": "sg-021b89fa7dd6b921f",
+        "aws_subnet.public": "subnet-0c2a40ebc2e9130eb",
+        "aws_vpc.project": "vpc-0dee40a401c0a5954"
+      },
+      "instance_id": "i-0ead9c11a3e0b0c7a",
+      "vpc_id": "vpc-0dee40a401c0a5954",
+      "public_ip": "13.239.184.100",
+      "volume_ids": [
+        "vol-017b0b8da7a576465"
+      ],
+      "finished_at_utc": "2026-10-20T21:08:16.389956+00:00"
+    },
+    {
+      "project": "final-devops-project/terraform",
+      "exercise": "final",
+      "reviewed_plan_sha256": "9712a1e6ce74d019b037f4f73f2dfb5809ed19641ef4d492afdf2b6eee3b186d",
+      "started_at_utc": "2026-10-20T21:08:21.749672+00:00",
+      "bucket": "devops-homework-24bcs10006-final-525426877661",
+      "apply": "PASS",
+      "verification": "PASS",
+      "cleanup": "PASS",
+      "created_ids": {
+        "aws_instance.demo": "i-043429f32ae8aac6d",
+        "aws_internet_gateway.project": "igw-04e69c7b119e7638d",
+        "aws_route_table.public": "rtb-036bbf49674cb66d6",
+        "aws_route_table_association.public": "rtbassoc-08c0b37b9fdd44536",
+        "aws_s3_bucket.artifacts": "devops-homework-24bcs10006-final-525426877661",
+        "aws_s3_bucket_public_access_block.artifacts": "devops-homework-24bcs10006-final-525426877661",
+        "aws_s3_bucket_server_side_encryption_configuration.artifacts": "devops-homework-24bcs10006-final-525426877661",
+        "aws_s3_bucket_versioning.artifacts": "devops-homework-24bcs10006-final-525426877661",
+        "aws_security_group.web": "sg-09f38c34bed96ffd4",
+        "aws_subnet.public": "subnet-006369af2ad781391",
+        "aws_vpc.project": "vpc-036751fa507980bb8"
+      },
+      "instance_id": "i-043429f32ae8aac6d",
+      "vpc_id": "vpc-036751fa507980bb8",
+      "public_ip": "13.54.2.174",
+      "volume_ids": [
+        "vol-0b3b4ff465efd44ea"
+      ],
+      "finished_at_utc": "2026-10-20T21:13:14.839475+00:00"
+    }
+  ]
+}

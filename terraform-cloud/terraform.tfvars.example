@@ -1,0 +1,5 @@
+# Replace the AMI ID, bucket name, and CIDR before any plan or apply.
+aws_region  = "ap-southeast-2"
+ami_id      = "ami-00000000000000000" # Replace with a current Amazon Linux 2023 AMI ID in this region.
+bucket_name = "replace-with-a-globally-unique-name-24bcs10006"
+ssh_cidr    = "203.0.113.10/32" # Replace with your public IPv4 address in CIDR notation.

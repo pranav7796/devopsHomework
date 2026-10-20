@@ -7,7 +7,7 @@ metadata:
     track: stable
     version: v1
 spec:
-  # 9 stable pods = 90% of traffic (9 out of 10 total pods)
+  # 9 of the 10 selected endpoints are stable; this is an approximate share.
   replicas: 9
   selector:
     matchLabels:
@@ -34,7 +34,7 @@ spec:
                   - |
                     echo '<html><body style="background:#1a1a2e;color:#e2e2e2;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh">
                     <p>STABLE v1</p>
-                    <p style="font-size:0.4em;color:#888">Track: stable | 90% of traffic</p>
+                    <p style="font-size:0.4em;color:#888">Track: stable | 9 of 10 endpoints</p>
                     </body></html>' > /usr/share/nginx/html/index.html
           resources:
             requests:

@@ -1,0 +1,128 @@
+---
+# Source: homework-api/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: homework
+data:
+  PORT: "8000"
+---
+# Source: homework-api/templates/database.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: homework-db
+spec:
+  selector: {app.kubernetes.io/instance: homework, component: db}
+  ports: [{name: postgres, port: 5432, targetPort: 5432}]
+---
+# Source: homework-api/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: homework
+spec:
+  type: ClusterIP
+  selector: {app.kubernetes.io/instance: homework, app.kubernetes.io/name: homework-api}
+  ports: [{name: http, port: 80, targetPort: http}]
+---
+# Source: homework-api/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: homework
+  labels:
+    app.kubernetes.io/name: homework-api
+    app.kubernetes.io/instance: homework
+spec:
+  replicas: 2
+  selector:
+    matchLabels: {app.kubernetes.io/instance: homework}
+  template:
+    metadata:
+      labels: {app.kubernetes.io/instance: homework, app.kubernetes.io/name: homework-api}
+    spec:
+      securityContext: {runAsNonRoot: true, runAsUser: 100, seccompProfile: {type: RuntimeDefault}}
+      containers:
+        - name: api
+          image: "ghcr.io/pranav7796/devopshomework/homework-api:2fda3b607ebaf632e5df6071e88b8ade4ec005ce"
+          imagePullPolicy: IfNotPresent
+          ports: [{name: http, containerPort: 8000 }]
+          env:
+            - {name: PORT, valueFrom: {configMapKeyRef: {name: homework, key: PORT}}}
+            - {name: DATABASE_URL, valueFrom: {secretKeyRef: {name: homework-api-secret, key: DATABASE_URL}}}
+          readinessProbe: {httpGet: {path: /health, port: http}, periodSeconds: 5}
+          livenessProbe: {httpGet: {path: /health, port: http}, periodSeconds: 10}
+          resources:
+            limits:
+              cpu: 500m
+              memory: 256Mi
+            requests:
+              cpu: 100m
+              memory: 64Mi
+          securityContext: {allowPrivilegeEscalation: false, readOnlyRootFilesystem: true, capabilities: {drop: [ALL]}}
+---
+# Source: homework-api/templates/hpa.yaml
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: homework
+spec:
+  scaleTargetRef: {apiVersion: apps/v1, kind: Deployment, name: homework}
+  minReplicas: 2
+  maxReplicas: 8
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target: {type: Utilization, averageUtilization: 70}
+---
+# Source: homework-api/templates/database.yaml
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: homework-db
+spec:
+  serviceName: homework-db
+  replicas: 1
+  selector:
+    matchLabels: {app.kubernetes.io/instance: homework, component: db}
+  template:
+    metadata:
+      labels: {app.kubernetes.io/instance: homework, component: db}
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:16-alpine
+          ports: [{name: postgres, containerPort: 5432}]
+          env:
+            - {name: POSTGRES_DB, value: homework}
+            - {name: POSTGRES_USER, value: homework}
+            - {name: POSTGRES_PASSWORD, valueFrom: {secretKeyRef: {name: homework-api-secret, key: DB_PASSWORD}}}
+            - {name: PGDATA, value: /var/lib/postgresql/data/pgdata}
+          readinessProbe: {exec: {command: [sh, -c, "pg_isready -U homework -d homework"]}, periodSeconds: 5}
+          resources:
+            requests: {cpu: 100m, memory: 128Mi}
+            limits: {cpu: 500m, memory: 512Mi}
+          volumeMounts: [{name: data, mountPath: /var/lib/postgresql/data}]
+  volumeClaimTemplates:
+    - metadata: {name: data}
+      spec:
+        accessModes: [ReadWriteOnce]
+        resources:
+          requests: {storage: 1Gi}
+---
+# Source: homework-api/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: homework
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: homework.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend: {service: {name: homework, port: {number: 80}}}

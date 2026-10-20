@@ -1,0 +1,16 @@
+START identity-before
+END identity-before 0
+START relaydesk-before
+END relaydesk-before 0
+START s18-state-before
+END s18-state-before 1
+Traceback (most recent call last):
+  File "/tmp/execute-homework-aws.py", line 53, in <module>
+    existing=tf(tag,directory,'state-before','state','list').stdout.strip()
+             ~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/execute-homework-aws.py", line 38, in tf
+    return run(tag+'-'+name,['terraform','-chdir='+project,*args],timeout=1200,ok=ok,save=save)
+  File "/tmp/execute-homework-aws.py", line 31, in run
+    if completed.returncode not in ok: raise RuntimeError(f'{name} failed (exit {completed.returncode}); inspect recorded output')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: s18-state-before failed (exit 1); inspect recorded output

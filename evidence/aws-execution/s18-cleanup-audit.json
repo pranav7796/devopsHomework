@@ -1,0 +1,35 @@
+{
+  "reviewed_at_utc": "2026-10-20T20:59:00.781200+00:00",
+  "saved_plan_sha256": "c5512a144a2246d275886dc4361db72456431b2d31dd63fba3af1492dca7d055",
+  "actions": [
+    {
+      "address": "aws_s3_bucket.homework",
+      "actions": [
+        "delete"
+      ],
+      "id": "devops-homework-24bcs10006-s18-525426877661"
+    },
+    {
+      "address": "aws_s3_bucket_public_access_block.homework",
+      "actions": [
+        "delete"
+      ],
+      "id": "devops-homework-24bcs10006-s18-525426877661"
+    },
+    {
+      "address": "aws_s3_bucket_server_side_encryption_configuration.homework",
+      "actions": [
+        "delete"
+      ],
+      "id": "devops-homework-24bcs10006-s18-525426877661"
+    },
+    {
+      "address": "aws_s3_bucket_versioning.homework",
+      "actions": [
+        "delete"
+      ],
+      "id": "devops-homework-24bcs10006-s18-525426877661"
+    }
+  ],
+  "only_new_reviewed_homework_addresses": true
+}

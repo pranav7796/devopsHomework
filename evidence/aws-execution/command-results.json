@@ -1,0 +1,1642 @@
+[
+  {
+    "name": "identity-before",
+    "command": [
+      "aws",
+      "sts",
+      "get-caller-identity",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T20:57:15.979767+00:00",
+    "finished_at_utc": "2026-10-20T20:57:20.946145+00:00",
+    "exit_code": 0,
+    "stdout": "identity-before.txt"
+  },
+  {
+    "name": "relaydesk-before",
+    "command": [
+      "aws",
+      "eks",
+      "describe-cluster",
+      "--name",
+      "relaydesk-capstone",
+      "--query",
+      "cluster.{arn:arn,status:status,version:version,vpc:resourcesVpcConfig.vpcId}",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T20:57:21.234967+00:00",
+    "finished_at_utc": "2026-10-20T20:57:26.327615+00:00",
+    "exit_code": 0,
+    "stdout": "relaydesk-before.txt"
+  },
+  {
+    "name": "s18-state-before",
+    "command": [
+      "terraform",
+      "-chdir=terraform-s3-demo",
+      "state",
+      "list"
+    ],
+    "started_at_utc": "2026-10-20T20:57:26.328676+00:00",
+    "finished_at_utc": "2026-10-20T20:57:27.770962+00:00",
+    "exit_code": 1,
+    "stdout": "s18-state-before.txt",
+    "stderr": "s18-state-before-stderr.txt"
+  },
+  {
+    "name": "s18-review-plan",
+    "command": [
+      "terraform",
+      "-chdir=terraform-s3-demo",
+      "show",
+      "-json",
+      "tfplan-completion"
+    ],
+    "started_at_utc": "2026-10-20T20:57:27.771830+00:00",
+    "finished_at_utc": "2026-10-20T20:57:32.263023+00:00",
+    "exit_code": 0
+  },
+  {
+    "name": "s18-apply",
+    "command": [
+      "terraform",
+      "-chdir=terraform-s3-demo",
+      "apply",
+      "-input=false",
+      "-no-color",
+      "tfplan-completion"
+    ],
+    "started_at_utc": "2026-10-20T20:57:32.264086+00:00",
+    "finished_at_utc": "2026-10-20T20:57:54.539770+00:00",
+    "exit_code": 0,
+    "stdout": "s18-apply.txt"
+  },
+  {
+    "name": "s18-show",
+    "command": [
+      "terraform",
+      "-chdir=terraform-s3-demo",
+      "show",
+      "-no-color"
+    ],
+    "started_at_utc": "2026-10-20T20:57:54.540681+00:00",
+    "finished_at_utc": "2026-10-20T20:58:00.365405+00:00",
+    "exit_code": 0,
+    "stdout": "s18-show.txt"
+  },
+  {
+    "name": "s18-output",
+    "command": [
+      "terraform",
+      "-chdir=terraform-s3-demo",
+      "output",
+      "-json"
+    ],
+    "started_at_utc": "2026-10-20T20:58:00.366124+00:00",
+    "finished_at_utc": "2026-10-20T20:58:01.830352+00:00",
+    "exit_code": 0,
+    "stdout": "s18-output.txt"
+  },
+  {
+    "name": "s18-state-values",
+    "command": [
+      "terraform",
+      "-chdir=terraform-s3-demo",
+      "show",
+      "-json"
+    ],
+    "started_at_utc": "2026-10-20T20:58:01.831006+00:00",
+    "finished_at_utc": "2026-10-20T20:58:07.244861+00:00",
+    "exit_code": 0
+  },
+  {
+    "name": "s18-bucket-tags",
+    "command": [
+      "aws",
+      "s3api",
+      "get-bucket-tagging",
+      "--bucket",
+      "devops-homework-24bcs10006-s18-525426877661",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T20:58:07.245521+00:00",
+    "finished_at_utc": "2026-10-20T20:58:13.396874+00:00",
+    "exit_code": 0,
+    "stdout": "s18-bucket-tags.txt"
+  },
+  {
+    "name": "s18-bucket-public-access",
+    "command": [
+      "aws",
+      "s3api",
+      "get-public-access-block",
+      "--bucket",
+      "devops-homework-24bcs10006-s18-525426877661",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T20:58:13.398011+00:00",
+    "finished_at_utc": "2026-10-20T20:58:18.503151+00:00",
+    "exit_code": 0,
+    "stdout": "s18-bucket-public-access.txt"
+  },
+  {
+    "name": "s18-bucket-versioning",
+    "command": [
+      "aws",
+      "s3api",
+      "get-bucket-versioning",
+      "--bucket",
+      "devops-homework-24bcs10006-s18-525426877661",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T20:58:18.503951+00:00",
+    "finished_at_utc": "2026-10-20T20:58:23.540845+00:00",
+    "exit_code": 0,
+    "stdout": "s18-bucket-versioning.txt"
+  },
+  {
+    "name": "s18-bucket-encryption",
+    "command": [
+      "aws",
+      "s3api",
+      "get-bucket-encryption",
+      "--bucket",
+      "devops-homework-24bcs10006-s18-525426877661",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T20:58:23.541871+00:00",
+    "finished_at_utc": "2026-10-20T20:58:28.572596+00:00",
+    "exit_code": 0,
+    "stdout": "s18-bucket-encryption.txt"
+  },
+  {
+    "name": "s18-bucket-location",
+    "command": [
+      "aws",
+      "s3api",
+      "get-bucket-location",
+      "--bucket",
+      "devops-homework-24bcs10006-s18-525426877661",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T20:58:28.573845+00:00",
+    "finished_at_utc": "2026-10-20T20:58:33.939037+00:00",
+    "exit_code": 0,
+    "stdout": "s18-bucket-location.txt"
+  },
+  {
+    "name": "s18-state-before-cleanup",
+    "command": [
+      "terraform",
+      "-chdir=terraform-s3-demo",
+      "state",
+      "list"
+    ],
+    "started_at_utc": "2026-10-20T20:58:33.940272+00:00",
+    "finished_at_utc": "2026-10-20T20:58:35.443653+00:00",
+    "exit_code": 0,
+    "stdout": "s18-state-before-cleanup.txt"
+  },
+  {
+    "name": "s18-destroy-plan",
+    "command": [
+      "terraform",
+      "-chdir=terraform-s3-demo",
+      "plan",
+      "-destroy",
+      "-input=false",
+      "-no-color",
+      "-var-file=/home/pranav/Projects/devopsHomework/evidence/private/aws-inputs/s18.tfvars.json",
+      "-out=tfplan-cleanup"
+    ],
+    "started_at_utc": "2026-10-20T20:58:35.444687+00:00",
+    "finished_at_utc": "2026-10-20T20:58:56.624071+00:00",
+    "exit_code": 0,
+    "stdout": "s18-destroy-plan.txt"
+  },
+  {
+    "name": "s18-review-destroy",
+    "command": [
+      "terraform",
+      "-chdir=terraform-s3-demo",
+      "show",
+      "-json",
+      "tfplan-cleanup"
+    ],
+    "started_at_utc": "2026-10-20T20:58:56.625280+00:00",
+    "finished_at_utc": "2026-10-20T20:59:00.780173+00:00",
+    "exit_code": 0
+  },
+  {
+    "name": "s18-destroy",
+    "command": [
+      "terraform",
+      "-chdir=terraform-s3-demo",
+      "apply",
+      "-input=false",
+      "-no-color",
+      "tfplan-cleanup"
+    ],
+    "started_at_utc": "2026-10-20T20:59:00.781590+00:00",
+    "finished_at_utc": "2026-10-20T20:59:12.826825+00:00",
+    "exit_code": 0,
+    "stdout": "s18-destroy.txt"
+  },
+  {
+    "name": "s18-state-after-cleanup",
+    "command": [
+      "terraform",
+      "-chdir=terraform-s3-demo",
+      "state",
+      "list"
+    ],
+    "started_at_utc": "2026-10-20T20:59:12.827916+00:00",
+    "finished_at_utc": "2026-10-20T20:59:14.284482+00:00",
+    "exit_code": 0,
+    "stdout": "s18-state-after-cleanup.txt"
+  },
+  {
+    "name": "s18-bucket-after-cleanup",
+    "command": [
+      "aws",
+      "s3api",
+      "head-bucket",
+      "--bucket",
+      "devops-homework-24bcs10006-s18-525426877661",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T20:59:14.285264+00:00",
+    "finished_at_utc": "2026-10-20T20:59:19.460603+00:00",
+    "exit_code": 254,
+    "stdout": "s18-bucket-after-cleanup.txt",
+    "stderr": "s18-bucket-after-cleanup-stderr.txt"
+  },
+  {
+    "name": "s19-state-before",
+    "command": [
+      "terraform",
+      "-chdir=terraform-cloud",
+      "state",
+      "list"
+    ],
+    "started_at_utc": "2026-10-20T20:59:19.462321+00:00",
+    "finished_at_utc": "2026-10-20T20:59:20.890283+00:00",
+    "exit_code": 1,
+    "stdout": "s19-state-before.txt",
+    "stderr": "s19-state-before-stderr.txt"
+  },
+  {
+    "name": "s19-review-plan",
+    "command": [
+      "terraform",
+      "-chdir=terraform-cloud",
+      "show",
+      "-json",
+      "tfplan-completion"
+    ],
+    "started_at_utc": "2026-10-20T20:59:20.891198+00:00",
+    "finished_at_utc": "2026-10-20T20:59:24.783972+00:00",
+    "exit_code": 0
+  },
+  {
+    "name": "s19-apply",
+    "command": [
+      "terraform",
+      "-chdir=terraform-cloud",
+      "apply",
+      "-input=false",
+      "-no-color",
+      "tfplan-completion"
+    ],
+    "started_at_utc": "2026-10-20T20:59:24.786657+00:00",
+    "finished_at_utc": "2026-10-20T21:00:21.583664+00:00",
+    "exit_code": 0,
+    "stdout": "s19-apply.txt"
+  },
+  {
+    "name": "s19-show",
+    "command": [
+      "terraform",
+      "-chdir=terraform-cloud",
+      "show",
+      "-no-color"
+    ],
+    "started_at_utc": "2026-10-20T21:00:21.585077+00:00",
+    "finished_at_utc": "2026-10-20T21:00:27.097992+00:00",
+    "exit_code": 0,
+    "stdout": "s19-show.txt"
+  },
+  {
+    "name": "s19-output",
+    "command": [
+      "terraform",
+      "-chdir=terraform-cloud",
+      "output",
+      "-json"
+    ],
+    "started_at_utc": "2026-10-20T21:00:27.098944+00:00",
+    "finished_at_utc": "2026-10-20T21:00:28.592843+00:00",
+    "exit_code": 0,
+    "stdout": "s19-output.txt"
+  },
+  {
+    "name": "s19-state-values",
+    "command": [
+      "terraform",
+      "-chdir=terraform-cloud",
+      "show",
+      "-json"
+    ],
+    "started_at_utc": "2026-10-20T21:00:28.594103+00:00",
+    "finished_at_utc": "2026-10-20T21:00:34.332166+00:00",
+    "exit_code": 0
+  },
+  {
+    "name": "s19-bucket-tags",
+    "command": [
+      "aws",
+      "s3api",
+      "get-bucket-tagging",
+      "--bucket",
+      "devops-homework-24bcs10006-s19-525426877661",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:00:34.333381+00:00",
+    "finished_at_utc": "2026-10-20T21:00:39.558056+00:00",
+    "exit_code": 0,
+    "stdout": "s19-bucket-tags.txt"
+  },
+  {
+    "name": "s19-bucket-public-access",
+    "command": [
+      "aws",
+      "s3api",
+      "get-public-access-block",
+      "--bucket",
+      "devops-homework-24bcs10006-s19-525426877661",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:00:39.559029+00:00",
+    "finished_at_utc": "2026-10-20T21:00:44.545784+00:00",
+    "exit_code": 0,
+    "stdout": "s19-bucket-public-access.txt"
+  },
+  {
+    "name": "s19-bucket-versioning",
+    "command": [
+      "aws",
+      "s3api",
+      "get-bucket-versioning",
+      "--bucket",
+      "devops-homework-24bcs10006-s19-525426877661",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:00:44.546707+00:00",
+    "finished_at_utc": "2026-10-20T21:00:49.663379+00:00",
+    "exit_code": 0,
+    "stdout": "s19-bucket-versioning.txt"
+  },
+  {
+    "name": "s19-bucket-encryption",
+    "command": [
+      "aws",
+      "s3api",
+      "get-bucket-encryption",
+      "--bucket",
+      "devops-homework-24bcs10006-s19-525426877661",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:00:49.664673+00:00",
+    "finished_at_utc": "2026-10-20T21:00:55.024690+00:00",
+    "exit_code": 0,
+    "stdout": "s19-bucket-encryption.txt"
+  },
+  {
+    "name": "s19-bucket-location",
+    "command": [
+      "aws",
+      "s3api",
+      "get-bucket-location",
+      "--bucket",
+      "devops-homework-24bcs10006-s19-525426877661",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:00:55.025812+00:00",
+    "finished_at_utc": "2026-10-20T21:01:00.312694+00:00",
+    "exit_code": 0,
+    "stdout": "s19-bucket-location.txt"
+  },
+  {
+    "name": "s19-instance-status-wait",
+    "command": [
+      "aws",
+      "ec2",
+      "wait",
+      "instance-status-ok",
+      "--instance-ids",
+      "i-0ead9c11a3e0b0c7a",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:01:00.314296+00:00",
+    "finished_at_utc": "2026-10-20T21:03:19.388392+00:00",
+    "exit_code": 0,
+    "stdout": "s19-instance-status-wait.txt"
+  },
+  {
+    "name": "s19-instance",
+    "command": [
+      "aws",
+      "ec2",
+      "describe-instances",
+      "--instance-ids",
+      "i-0ead9c11a3e0b0c7a",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:03:19.389537+00:00",
+    "finished_at_utc": "2026-10-20T21:03:25.125502+00:00",
+    "exit_code": 0,
+    "stdout": "s19-instance.txt"
+  },
+  {
+    "name": "s19-vpc",
+    "command": [
+      "aws",
+      "ec2",
+      "describe-vpcs",
+      "--vpc-ids",
+      "vpc-0dee40a401c0a5954",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:03:25.127159+00:00",
+    "finished_at_utc": "2026-10-20T21:03:30.814866+00:00",
+    "exit_code": 0,
+    "stdout": "s19-vpc.txt"
+  },
+  {
+    "name": "s19-routes",
+    "command": [
+      "aws",
+      "ec2",
+      "describe-route-tables",
+      "--filters",
+      "Name=vpc-id,Values=vpc-0dee40a401c0a5954",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:03:30.815915+00:00",
+    "finished_at_utc": "2026-10-20T21:03:36.734011+00:00",
+    "exit_code": 0,
+    "stdout": "s19-routes.txt"
+  },
+  {
+    "name": "s19-security",
+    "command": [
+      "aws",
+      "ec2",
+      "describe-security-groups",
+      "--group-ids",
+      "sg-021b89fa7dd6b921f",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:03:36.735332+00:00",
+    "finished_at_utc": "2026-10-20T21:03:42.224295+00:00",
+    "exit_code": 0,
+    "stdout": "s19-security.txt"
+  },
+  {
+    "name": "s19-state-before-cleanup",
+    "command": [
+      "terraform",
+      "-chdir=terraform-cloud",
+      "state",
+      "list"
+    ],
+    "started_at_utc": "2026-10-20T21:03:42.951898+00:00",
+    "finished_at_utc": "2026-10-20T21:03:44.363847+00:00",
+    "exit_code": 0,
+    "stdout": "s19-state-before-cleanup.txt"
+  },
+  {
+    "name": "identity-before",
+    "command": [
+      "aws",
+      "sts",
+      "get-caller-identity",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:04:59.370026+00:00",
+    "finished_at_utc": "2026-10-20T21:05:06.530775+00:00",
+    "exit_code": 0,
+    "stdout": "identity-before-retry-2.txt"
+  },
+  {
+    "name": "relaydesk-before",
+    "command": [
+      "aws",
+      "eks",
+      "describe-cluster",
+      "--name",
+      "relaydesk-capstone",
+      "--query",
+      "cluster.{arn:arn,status:status,version:version,vpc:resourcesVpcConfig.vpcId}",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:05:06.755702+00:00",
+    "finished_at_utc": "2026-10-20T21:05:12.816767+00:00",
+    "exit_code": 0,
+    "stdout": "relaydesk-before-retry-2.txt"
+  },
+  {
+    "name": "s18-state-before",
+    "command": [
+      "terraform",
+      "-chdir=terraform-s3-demo",
+      "state",
+      "list"
+    ],
+    "started_at_utc": "2026-10-20T21:05:12.818184+00:00",
+    "finished_at_utc": "2026-10-20T21:05:14.167216+00:00",
+    "exit_code": 0,
+    "stdout": "s18-state-before-retry-2.txt"
+  },
+  {
+    "name": "s19-state-before",
+    "command": [
+      "terraform",
+      "-chdir=terraform-cloud",
+      "state",
+      "list"
+    ],
+    "started_at_utc": "2026-10-20T21:05:14.168497+00:00",
+    "finished_at_utc": "2026-10-20T21:05:15.534161+00:00",
+    "exit_code": 0,
+    "stdout": "s19-state-before-retry-2.txt"
+  },
+  {
+    "name": "s19-resume-state-values",
+    "command": [
+      "terraform",
+      "-chdir=terraform-cloud",
+      "show",
+      "-json"
+    ],
+    "started_at_utc": "2026-10-20T21:05:15.535293+00:00",
+    "finished_at_utc": "2026-10-20T21:05:20.712980+00:00",
+    "exit_code": 0
+  },
+  {
+    "name": "s19-review-plan",
+    "command": [
+      "terraform",
+      "-chdir=terraform-cloud",
+      "show",
+      "-json",
+      "tfplan-completion"
+    ],
+    "started_at_utc": "2026-10-20T21:05:20.714419+00:00",
+    "finished_at_utc": "2026-10-20T21:05:24.934690+00:00",
+    "exit_code": 0
+  },
+  {
+    "name": "s19-show",
+    "command": [
+      "terraform",
+      "-chdir=terraform-cloud",
+      "show",
+      "-no-color"
+    ],
+    "started_at_utc": "2026-10-20T21:05:24.938193+00:00",
+    "finished_at_utc": "2026-10-20T21:05:31.985279+00:00",
+    "exit_code": 0,
+    "stdout": "s19-show-retry-2.txt"
+  },
+  {
+    "name": "s19-output",
+    "command": [
+      "terraform",
+      "-chdir=terraform-cloud",
+      "output",
+      "-json"
+    ],
+    "started_at_utc": "2026-10-20T21:05:31.986732+00:00",
+    "finished_at_utc": "2026-10-20T21:05:33.630347+00:00",
+    "exit_code": 0,
+    "stdout": "s19-output-retry-2.txt"
+  },
+  {
+    "name": "s19-state-values",
+    "command": [
+      "terraform",
+      "-chdir=terraform-cloud",
+      "show",
+      "-json"
+    ],
+    "started_at_utc": "2026-10-20T21:05:33.631799+00:00",
+    "finished_at_utc": "2026-10-20T21:05:39.004220+00:00",
+    "exit_code": 0
+  },
+  {
+    "name": "s19-bucket-tags",
+    "command": [
+      "aws",
+      "s3api",
+      "get-bucket-tagging",
+      "--bucket",
+      "devops-homework-24bcs10006-s19-525426877661",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:05:39.005713+00:00",
+    "finished_at_utc": "2026-10-20T21:05:44.271865+00:00",
+    "exit_code": 0,
+    "stdout": "s19-bucket-tags-retry-2.txt"
+  },
+  {
+    "name": "s19-bucket-public-access",
+    "command": [
+      "aws",
+      "s3api",
+      "get-public-access-block",
+      "--bucket",
+      "devops-homework-24bcs10006-s19-525426877661",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:05:44.273231+00:00",
+    "finished_at_utc": "2026-10-20T21:05:51.029533+00:00",
+    "exit_code": 0,
+    "stdout": "s19-bucket-public-access-retry-2.txt"
+  },
+  {
+    "name": "s19-bucket-versioning",
+    "command": [
+      "aws",
+      "s3api",
+      "get-bucket-versioning",
+      "--bucket",
+      "devops-homework-24bcs10006-s19-525426877661",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:05:51.030887+00:00",
+    "finished_at_utc": "2026-10-20T21:05:55.842360+00:00",
+    "exit_code": 0,
+    "stdout": "s19-bucket-versioning-retry-2.txt"
+  },
+  {
+    "name": "s19-bucket-encryption",
+    "command": [
+      "aws",
+      "s3api",
+      "get-bucket-encryption",
+      "--bucket",
+      "devops-homework-24bcs10006-s19-525426877661",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:05:55.844062+00:00",
+    "finished_at_utc": "2026-10-20T21:06:00.888667+00:00",
+    "exit_code": 0,
+    "stdout": "s19-bucket-encryption-retry-2.txt"
+  },
+  {
+    "name": "s19-bucket-location",
+    "command": [
+      "aws",
+      "s3api",
+      "get-bucket-location",
+      "--bucket",
+      "devops-homework-24bcs10006-s19-525426877661",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:06:00.889935+00:00",
+    "finished_at_utc": "2026-10-20T21:06:05.907346+00:00",
+    "exit_code": 0,
+    "stdout": "s19-bucket-location-retry-2.txt"
+  },
+  {
+    "name": "s19-instance-status-wait",
+    "command": [
+      "aws",
+      "ec2",
+      "wait",
+      "instance-status-ok",
+      "--instance-ids",
+      "i-0ead9c11a3e0b0c7a",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:06:05.909060+00:00",
+    "finished_at_utc": "2026-10-20T21:06:11.365489+00:00",
+    "exit_code": 0,
+    "stdout": "s19-instance-status-wait-retry-2.txt"
+  },
+  {
+    "name": "s19-instance",
+    "command": [
+      "aws",
+      "ec2",
+      "describe-instances",
+      "--instance-ids",
+      "i-0ead9c11a3e0b0c7a",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:06:11.367208+00:00",
+    "finished_at_utc": "2026-10-20T21:06:16.852155+00:00",
+    "exit_code": 0,
+    "stdout": "s19-instance-retry-2.txt"
+  },
+  {
+    "name": "s19-vpc",
+    "command": [
+      "aws",
+      "ec2",
+      "describe-vpcs",
+      "--vpc-ids",
+      "vpc-0dee40a401c0a5954",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:06:16.854215+00:00",
+    "finished_at_utc": "2026-10-20T21:06:22.133006+00:00",
+    "exit_code": 0,
+    "stdout": "s19-vpc-retry-2.txt"
+  },
+  {
+    "name": "s19-routes",
+    "command": [
+      "aws",
+      "ec2",
+      "describe-route-tables",
+      "--filters",
+      "Name=vpc-id,Values=vpc-0dee40a401c0a5954",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:06:22.134361+00:00",
+    "finished_at_utc": "2026-10-20T21:06:27.569854+00:00",
+    "exit_code": 0,
+    "stdout": "s19-routes-retry-2.txt"
+  },
+  {
+    "name": "s19-security",
+    "command": [
+      "aws",
+      "ec2",
+      "describe-security-groups",
+      "--group-ids",
+      "sg-021b89fa7dd6b921f",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:06:27.571601+00:00",
+    "finished_at_utc": "2026-10-20T21:06:32.928709+00:00",
+    "exit_code": 0,
+    "stdout": "s19-security-retry-2.txt"
+  },
+  {
+    "name": "s19-state-before-cleanup",
+    "command": [
+      "terraform",
+      "-chdir=terraform-cloud",
+      "state",
+      "list"
+    ],
+    "started_at_utc": "2026-10-20T21:06:33.728258+00:00",
+    "finished_at_utc": "2026-10-20T21:06:35.149485+00:00",
+    "exit_code": 0,
+    "stdout": "s19-state-before-cleanup-retry-2.txt"
+  },
+  {
+    "name": "s19-destroy-plan",
+    "command": [
+      "terraform",
+      "-chdir=terraform-cloud",
+      "plan",
+      "-destroy",
+      "-input=false",
+      "-no-color",
+      "-var-file=/home/pranav/Projects/devopsHomework/evidence/private/aws-inputs/s19.tfvars.json",
+      "-out=tfplan-cleanup"
+    ],
+    "started_at_utc": "2026-10-20T21:06:35.151223+00:00",
+    "finished_at_utc": "2026-10-20T21:06:56.611448+00:00",
+    "exit_code": 0,
+    "stdout": "s19-destroy-plan.txt"
+  },
+  {
+    "name": "s19-review-destroy",
+    "command": [
+      "terraform",
+      "-chdir=terraform-cloud",
+      "show",
+      "-json",
+      "tfplan-cleanup"
+    ],
+    "started_at_utc": "2026-10-20T21:06:56.613372+00:00",
+    "finished_at_utc": "2026-10-20T21:07:00.478751+00:00",
+    "exit_code": 0
+  },
+  {
+    "name": "s19-destroy",
+    "command": [
+      "terraform",
+      "-chdir=terraform-cloud",
+      "apply",
+      "-input=false",
+      "-no-color",
+      "tfplan-cleanup"
+    ],
+    "started_at_utc": "2026-10-20T21:07:00.481608+00:00",
+    "finished_at_utc": "2026-10-20T21:07:47.601927+00:00",
+    "exit_code": 0,
+    "stdout": "s19-destroy.txt"
+  },
+  {
+    "name": "s19-state-after-cleanup",
+    "command": [
+      "terraform",
+      "-chdir=terraform-cloud",
+      "state",
+      "list"
+    ],
+    "started_at_utc": "2026-10-20T21:07:47.603630+00:00",
+    "finished_at_utc": "2026-10-20T21:07:49.187853+00:00",
+    "exit_code": 0,
+    "stdout": "s19-state-after-cleanup.txt"
+  },
+  {
+    "name": "s19-bucket-after-cleanup",
+    "command": [
+      "aws",
+      "s3api",
+      "head-bucket",
+      "--bucket",
+      "devops-homework-24bcs10006-s19-525426877661",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:07:49.189387+00:00",
+    "finished_at_utc": "2026-10-20T21:07:54.366437+00:00",
+    "exit_code": 254,
+    "stdout": "s19-bucket-after-cleanup.txt",
+    "stderr": "s19-bucket-after-cleanup-stderr.txt"
+  },
+  {
+    "name": "s19-terminated-wait",
+    "command": [
+      "aws",
+      "ec2",
+      "wait",
+      "instance-terminated",
+      "--instance-ids",
+      "i-0ead9c11a3e0b0c7a",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:07:54.368623+00:00",
+    "finished_at_utc": "2026-10-20T21:08:00.213067+00:00",
+    "exit_code": 0,
+    "stdout": "s19-terminated-wait.txt"
+  },
+  {
+    "name": "s19-instance-after-cleanup",
+    "command": [
+      "aws",
+      "ec2",
+      "describe-instances",
+      "--instance-ids",
+      "i-0ead9c11a3e0b0c7a",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:08:00.214815+00:00",
+    "finished_at_utc": "2026-10-20T21:08:05.624488+00:00",
+    "exit_code": 0,
+    "stdout": "s19-instance-after-cleanup.txt"
+  },
+  {
+    "name": "s19-vpc-after-cleanup",
+    "command": [
+      "aws",
+      "ec2",
+      "describe-vpcs",
+      "--vpc-ids",
+      "vpc-0dee40a401c0a5954",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:08:05.630405+00:00",
+    "finished_at_utc": "2026-10-20T21:08:11.160211+00:00",
+    "exit_code": 254,
+    "stdout": "s19-vpc-after-cleanup.txt",
+    "stderr": "s19-vpc-after-cleanup-stderr.txt"
+  },
+  {
+    "name": "s19-volume-after-cleanup-vol-017b0b8da7a576465",
+    "command": [
+      "aws",
+      "ec2",
+      "describe-volumes",
+      "--volume-ids",
+      "vol-017b0b8da7a576465",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:08:11.161781+00:00",
+    "finished_at_utc": "2026-10-20T21:08:16.388088+00:00",
+    "exit_code": 254,
+    "stdout": "s19-volume-after-cleanup-vol-017b0b8da7a576465.txt",
+    "stderr": "s19-volume-after-cleanup-vol-017b0b8da7a576465-stderr.txt"
+  },
+  {
+    "name": "final-state-before",
+    "command": [
+      "terraform",
+      "-chdir=final-devops-project/terraform",
+      "state",
+      "list"
+    ],
+    "started_at_utc": "2026-10-20T21:08:16.390738+00:00",
+    "finished_at_utc": "2026-10-20T21:08:17.810696+00:00",
+    "exit_code": 1,
+    "stdout": "final-state-before.txt",
+    "stderr": "final-state-before-stderr.txt"
+  },
+  {
+    "name": "final-review-plan",
+    "command": [
+      "terraform",
+      "-chdir=final-devops-project/terraform",
+      "show",
+      "-json",
+      "tfplan-completion"
+    ],
+    "started_at_utc": "2026-10-20T21:08:17.811901+00:00",
+    "finished_at_utc": "2026-10-20T21:08:21.747759+00:00",
+    "exit_code": 0
+  },
+  {
+    "name": "final-apply",
+    "command": [
+      "terraform",
+      "-chdir=final-devops-project/terraform",
+      "apply",
+      "-input=false",
+      "-no-color",
+      "tfplan-completion"
+    ],
+    "started_at_utc": "2026-10-20T21:08:21.750056+00:00",
+    "finished_at_utc": "2026-10-20T21:09:16.552523+00:00",
+    "exit_code": 0,
+    "stdout": "final-apply.txt"
+  },
+  {
+    "name": "final-show",
+    "command": [
+      "terraform",
+      "-chdir=final-devops-project/terraform",
+      "show",
+      "-no-color"
+    ],
+    "started_at_utc": "2026-10-20T21:09:16.554309+00:00",
+    "finished_at_utc": "2026-10-20T21:09:22.287327+00:00",
+    "exit_code": 0,
+    "stdout": "final-show.txt"
+  },
+  {
+    "name": "final-output",
+    "command": [
+      "terraform",
+      "-chdir=final-devops-project/terraform",
+      "output",
+      "-json"
+    ],
+    "started_at_utc": "2026-10-20T21:09:22.288584+00:00",
+    "finished_at_utc": "2026-10-20T21:09:23.745269+00:00",
+    "exit_code": 0,
+    "stdout": "final-output.txt"
+  },
+  {
+    "name": "final-state-values",
+    "command": [
+      "terraform",
+      "-chdir=final-devops-project/terraform",
+      "show",
+      "-json"
+    ],
+    "started_at_utc": "2026-10-20T21:09:23.748659+00:00",
+    "finished_at_utc": "2026-10-20T21:09:29.428906+00:00",
+    "exit_code": 0
+  },
+  {
+    "name": "final-bucket-tags",
+    "command": [
+      "aws",
+      "s3api",
+      "get-bucket-tagging",
+      "--bucket",
+      "devops-homework-24bcs10006-final-525426877661",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:09:29.430523+00:00",
+    "finished_at_utc": "2026-10-20T21:09:34.565354+00:00",
+    "exit_code": 0,
+    "stdout": "final-bucket-tags.txt"
+  },
+  {
+    "name": "final-bucket-public-access",
+    "command": [
+      "aws",
+      "s3api",
+      "get-public-access-block",
+      "--bucket",
+      "devops-homework-24bcs10006-final-525426877661",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:09:34.566889+00:00",
+    "finished_at_utc": "2026-10-20T21:09:39.466805+00:00",
+    "exit_code": 0,
+    "stdout": "final-bucket-public-access.txt"
+  },
+  {
+    "name": "final-bucket-versioning",
+    "command": [
+      "aws",
+      "s3api",
+      "get-bucket-versioning",
+      "--bucket",
+      "devops-homework-24bcs10006-final-525426877661",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:09:39.468276+00:00",
+    "finished_at_utc": "2026-10-20T21:09:44.386209+00:00",
+    "exit_code": 0,
+    "stdout": "final-bucket-versioning.txt"
+  },
+  {
+    "name": "final-bucket-encryption",
+    "command": [
+      "aws",
+      "s3api",
+      "get-bucket-encryption",
+      "--bucket",
+      "devops-homework-24bcs10006-final-525426877661",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:09:44.387862+00:00",
+    "finished_at_utc": "2026-10-20T21:09:54.494967+00:00",
+    "exit_code": 0,
+    "stdout": "final-bucket-encryption.txt"
+  },
+  {
+    "name": "final-bucket-location",
+    "command": [
+      "aws",
+      "s3api",
+      "get-bucket-location",
+      "--bucket",
+      "devops-homework-24bcs10006-final-525426877661",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:09:54.496831+00:00",
+    "finished_at_utc": "2026-10-20T21:09:59.760745+00:00",
+    "exit_code": 0,
+    "stdout": "final-bucket-location.txt"
+  },
+  {
+    "name": "final-instance-status-wait",
+    "command": [
+      "aws",
+      "ec2",
+      "wait",
+      "instance-status-ok",
+      "--instance-ids",
+      "i-043429f32ae8aac6d",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:09:59.762794+00:00",
+    "finished_at_utc": "2026-10-20T21:11:28.361511+00:00",
+    "exit_code": 0,
+    "stdout": "final-instance-status-wait.txt"
+  },
+  {
+    "name": "final-instance",
+    "command": [
+      "aws",
+      "ec2",
+      "describe-instances",
+      "--instance-ids",
+      "i-043429f32ae8aac6d",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:11:28.362933+00:00",
+    "finished_at_utc": "2026-10-20T21:11:34.395215+00:00",
+    "exit_code": 0,
+    "stdout": "final-instance.txt"
+  },
+  {
+    "name": "final-vpc",
+    "command": [
+      "aws",
+      "ec2",
+      "describe-vpcs",
+      "--vpc-ids",
+      "vpc-036751fa507980bb8",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:11:34.397790+00:00",
+    "finished_at_utc": "2026-10-20T21:11:40.445118+00:00",
+    "exit_code": 0,
+    "stdout": "final-vpc.txt"
+  },
+  {
+    "name": "final-routes",
+    "command": [
+      "aws",
+      "ec2",
+      "describe-route-tables",
+      "--filters",
+      "Name=vpc-id,Values=vpc-036751fa507980bb8",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:11:40.447229+00:00",
+    "finished_at_utc": "2026-10-20T21:11:46.222580+00:00",
+    "exit_code": 0,
+    "stdout": "final-routes.txt"
+  },
+  {
+    "name": "final-security",
+    "command": [
+      "aws",
+      "ec2",
+      "describe-security-groups",
+      "--group-ids",
+      "sg-09f38c34bed96ffd4",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:11:46.223449+00:00",
+    "finished_at_utc": "2026-10-20T21:11:49.955464+00:00",
+    "exit_code": 0,
+    "stdout": "final-security.txt"
+  },
+  {
+    "name": "final-state-before-cleanup",
+    "command": [
+      "terraform",
+      "-chdir=final-devops-project/terraform",
+      "state",
+      "list"
+    ],
+    "started_at_utc": "2026-10-20T21:11:50.730349+00:00",
+    "finished_at_utc": "2026-10-20T21:11:51.491782+00:00",
+    "exit_code": 0,
+    "stdout": "final-state-before-cleanup.txt"
+  },
+  {
+    "name": "final-destroy-plan",
+    "command": [
+      "terraform",
+      "-chdir=final-devops-project/terraform",
+      "plan",
+      "-destroy",
+      "-input=false",
+      "-no-color",
+      "-var-file=/home/pranav/Projects/devopsHomework/evidence/private/aws-inputs/final.tfvars.json",
+      "-out=tfplan-cleanup"
+    ],
+    "started_at_utc": "2026-10-20T21:11:51.492665+00:00",
+    "finished_at_utc": "2026-10-20T21:12:09.619972+00:00",
+    "exit_code": 0,
+    "stdout": "final-destroy-plan.txt"
+  },
+  {
+    "name": "final-review-destroy",
+    "command": [
+      "terraform",
+      "-chdir=final-devops-project/terraform",
+      "show",
+      "-json",
+      "tfplan-cleanup"
+    ],
+    "started_at_utc": "2026-10-20T21:12:09.621719+00:00",
+    "finished_at_utc": "2026-10-20T21:12:12.007603+00:00",
+    "exit_code": 0
+  },
+  {
+    "name": "final-destroy",
+    "command": [
+      "terraform",
+      "-chdir=final-devops-project/terraform",
+      "apply",
+      "-input=false",
+      "-no-color",
+      "tfplan-cleanup"
+    ],
+    "started_at_utc": "2026-10-20T21:12:12.008993+00:00",
+    "finished_at_utc": "2026-10-20T21:12:56.783677+00:00",
+    "exit_code": 0,
+    "stdout": "final-destroy.txt"
+  },
+  {
+    "name": "final-state-after-cleanup",
+    "command": [
+      "terraform",
+      "-chdir=final-devops-project/terraform",
+      "state",
+      "list"
+    ],
+    "started_at_utc": "2026-10-20T21:12:56.785174+00:00",
+    "finished_at_utc": "2026-10-20T21:12:57.543788+00:00",
+    "exit_code": 0,
+    "stdout": "final-state-after-cleanup.txt"
+  },
+  {
+    "name": "final-bucket-after-cleanup",
+    "command": [
+      "aws",
+      "s3api",
+      "head-bucket",
+      "--bucket",
+      "devops-homework-24bcs10006-final-525426877661",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:12:57.544438+00:00",
+    "finished_at_utc": "2026-10-20T21:13:00.586066+00:00",
+    "exit_code": 254,
+    "stdout": "final-bucket-after-cleanup.txt",
+    "stderr": "final-bucket-after-cleanup-stderr.txt"
+  },
+  {
+    "name": "final-terminated-wait",
+    "command": [
+      "aws",
+      "ec2",
+      "wait",
+      "instance-terminated",
+      "--instance-ids",
+      "i-043429f32ae8aac6d",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:13:00.587115+00:00",
+    "finished_at_utc": "2026-10-20T21:13:03.839035+00:00",
+    "exit_code": 0,
+    "stdout": "final-terminated-wait.txt"
+  },
+  {
+    "name": "final-instance-after-cleanup",
+    "command": [
+      "aws",
+      "ec2",
+      "describe-instances",
+      "--instance-ids",
+      "i-043429f32ae8aac6d",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:13:03.839857+00:00",
+    "finished_at_utc": "2026-10-20T21:13:07.182061+00:00",
+    "exit_code": 0,
+    "stdout": "final-instance-after-cleanup.txt"
+  },
+  {
+    "name": "final-vpc-after-cleanup",
+    "command": [
+      "aws",
+      "ec2",
+      "describe-vpcs",
+      "--vpc-ids",
+      "vpc-036751fa507980bb8",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:13:07.182863+00:00",
+    "finished_at_utc": "2026-10-20T21:13:11.464413+00:00",
+    "exit_code": 254,
+    "stdout": "final-vpc-after-cleanup.txt",
+    "stderr": "final-vpc-after-cleanup-stderr.txt"
+  },
+  {
+    "name": "final-volume-after-cleanup-vol-0b3b4ff465efd44ea",
+    "command": [
+      "aws",
+      "ec2",
+      "describe-volumes",
+      "--volume-ids",
+      "vol-0b3b4ff465efd44ea",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:13:11.465242+00:00",
+    "finished_at_utc": "2026-10-20T21:13:14.838637+00:00",
+    "exit_code": 254,
+    "stdout": "final-volume-after-cleanup-vol-0b3b4ff465efd44ea.txt",
+    "stderr": "final-volume-after-cleanup-vol-0b3b4ff465efd44ea-stderr.txt"
+  },
+  {
+    "name": "relaydesk-after",
+    "command": [
+      "aws",
+      "eks",
+      "describe-cluster",
+      "--name",
+      "relaydesk-capstone",
+      "--query",
+      "cluster.{arn:arn,status:status,version:version,vpc:resourcesVpcConfig.vpcId}",
+      "--profile",
+      "devops-new",
+      "--region",
+      "ap-southeast-2",
+      "--output",
+      "json",
+      "--no-cli-pager"
+    ],
+    "started_at_utc": "2026-10-20T21:13:14.839695+00:00",
+    "finished_at_utc": "2026-10-20T21:13:18.133266+00:00",
+    "exit_code": 0,
+    "stdout": "relaydesk-after.txt"
+  }
+]

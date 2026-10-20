@@ -2,7 +2,13 @@ terraform {
   required_version = ">= 1.5.0"
   required_providers { aws = { source = "hashicorp/aws", version = "~> 5.0" } }
 }
-provider "aws" { region = var.aws_region }
+provider "aws" {
+  region              = var.aws_region
+  allowed_account_ids = ["525426877661"]
+  default_tags {
+    tags = { Project = "devopsHomework", Exercise = "final-project" }
+  }
+}
 data "aws_availability_zones" "available" { state = "available" }
 resource "aws_vpc" "project" {
   cidr_block           = "10.42.0.0/16"
@@ -55,7 +61,7 @@ resource "aws_instance" "demo" {
   instance_type          = "t3.micro"
   subnet_id              = aws_subnet.public.id
   vpc_security_group_ids = [aws_security_group.web.id]
-  user_data              = "#!/bin/sh\nyum install -y httpd\necho 'DevOps homework' > /var/www/html/index.html\nsystemctl enable --now httpd"
+  user_data              = "#!/bin/bash\ndnf install -y httpd\necho 'DevOps homework' > /var/www/html/index.html\nsystemctl enable --now httpd"
   tags                   = { Name = "homework-demo" }
 }
 resource "aws_s3_bucket" "artifacts" {
@@ -68,4 +74,22 @@ resource "aws_s3_bucket_public_access_block" "artifacts" {
   block_public_policy     = true
   ignore_public_acls      = true
   restrict_public_buckets = true
+}
+
+resource "aws_s3_bucket_versioning" "artifacts" {
+  bucket = aws_s3_bucket.artifacts.id
+
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+
+resource "aws_s3_bucket_server_side_encryption_configuration" "artifacts" {
+  bucket = aws_s3_bucket.artifacts.id
+
+  rule {
+    apply_server_side_encryption_by_default {
+      sse_algorithm = "AES256"
+    }
+  }
 }

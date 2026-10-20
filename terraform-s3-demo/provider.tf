@@ -4,4 +4,10 @@ terraform {
     aws = { source = "hashicorp/aws", version = "~> 5.0" }
   }
 }
-provider "aws" { region = var.aws_region }
+provider "aws" {
+  region              = var.aws_region
+  allowed_account_ids = ["525426877661"]
+  default_tags {
+    tags = { Project = "devopsHomework", Exercise = "session18" }
+  }
+}

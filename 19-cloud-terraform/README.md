@@ -1,3 +1,3 @@
 # Session 19: Cloud and Terraform in Action
 
-Submission landing page. The [Terraform cloud project](../terraform-cloud/README.md) contains the VPC, subnet, security group, EC2, S3, variables, outputs, and commands. Local formatting and validation passed. AWS provisioning and screenshots still require credentials.
+Submission landing page. The [Terraform cloud project](../terraform-cloud/README.md) contains the VPC, subnet, security group, EC2, S3, variables, outputs, and commands. Authenticated init/format/validation and this project's own [11-addition Sydney plan](../evidence/aws-plans/s19-plan.txt) passed on 21 October 2026 (IST). Provisioning, healthy EC2 status, real HTTP/S3 verification, show/output and destroy passed. The new instance is terminated and its VPC/root disk/bucket are absent. [Execution proof](../evidence/aws-execution/README.md). See the [reviewed workflow](../AWS-HOMEWORK.md).

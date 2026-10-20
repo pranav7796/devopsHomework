@@ -1,0 +1,726 @@
+{
+  "verified_at_utc": "2026-10-20T21:15:00.071776+00:00",
+  "files": [
+    {
+      "path": "evidence/aws-plans/README.md",
+      "bytes": 1595,
+      "sha256": "1fddb73b597955b370874407f6b9b95582badd6a51aa429d381ee24740b63bdc"
+    },
+    {
+      "path": "evidence/aws-plans/ami-details.json",
+      "bytes": 1724,
+      "sha256": "0c24882d2f09f4414371fdac17d5caa0beb47e584c5bfb5ec795d3a3733323a4"
+    },
+    {
+      "path": "evidence/aws-plans/command-results.json",
+      "bytes": 6505,
+      "sha256": "a6e40cff7b998ab1492f0ed23325a3dd8048a98c9004cb265e245a6aefdd9cf8"
+    },
+    {
+      "path": "evidence/aws-plans/cost-estimate.json",
+      "bytes": 746,
+      "sha256": "03f6889c88e547a09e25b5478408dd5eeac0830e15088fbb8d4dd1be03fd6755"
+    },
+    {
+      "path": "evidence/aws-plans/final-fmt.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/aws-plans/final-init.txt",
+      "bytes": 625,
+      "sha256": "e9c09c5736ff9fa2d07872ba6290876a1aadcf54e54f904e0b65228fbfad0b8b"
+    },
+    {
+      "path": "evidence/aws-plans/final-plan.txt",
+      "bytes": 13658,
+      "sha256": "f5e7bc31ad3342a764989ece31fa5a13f76914b057cd934f6cc3ab897e007cc6"
+    },
+    {
+      "path": "evidence/aws-plans/final-validate.txt",
+      "bytes": 38,
+      "sha256": "f7997225125835fdd14060ac776d273f394b874f9a481b9e2122c83dc8adc5c1"
+    },
+    {
+      "path": "evidence/aws-plans/identity.txt",
+      "bytes": 222,
+      "sha256": "c3117d30ccc917b6e736f2956aefabafc58ffe4a538d7aa63cadb0198aa3e9ab"
+    },
+    {
+      "path": "evidence/aws-plans/image.txt",
+      "bytes": 426,
+      "sha256": "641df46faeb7cf672a5da25624163247928047ba7daaede689a2be7df0956b1e"
+    },
+    {
+      "path": "evidence/aws-plans/price-ec2.json",
+      "bytes": 10781,
+      "sha256": "e2d7daff1ec2ef0eb9592b0f1237bf1fdf8270d927bf23e3217a568666925418"
+    },
+    {
+      "path": "evidence/aws-plans/price-ipv4.json",
+      "bytes": 1093,
+      "sha256": "bf6274f37964ff4f424749aa43b41f21018d39bb66ea089471f3b4123181817f"
+    },
+    {
+      "path": "evidence/aws-plans/price-storage.json",
+      "bytes": 1245,
+      "sha256": "3584cb130e9f59d1b80beebffe1d4d886008aa6400fd5941fd6922a960279cb1"
+    },
+    {
+      "path": "evidence/aws-plans/price-summary.json",
+      "bytes": 1291,
+      "sha256": "79943ab488f99b338ef78a26e2c7f818d73f53643396070e22b6b1a25c94ca45"
+    },
+    {
+      "path": "evidence/aws-plans/s18-fmt.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/aws-plans/s18-init.txt",
+      "bytes": 625,
+      "sha256": "e9c09c5736ff9fa2d07872ba6290876a1aadcf54e54f904e0b65228fbfad0b8b"
+    },
+    {
+      "path": "evidence/aws-plans/s18-plan.txt",
+      "bytes": 3790,
+      "sha256": "1be8a6ac037065053e8ca2de2933da18800187f0922588f3fd6c9602ccb66e94"
+    },
+    {
+      "path": "evidence/aws-plans/s18-validate.txt",
+      "bytes": 38,
+      "sha256": "f7997225125835fdd14060ac776d273f394b874f9a481b9e2122c83dc8adc5c1"
+    },
+    {
+      "path": "evidence/aws-plans/s19-fmt.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/aws-plans/s19-init.txt",
+      "bytes": 625,
+      "sha256": "e9c09c5736ff9fa2d07872ba6290876a1aadcf54e54f904e0b65228fbfad0b8b"
+    },
+    {
+      "path": "evidence/aws-plans/s19-plan.txt",
+      "bytes": 13628,
+      "sha256": "54f0c7ecea446271e08ee4b8215dc52bdc2020efd9227e45a019bc1b2aaa58a8"
+    },
+    {
+      "path": "evidence/aws-plans/s19-validate.txt",
+      "bytes": 38,
+      "sha256": "f7997225125835fdd14060ac776d273f394b874f9a481b9e2122c83dc8adc5c1"
+    },
+    {
+      "path": "evidence/aws-plans/summary.json",
+      "bytes": 5805,
+      "sha256": "f5cf8069470f54bdf6fd4f856bd68aa4e6ed45d5c30d38826d770f63ce2f06cd"
+    },
+    {
+      "path": "evidence/completion-2026-10-21/README.md",
+      "bytes": 3590,
+      "sha256": "974c8bae62c1264d80c8798087153a2b570477ecc0dbf094dcb6c799bffa3f0f"
+    },
+    {
+      "path": "evidence/completion-2026-10-21/api-unit-tests.txt",
+      "bytes": 550,
+      "sha256": "118b42ce35b7b9a9147a1d5094f7296b7574e0c57b7b948ee0ad91cfdbf17ff3"
+    },
+    {
+      "path": "evidence/completion-2026-10-21/aws-plan-help.txt",
+      "bytes": 354,
+      "sha256": "b5f534e0134ff76ec98e75a81bb9e9d7210a8561b4d9b576b6dc8369f31cfb21"
+    },
+    {
+      "path": "evidence/completion-2026-10-21/aws-plans-run.txt",
+      "bytes": 5928,
+      "sha256": "d069f22f41d7c02c61350c4ab1b7cc9b47028057ced82cb2b5e1436b2796f32b"
+    },
+    {
+      "path": "evidence/completion-2026-10-21/capture-capability.json",
+      "bytes": 268,
+      "sha256": "940d2203386f6efdbfb510d292025e24e877b81fad38382062e95e2c801f0d33"
+    },
+    {
+      "path": "evidence/completion-2026-10-21/final-devops-project-terraform-fmt.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/completion-2026-10-21/helm-lint.txt",
+      "bytes": 115,
+      "sha256": "b7c3b19d5395feed10e6cdfbd66cefa55e8fbc1dfb8e6418c340ab6ccc2a53df"
+    },
+    {
+      "path": "evidence/completion-2026-10-21/helm-render.txt",
+      "bytes": 4025,
+      "sha256": "79cb5896786c29c8bc08e1214d437ae32e8fb647a0358813389a2c68ce187362"
+    },
+    {
+      "path": "evidence/completion-2026-10-21/local-validation.json",
+      "bytes": 3507,
+      "sha256": "d92c2011154299383325466f8fb2fe6d39de90c24c30a03bc0d9ce96fba72cf8"
+    },
+    {
+      "path": "evidence/completion-2026-10-21/minikube-start.txt",
+      "bytes": 794,
+      "sha256": "732f8805ca87e33a1346dc989c1b2c5b61e95ef751800ed7d9ca5a073ba18fb5"
+    },
+    {
+      "path": "evidence/completion-2026-10-21/shell-syntax.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/completion-2026-10-21/strategy-commands.json",
+      "bytes": 179347,
+      "sha256": "7f36f27f2d00bb343cf1a5eebdb557fb01587705538642138ad4b8a76a4bf637"
+    },
+    {
+      "path": "evidence/completion-2026-10-21/strategy-results.json",
+      "bytes": 1354,
+      "sha256": "8b8476c12d3296b48aca1583789139c84b2874f1b60fe8ee25b336ecf0b3e761"
+    },
+    {
+      "path": "evidence/completion-2026-10-21/strategy-run.txt",
+      "bytes": 1354,
+      "sha256": "8b8476c12d3296b48aca1583789139c84b2874f1b60fe8ee25b336ecf0b3e761"
+    },
+    {
+      "path": "evidence/completion-2026-10-21/terraform-cloud-fmt.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/completion-2026-10-21/terraform-s3-demo-fmt.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/aws-execution/AUTHORIZATION.md",
+      "bytes": 1106,
+      "sha256": "224e480300bee5b208f7944e64d443e4599872795ca188543ac3ccb9791dae2a"
+    },
+    {
+      "path": "evidence/aws-execution/README.md",
+      "bytes": 3283,
+      "sha256": "ab81b792aba49ddfff827cbcbd40bd0f40c1290633764942193a83085a49d112"
+    },
+    {
+      "path": "evidence/aws-execution/command-results.json",
+      "bytes": 40199,
+      "sha256": "9aefe8e34981b35bbb890627568b2c52cb71fa8c528d5c4b5c58d8f808286174"
+    },
+    {
+      "path": "evidence/aws-execution/execution-helper.py",
+      "bytes": 13077,
+      "sha256": "3dfed6854f9eb484acacb4cfc16a1e2e26cea42d4df0ca35a51b141300f8dc94"
+    },
+    {
+      "path": "evidence/aws-execution/final-apply.txt",
+      "bytes": 1868,
+      "sha256": "646ede8f4f606e5021fc582375bff2593a2bdabd4a090cf84bc2077e73f91169"
+    },
+    {
+      "path": "evidence/aws-execution/final-bucket-after-cleanup-stderr.txt",
+      "bytes": 88,
+      "sha256": "339cd21d49c04711ebb5f3d049b25a51619937c5205481672d13c0aeceeb7074"
+    },
+    {
+      "path": "evidence/aws-execution/final-bucket-after-cleanup.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/aws-execution/final-bucket-encryption.txt",
+      "bytes": 429,
+      "sha256": "9dcbf5a9219555f282511d108aea0d88f078e8824b9fdd397160394bd3c2a213"
+    },
+    {
+      "path": "evidence/aws-execution/final-bucket-location.txt",
+      "bytes": 47,
+      "sha256": "eed0bc1f2ef81533962c92f77aff1c906a56ee7e90a43399b2f396a8e6aab3d2"
+    },
+    {
+      "path": "evidence/aws-execution/final-bucket-public-access.txt",
+      "bytes": 190,
+      "sha256": "31f1f0a092cfdc6587c931923da09fc537545478aca3c5dcc2c060b73a91e4d9"
+    },
+    {
+      "path": "evidence/aws-execution/final-bucket-tags.txt",
+      "bytes": 293,
+      "sha256": "100b8a8e7a4f1e100c4afb03f77ee1e1dd31534e5e9925490de42e2cdbd87872"
+    },
+    {
+      "path": "evidence/aws-execution/final-bucket-versioning.txt",
+      "bytes": 28,
+      "sha256": "e0d7fcfe6b2ca7b3376e1af42cfbf309d2ee91d4cd664565f9b73c4816079f22"
+    },
+    {
+      "path": "evidence/aws-execution/final-cleanup-audit.json",
+      "bytes": 1899,
+      "sha256": "d8caa64b09ef4fceb6357e7ca591f7561cbdb97c1db6309373f0e4f36cd2e4b4"
+    },
+    {
+      "path": "evidence/aws-execution/final-destroy-plan.txt",
+      "bytes": 17247,
+      "sha256": "0cbac19a6ad590c65c364b015b8454fb7f1435a155025b725fb79ab51603de99"
+    },
+    {
+      "path": "evidence/aws-execution/final-destroy.txt",
+      "bytes": 2046,
+      "sha256": "b8ef14cbddb23b836185cebd2b9dea5a6f323236877b7a350d8847266fdc13ad"
+    },
+    {
+      "path": "evidence/aws-execution/final-http-attempts.json",
+      "bytes": 113,
+      "sha256": "9d8fec1c8936fd9260a979506438b869d53e66f1c2d8fa35971140b3981c5a1a"
+    },
+    {
+      "path": "evidence/aws-execution/final-http.txt",
+      "bytes": 48,
+      "sha256": "00ee76030b39cd902e68d52d4ad1258648579bbd0d9a9f584611b60669b27436"
+    },
+    {
+      "path": "evidence/aws-execution/final-instance-after-cleanup.txt",
+      "bytes": 4041,
+      "sha256": "0ec1a358d2ddd6292d42f2191ae15aa9e32b93f31f9b79c9e392deb9f6b0f731"
+    },
+    {
+      "path": "evidence/aws-execution/final-instance-status-wait.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/aws-execution/final-instance.txt",
+      "bytes": 7748,
+      "sha256": "3f85dd541dd8d6677bcebf2e19cc2c65329efc85d38c69f8088526ff8eb5f597"
+    },
+    {
+      "path": "evidence/aws-execution/final-output.txt",
+      "bytes": 340,
+      "sha256": "900775cc3117e83677eac9ca09756dea42dcee37bcc466d49266b71d6ebdc8c9"
+    },
+    {
+      "path": "evidence/aws-execution/final-routes.txt",
+      "bytes": 2270,
+      "sha256": "a2b83bc35b91252ad5bfd9b8af2873b6874fec11b4316c9c32b492a1c7a4782e"
+    },
+    {
+      "path": "evidence/aws-execution/final-security.txt",
+      "bytes": 1996,
+      "sha256": "0cdb2dab795eef339f8c3d2b6ba9db427c2edb161fd63e0f042306b823b4c740"
+    },
+    {
+      "path": "evidence/aws-execution/final-show.txt",
+      "bytes": 14218,
+      "sha256": "f273a0adaa2f2ac99904c59bcfabb7ddbc8955635705cafacf0b6b6b41e67d12"
+    },
+    {
+      "path": "evidence/aws-execution/final-state-after-cleanup.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/aws-execution/final-state-before-cleanup.txt",
+      "bytes": 364,
+      "sha256": "e662a0b6e0649c09f555203dab0049af6f54c0df9f1d32757cb5823494aa663f"
+    },
+    {
+      "path": "evidence/aws-execution/final-state-before-stderr.txt",
+      "bytes": 222,
+      "sha256": "66a451d770c3d1485c9a72203f89a19a3fbe9111451d5ce948216f46a90f3b3e"
+    },
+    {
+      "path": "evidence/aws-execution/final-state-before.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/aws-execution/final-terminated-wait.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/aws-execution/final-volume-after-cleanup-vol-0b3b4ff465efd44ea-stderr.txt",
+      "bytes": 153,
+      "sha256": "817a7f49d0e5b46ece698a76a2a51cd583d0f59252e29a29a5f51e595a1a56cb"
+    },
+    {
+      "path": "evidence/aws-execution/final-volume-after-cleanup-vol-0b3b4ff465efd44ea.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/aws-execution/final-vpc-after-cleanup-stderr.txt",
+      "bytes": 148,
+      "sha256": "8e24e02c078a051bf35478880c168fbda05bc85e2712cd4bbe1663d9d55cbe56"
+    },
+    {
+      "path": "evidence/aws-execution/final-vpc-after-cleanup.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/aws-execution/final-vpc.txt",
+      "bytes": 1154,
+      "sha256": "28ba737e6709335446f99a964e115105903235b3d26cdeef00e8e741036d2eb3"
+    },
+    {
+      "path": "evidence/aws-execution/identity-before-retry-2.txt",
+      "bytes": 222,
+      "sha256": "c3117d30ccc917b6e736f2956aefabafc58ffe4a538d7aa63cadb0198aa3e9ab"
+    },
+    {
+      "path": "evidence/aws-execution/identity-before.txt",
+      "bytes": 222,
+      "sha256": "c3117d30ccc917b6e736f2956aefabafc58ffe4a538d7aa63cadb0198aa3e9ab"
+    },
+    {
+      "path": "evidence/aws-execution/initial-preflight-commands.json",
+      "bytes": 1370,
+      "sha256": "96f2a4b78e4bb545261bae1e51c5524359d15b014f1f7f2b45acc1fecd82f3bc"
+    },
+    {
+      "path": "evidence/aws-execution/initial-preflight-diagnostic.txt",
+      "bytes": 907,
+      "sha256": "bfece2178e7dfcca58334fc9872f4b48c4f1289854dd0461a37a89cb728c323e"
+    },
+    {
+      "path": "evidence/aws-execution/relaydesk-after.txt",
+      "bytes": 167,
+      "sha256": "ebe12295c4affd87cb8f490c0139c110dd7c5c934b410040db1f97639a8f0860"
+    },
+    {
+      "path": "evidence/aws-execution/relaydesk-before-retry-2.txt",
+      "bytes": 167,
+      "sha256": "ebe12295c4affd87cb8f490c0139c110dd7c5c934b410040db1f97639a8f0860"
+    },
+    {
+      "path": "evidence/aws-execution/relaydesk-before.txt",
+      "bytes": 167,
+      "sha256": "ebe12295c4affd87cb8f490c0139c110dd7c5c934b410040db1f97639a8f0860"
+    },
+    {
+      "path": "evidence/aws-execution/s18-apply.txt",
+      "bytes": 944,
+      "sha256": "3f69581523fe8ac465cc1ccb9cd437279b586e1eaab7771378a354056d51a237"
+    },
+    {
+      "path": "evidence/aws-execution/s18-bucket-after-cleanup-stderr.txt",
+      "bytes": 88,
+      "sha256": "339cd21d49c04711ebb5f3d049b25a51619937c5205481672d13c0aeceeb7074"
+    },
+    {
+      "path": "evidence/aws-execution/s18-bucket-after-cleanup.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/aws-execution/s18-bucket-encryption.txt",
+      "bytes": 429,
+      "sha256": "9dcbf5a9219555f282511d108aea0d88f078e8824b9fdd397160394bd3c2a213"
+    },
+    {
+      "path": "evidence/aws-execution/s18-bucket-location.txt",
+      "bytes": 47,
+      "sha256": "eed0bc1f2ef81533962c92f77aff1c906a56ee7e90a43399b2f396a8e6aab3d2"
+    },
+    {
+      "path": "evidence/aws-execution/s18-bucket-public-access.txt",
+      "bytes": 190,
+      "sha256": "31f1f0a092cfdc6587c931923da09fc537545478aca3c5dcc2c060b73a91e4d9"
+    },
+    {
+      "path": "evidence/aws-execution/s18-bucket-tags.txt",
+      "bytes": 487,
+      "sha256": "666320b36717c4466c15235e6375c53799457feb88863180f9fec78c15015af3"
+    },
+    {
+      "path": "evidence/aws-execution/s18-bucket-versioning.txt",
+      "bytes": 28,
+      "sha256": "e0d7fcfe6b2ca7b3376e1af42cfbf309d2ee91d4cd664565f9b73c4816079f22"
+    },
+    {
+      "path": "evidence/aws-execution/s18-cleanup-audit.json",
+      "bytes": 922,
+      "sha256": "d5cb94c975dfd57e10decdefcb52291f4692d0ddf93dfcc0036b536d086951d7"
+    },
+    {
+      "path": "evidence/aws-execution/s18-destroy-plan.txt",
+      "bytes": 5021,
+      "sha256": "4aa8740335d540f197f2db0fa55e65aae29469d60f3e049cd85d225563773101"
+    },
+    {
+      "path": "evidence/aws-execution/s18-destroy.txt",
+      "bytes": 761,
+      "sha256": "323e0833bf2210364a2890790ffc883bdf80bd5d1ac6e21023728de3342b068f"
+    },
+    {
+      "path": "evidence/aws-execution/s18-output.txt",
+      "bytes": 273,
+      "sha256": "33033cf0e81895a2458bcab83bd294848476272c5712825b41f2881d292fc14c"
+    },
+    {
+      "path": "evidence/aws-execution/s18-show.txt",
+      "bytes": 3286,
+      "sha256": "2229b3ac3997392ba340c69d314d88fe7c880e3e69e0ededc882ddd7735e3426"
+    },
+    {
+      "path": "evidence/aws-execution/s18-state-after-cleanup.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/aws-execution/s18-state-before-cleanup.txt",
+      "bytes": 160,
+      "sha256": "496a787d92e9be722e326388b0ea35b6c38d9d586f67e8aa228bc54f6a7cb020"
+    },
+    {
+      "path": "evidence/aws-execution/s18-state-before-retry-2.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/aws-execution/s18-state-before-stderr.txt",
+      "bytes": 222,
+      "sha256": "66a451d770c3d1485c9a72203f89a19a3fbe9111451d5ce948216f46a90f3b3e"
+    },
+    {
+      "path": "evidence/aws-execution/s18-state-before.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/aws-execution/s19-apply.txt",
+      "bytes": 1921,
+      "sha256": "018e3332961421201b8b6a56e11e2ab6744899ff7c9828a66b66e49ed726dfa8"
+    },
+    {
+      "path": "evidence/aws-execution/s19-bucket-after-cleanup-stderr.txt",
+      "bytes": 88,
+      "sha256": "339cd21d49c04711ebb5f3d049b25a51619937c5205481672d13c0aeceeb7074"
+    },
+    {
+      "path": "evidence/aws-execution/s19-bucket-after-cleanup.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/aws-execution/s19-bucket-encryption-retry-2.txt",
+      "bytes": 429,
+      "sha256": "9dcbf5a9219555f282511d108aea0d88f078e8824b9fdd397160394bd3c2a213"
+    },
+    {
+      "path": "evidence/aws-execution/s19-bucket-encryption.txt",
+      "bytes": 429,
+      "sha256": "9dcbf5a9219555f282511d108aea0d88f078e8824b9fdd397160394bd3c2a213"
+    },
+    {
+      "path": "evidence/aws-execution/s19-bucket-location-retry-2.txt",
+      "bytes": 47,
+      "sha256": "eed0bc1f2ef81533962c92f77aff1c906a56ee7e90a43399b2f396a8e6aab3d2"
+    },
+    {
+      "path": "evidence/aws-execution/s19-bucket-location.txt",
+      "bytes": 47,
+      "sha256": "eed0bc1f2ef81533962c92f77aff1c906a56ee7e90a43399b2f396a8e6aab3d2"
+    },
+    {
+      "path": "evidence/aws-execution/s19-bucket-public-access-retry-2.txt",
+      "bytes": 190,
+      "sha256": "31f1f0a092cfdc6587c931923da09fc537545478aca3c5dcc2c060b73a91e4d9"
+    },
+    {
+      "path": "evidence/aws-execution/s19-bucket-public-access.txt",
+      "bytes": 190,
+      "sha256": "31f1f0a092cfdc6587c931923da09fc537545478aca3c5dcc2c060b73a91e4d9"
+    },
+    {
+      "path": "evidence/aws-execution/s19-bucket-tags-retry-2.txt",
+      "bytes": 289,
+      "sha256": "8fe96934b958059093f829e13f6e6e3276ea31c3d5692d6198284d19fa53339b"
+    },
+    {
+      "path": "evidence/aws-execution/s19-bucket-tags.txt",
+      "bytes": 289,
+      "sha256": "8fe96934b958059093f829e13f6e6e3276ea31c3d5692d6198284d19fa53339b"
+    },
+    {
+      "path": "evidence/aws-execution/s19-bucket-versioning-retry-2.txt",
+      "bytes": 28,
+      "sha256": "e0d7fcfe6b2ca7b3376e1af42cfbf309d2ee91d4cd664565f9b73c4816079f22"
+    },
+    {
+      "path": "evidence/aws-execution/s19-bucket-versioning.txt",
+      "bytes": 28,
+      "sha256": "e0d7fcfe6b2ca7b3376e1af42cfbf309d2ee91d4cd664565f9b73c4816079f22"
+    },
+    {
+      "path": "evidence/aws-execution/s19-cleanup-audit.json",
+      "bytes": 1891,
+      "sha256": "8f3069b55b4588d1507f651857c76bd609c06ecd4e4c68c8172e16b354290219"
+    },
+    {
+      "path": "evidence/aws-execution/s19-destroy-plan.txt",
+      "bytes": 17190,
+      "sha256": "7419a6737c3d57c45ae0a6b714b073587dc3fd2f710d84fee2d4babae473ae0d"
+    },
+    {
+      "path": "evidence/aws-execution/s19-destroy.txt",
+      "bytes": 2038,
+      "sha256": "fa3de24adda8365575dfb7c50f24d11e52fa583b204cc93eb63187be19e14875"
+    },
+    {
+      "path": "evidence/aws-execution/s19-http-attempts.json",
+      "bytes": 113,
+      "sha256": "a36ad8a1b90c847946c3c92d0acdc0fc9e050262c1bfdb5e5c014b9053f88357"
+    },
+    {
+      "path": "evidence/aws-execution/s19-http.txt",
+      "bytes": 51,
+      "sha256": "0c78b082a56f55bae7708900fdf6f70048d65fc88d9ad00e23e2f69ad49e64eb"
+    },
+    {
+      "path": "evidence/aws-execution/s19-instance-after-cleanup.txt",
+      "bytes": 4037,
+      "sha256": "450306cb3973eba4c965ce1e378b8618877c3ecd4957675a507591b938981d5d"
+    },
+    {
+      "path": "evidence/aws-execution/s19-instance-retry-2.txt",
+      "bytes": 7768,
+      "sha256": "2084f6741c266e4effb8e4c3dd81d734428836e18bafd65b877d3c1730dbd191"
+    },
+    {
+      "path": "evidence/aws-execution/s19-instance-status-wait-retry-2.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/aws-execution/s19-instance-status-wait.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/aws-execution/s19-instance.txt",
+      "bytes": 7768,
+      "sha256": "2084f6741c266e4effb8e4c3dd81d734428836e18bafd65b877d3c1730dbd191"
+    },
+    {
+      "path": "evidence/aws-execution/s19-output-retry-2.txt",
+      "bytes": 341,
+      "sha256": "c356fe887e52b2f2671f73af041fc2eb861f37294a9498cd8c1dc2d49ac13ebc"
+    },
+    {
+      "path": "evidence/aws-execution/s19-output.txt",
+      "bytes": 341,
+      "sha256": "c356fe887e52b2f2671f73af041fc2eb861f37294a9498cd8c1dc2d49ac13ebc"
+    },
+    {
+      "path": "evidence/aws-execution/s19-routes-retry-2.txt",
+      "bytes": 2266,
+      "sha256": "5689368c42d279b329f677b87a12e935cd62186108d37cde0ea71443f7fab18f"
+    },
+    {
+      "path": "evidence/aws-execution/s19-routes.txt",
+      "bytes": 2266,
+      "sha256": "5689368c42d279b329f677b87a12e935cd62186108d37cde0ea71443f7fab18f"
+    },
+    {
+      "path": "evidence/aws-execution/s19-security-retry-2.txt",
+      "bytes": 1992,
+      "sha256": "8f971003edebbec8c54ae1e6abc85e5510978a63e814e389c31a97b554d9f085"
+    },
+    {
+      "path": "evidence/aws-execution/s19-security.txt",
+      "bytes": 1992,
+      "sha256": "8f971003edebbec8c54ae1e6abc85e5510978a63e814e389c31a97b554d9f085"
+    },
+    {
+      "path": "evidence/aws-execution/s19-show-retry-2.txt",
+      "bytes": 14169,
+      "sha256": "9ad73e02a84b1873295b57669a6eee822872e62733d9d80e0c476d6f177e1804"
+    },
+    {
+      "path": "evidence/aws-execution/s19-show.txt",
+      "bytes": 14169,
+      "sha256": "9ad73e02a84b1873295b57669a6eee822872e62733d9d80e0c476d6f177e1804"
+    },
+    {
+      "path": "evidence/aws-execution/s19-state-after-cleanup.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/aws-execution/s19-state-before-cleanup-retry-2.txt",
+      "bytes": 364,
+      "sha256": "e662a0b6e0649c09f555203dab0049af6f54c0df9f1d32757cb5823494aa663f"
+    },
+    {
+      "path": "evidence/aws-execution/s19-state-before-cleanup.txt",
+      "bytes": 364,
+      "sha256": "e662a0b6e0649c09f555203dab0049af6f54c0df9f1d32757cb5823494aa663f"
+    },
+    {
+      "path": "evidence/aws-execution/s19-state-before-retry-2.txt",
+      "bytes": 364,
+      "sha256": "e662a0b6e0649c09f555203dab0049af6f54c0df9f1d32757cb5823494aa663f"
+    },
+    {
+      "path": "evidence/aws-execution/s19-state-before-stderr.txt",
+      "bytes": 222,
+      "sha256": "66a451d770c3d1485c9a72203f89a19a3fbe9111451d5ce948216f46a90f3b3e"
+    },
+    {
+      "path": "evidence/aws-execution/s19-state-before.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/aws-execution/s19-terminated-wait.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/aws-execution/s19-volume-after-cleanup-vol-017b0b8da7a576465-stderr.txt",
+      "bytes": 153,
+      "sha256": "0adcf2849c44a49cac12d7da235a0bd7c3f0ec97939699fb40fafb8525550118"
+    },
+    {
+      "path": "evidence/aws-execution/s19-volume-after-cleanup-vol-017b0b8da7a576465.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/aws-execution/s19-vpc-after-cleanup-stderr.txt",
+      "bytes": 148,
+      "sha256": "176ba67ee389d7996120cdb003a5b567af9b7af6ecce1a9c32e5a081be58694a"
+    },
+    {
+      "path": "evidence/aws-execution/s19-vpc-after-cleanup.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/aws-execution/s19-vpc-retry-2.txt",
+      "bytes": 1150,
+      "sha256": "a9d961677cefd5fd24258831cde0af847dc1921a6aa2c035e4164108471dc51b"
+    },
+    {
+      "path": "evidence/aws-execution/s19-vpc.txt",
+      "bytes": 1150,
+      "sha256": "a9d961677cefd5fd24258831cde0af847dc1921a6aa2c035e4164108471dc51b"
+    },
+    {
+      "path": "evidence/aws-execution/summary.json",
+      "bytes": 4059,
+      "sha256": "ec302b6a76d69a18a40fb43f4602b18b088fab28840fcf007615c9dea073837c"
+    },
+    {
+      "path": "evidence/aws-execution-run.txt",
+      "bytes": 5005,
+      "sha256": "9b9bd2960018d60700c3381a8d486cdde402beb0c62f204580988331fd49b81a"
+    }
+  ],
+  "scope": "Public planning, execution and validation artifacts; private inputs/state/plan binaries excluded."
+}

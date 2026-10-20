@@ -1,0 +1,95 @@
+# aws_s3_bucket.homework:
+resource "aws_s3_bucket" "homework" {
+    acceleration_status         = null
+    arn                         = "arn:aws:s3:::devops-homework-24bcs10006-s18-525426877661"
+    bucket                      = "devops-homework-24bcs10006-s18-525426877661"
+    bucket_domain_name          = "devops-homework-24bcs10006-s18-525426877661.s3.amazonaws.com"
+    bucket_prefix               = null
+    bucket_regional_domain_name = "devops-homework-24bcs10006-s18-525426877661.s3.ap-southeast-2.amazonaws.com"
+    force_destroy               = false
+    hosted_zone_id              = "Z1WCIGYICN2BYD"
+    id                          = "devops-homework-24bcs10006-s18-525426877661"
+    object_lock_enabled         = false
+    policy                      = null
+    region                      = "ap-southeast-2"
+    request_payer               = "BucketOwner"
+    tags                        = {
+        "Environment" = "homework"
+        "ManagedBy"   = "Terraform"
+        "Name"        = "devops-homework-24bcs10006-s18-525426877661"
+    }
+    tags_all                    = {
+        "Environment" = "homework"
+        "Exercise"    = "session18"
+        "ManagedBy"   = "Terraform"
+        "Name"        = "devops-homework-24bcs10006-s18-525426877661"
+        "Project"     = "devopsHomework"
+    }
+
+    grant {
+        id          = "b8e54c6a44466851a6f83aa47dcd12cfe5eb7f6e5875fdf7899e8058f4ac26eb"
+        permissions = [
+            "FULL_CONTROL",
+        ]
+        type        = "CanonicalUser"
+        uri         = null
+    }
+
+    server_side_encryption_configuration {
+        rule {
+            bucket_key_enabled = false
+
+            apply_server_side_encryption_by_default {
+                kms_master_key_id = null
+                sse_algorithm     = "AES256"
+            }
+        }
+    }
+
+    versioning {
+        enabled    = false
+        mfa_delete = false
+    }
+}
+
+# aws_s3_bucket_public_access_block.homework:
+resource "aws_s3_bucket_public_access_block" "homework" {
+    block_public_acls       = true
+    block_public_policy     = true
+    bucket                  = "devops-homework-24bcs10006-s18-525426877661"
+    id                      = "devops-homework-24bcs10006-s18-525426877661"
+    ignore_public_acls      = true
+    restrict_public_buckets = true
+}
+
+# aws_s3_bucket_server_side_encryption_configuration.homework:
+resource "aws_s3_bucket_server_side_encryption_configuration" "homework" {
+    bucket                = "devops-homework-24bcs10006-s18-525426877661"
+    expected_bucket_owner = null
+    id                    = "devops-homework-24bcs10006-s18-525426877661"
+
+    rule {
+        apply_server_side_encryption_by_default {
+            kms_master_key_id = null
+            sse_algorithm     = "AES256"
+        }
+    }
+}
+
+# aws_s3_bucket_versioning.homework:
+resource "aws_s3_bucket_versioning" "homework" {
+    bucket                = "devops-homework-24bcs10006-s18-525426877661"
+    expected_bucket_owner = null
+    id                    = "devops-homework-24bcs10006-s18-525426877661"
+
+    versioning_configuration {
+        mfa_delete = null
+        status     = "Enabled"
+    }
+}
+
+
+Outputs:
+
+bucket_arn = "arn:aws:s3:::devops-homework-24bcs10006-s18-525426877661"
+bucket_name = "devops-homework-24bcs10006-s18-525426877661"

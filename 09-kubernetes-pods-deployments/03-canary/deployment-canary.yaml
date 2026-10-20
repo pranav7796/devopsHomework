@@ -7,7 +7,7 @@ metadata:
     track: canary
     version: v2
 spec:
-  # 1 canary pod = 10% of traffic (1 out of 10 total pods)
+  # 1 of the 10 selected endpoints is canary; this is an approximate share.
   # To increase canary traffic: scale up this deployment and scale down stable
   #   e.g. 10% -> scale canary to 1 replicas (1/10 total)
   #        20% -> scale canary to 2 replicas (2/10 total)
@@ -38,7 +38,7 @@ spec:
                   - |
                     echo '<html><body style="background:#7b2d00;color:#ffd60a;font-family:monospace;font-size:3em;text-align:center;padding-top:20vh">
                     <p>CANARY v2</p>
-                    <p style="font-size:0.4em;color:#ff9f1c">Track: canary | 10% of traffic (1 of 10 pods)</p>
+                    <p style="font-size:0.4em;color:#ff9f1c">Track: canary | 1 of 10 endpoints</p>
                     </body></html>' > /usr/share/nginx/html/index.html
           resources:
             requests:

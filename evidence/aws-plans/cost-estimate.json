@@ -1,0 +1,24 @@
+{
+  "calculated_at_utc": "2026-10-20T20:48:49.185214+00:00",
+  "source": "Official AWS Price List API responses in this directory",
+  "currency": "USD",
+  "region": "ap-southeast-2",
+  "per_running_exercise_hour": {
+    "t3_micro_linux": 0.0132,
+    "public_ipv4": 0.005,
+    "8_gib_gp3_at_730_hours_month": 0.001052054794520548
+  },
+  "assumptions": [
+    "One public IPv4 address and an 8-GiB gp3 root disk per t3.micro",
+    "Two EC2 exercises run sequentially; S3-only exercise has no EC2 baseline"
+  ],
+  "exclusions": [
+    "S3 storage and requests",
+    "transfer",
+    "surplus CPU credits",
+    "tax",
+    "billing rounding"
+  ],
+  "actual_bill_or_credit_guarantee": false,
+  "baseline_usd_per_hour_one_exercise": 0.019252054794520548
+}

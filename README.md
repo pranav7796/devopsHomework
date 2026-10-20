@@ -91,7 +91,7 @@ Helm install, upgrade, history, rollback and uninstall practice is in `15-helm/R
 
 ## Terraform and AWS
 
-`terraform-s3-demo/` creates a private, versioned and encrypted S3 bucket. `terraform-cloud/` demonstrates VPC, subnet, route, security group, EC2 and S3 resources. Both need AWS credentials, provider downloads and plan review. No cloud resource has been created here. Protect Terraform state; never commit tfvars or state files.
+`terraform-s3-demo/` creates a private, versioned and encrypted S3 bucket. `terraform-cloud/` demonstrates VPC, subnet, route, security group, EC2 and S3 resources. All three homework Terraform projects now have real authenticated Sydney plans (4, 11 and 11 additions), using `devops-new` in account `525426877661`. Providers reject other accounts. All three reviewed plans were subsequently applied, independently verified and destroyed. New homework buckets/VPCs/root disks are absent and both EC2 instances are terminated; RelayDesk was not modified. See [the concrete plans and cost/cleanup scope](AWS-HOMEWORK.md). Protect Terraform state; never commit credentials, private input snapshots or saved plan binaries.
 
 ## Monitoring and GitOps
 
@@ -104,7 +104,8 @@ Kubernetes failure cases and commands are documented in `14-kubernetes-troublesh
 ## Validation status
 
 - **VERIFIED LOCALLY:** only checks recorded in `PROGRESS.md` after execution.
-- **REQUIRES EXTERNAL CREDENTIALS:** AWS plan/apply and GitHub-hosted Actions / GHCR publish.
+- **AWS LIFECYCLE VERIFIED:** all three plans were applied, verified and destroyed; [actual execution/absence proof](evidence/aws-execution/README.md). No homework resources remain running. GitHub Actions/GHCR evidence retains its own dates.
 - **REQUIRES WORKING RUNTIMES:** Docker image/Compose and Kubernetes deploy, HPA, Ingress, Helm rollback, GitOps and monitoring.
-- **REQUIRES USER SCREENSHOT:** genuine live evidence listed in `SCREENSHOT_CHECKLIST.md`.
-# DevOps_Homework
+- **CAPTURE PENDING:** new AWS plan/deployment/destroy PNGs require a real capture surface; Computer Use exposed none in this session. Actual CLI output is saved; no screenshot was fabricated.
+
+Latest local completion check: [21 October 2026 results](evidence/completion-2026-10-21/README.md). All four deployment strategies were exercised on local Minikube, four API unit tests and Helm validation passed, and all three AWS projects produced authenticated plans. All three temporary AWS exercises were then applied, verified and cleaned up; see [AWS execution evidence](evidence/aws-execution/README.md).

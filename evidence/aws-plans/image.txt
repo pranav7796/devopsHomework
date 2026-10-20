@@ -1,0 +1,11 @@
+{
+    "Parameter": {
+        "Name": "/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64",
+        "Type": "String",
+        "Value": "ami-085ce13fd231ab4ae",
+        "Version": 195,
+        "LastModifiedDate": "2026-10-17T01:31:15.360000+05:30",
+        "ARN": "arn:aws:ssm:ap-southeast-2::parameter/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64",
+        "DataType": "text"
+    }
+}

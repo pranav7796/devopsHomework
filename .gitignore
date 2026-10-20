@@ -5,6 +5,11 @@
 !terraform-s3-demo/terraform.tfvars
 **/terraform.tfstate
 **/terraform.tfstate.backup
+**/terraform.tfstate.*
 **/.terraform/
 **/tfplan
+**/tfplan-*
+**/*.tfplan
+**/*.tfvars.json
 **/__pycache__/
+evidence/private/

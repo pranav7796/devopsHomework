@@ -1,0 +1,13 @@
+{"event": "http", "message": "\"GET /health HTTP/1.1\" 200 -"}
+{"event": "http", "message": "\"GET /metrics HTTP/1.1\" 200 -"}
+{"event": "http", "message": "\"GET /missing HTTP/1.1\" 404 -"}
+{"event": "http", "message": "\"GET / HTTP/1.1\" 200 -"}
+test_health (test_app.ApiTest.test_health) ... ok
+test_metrics (test_app.ApiTest.test_metrics) ... ok
+test_not_found (test_app.ApiTest.test_not_found) ... ok
+test_root (test_app.ApiTest.test_root) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.508s
+
+OK

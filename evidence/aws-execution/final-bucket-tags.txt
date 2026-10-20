@@ -1,0 +1,16 @@
+{
+    "TagSet": [
+        {
+            "Key": "Project",
+            "Value": "devopsHomework"
+        },
+        {
+            "Key": "Exercise",
+            "Value": "final-project"
+        },
+        {
+            "Key": "Name",
+            "Value": "homework-artifacts"
+        }
+    ]
+}

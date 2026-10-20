@@ -1,0 +1,47 @@
+{
+  "ec2": [
+    {
+      "usage_type": "APS2-BoxUsage:t3.micro",
+      "effective_date": "2026-10-01T00:00:00Z",
+      "unit": "Hrs",
+      "endRange": "Inf",
+      "description": "$0.0132 per On Demand Linux t3.micro Instance Hour",
+      "appliesTo": [],
+      "rateCode": "HXWVK8ZBMBMGMVKN.JRTCKXETXF.6YS6EN2CT7",
+      "beginRange": "0",
+      "pricePerUnit": {
+        "USD": "0.0132000000"
+      }
+    }
+  ],
+  "storage": [
+    {
+      "usage_type": "APS2-EBS:VolumeUsage.gp3",
+      "effective_date": "2026-10-01T00:00:00Z",
+      "unit": "GB-Mo",
+      "endRange": "Inf",
+      "description": "$0.096 per GB-month of General Purpose (gp3) provisioned storage - Asia Pacific (Sydney)",
+      "appliesTo": [],
+      "rateCode": "QR74UAP3E9WUYT9B.JRTCKXETXF.6YS6EN2CT7",
+      "beginRange": "0",
+      "pricePerUnit": {
+        "USD": "0.0960000000"
+      }
+    }
+  ],
+  "ipv4": [
+    {
+      "usage_type": "APS2-PublicIPv4:InUseAddress",
+      "effective_date": "2026-10-01T00:00:00Z",
+      "unit": "Hrs",
+      "endRange": "Inf",
+      "description": "$0.005 per In-use public IPv4 address per hour",
+      "appliesTo": [],
+      "rateCode": "JZP2PURP9VVQ96GH.JRTCKXETXF.6YS6EN2CT7",
+      "beginRange": "0",
+      "pricePerUnit": {
+        "USD": "0.0050000000"
+      }
+    }
+  ]
+}

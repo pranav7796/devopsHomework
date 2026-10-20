@@ -8,6 +8,13 @@
 
 ## Run
 
+Set a local lab password in the shell. Compose needs this variable for every
+command because it is used to initialize MySQL; do not commit the value.
+
+```bash
+export MYSQL_ROOT_PASSWORD='choose-a-local-lab-password'
+```
+
 ```bash
 docker compose up -d
 docker compose ps
@@ -20,4 +27,5 @@ Stop the containers:
 
 ```bash
 docker compose down
+unset MYSQL_ROOT_PASSWORD
 ```

@@ -1,0 +1,29 @@
+aws_route_table_association.public: Destroying... [id=rtbassoc-08c0b37b9fdd44536]
+aws_s3_bucket_public_access_block.artifacts: Destroying... [id=devops-homework-24bcs10006-final-525426877661]
+aws_s3_bucket_versioning.artifacts: Destroying... [id=devops-homework-24bcs10006-final-525426877661]
+aws_s3_bucket_server_side_encryption_configuration.artifacts: Destroying... [id=devops-homework-24bcs10006-final-525426877661]
+aws_instance.demo: Destroying... [id=i-043429f32ae8aac6d]
+aws_s3_bucket_versioning.artifacts: Destruction complete after 1s
+aws_s3_bucket_server_side_encryption_configuration.artifacts: Destruction complete after 2s
+aws_route_table_association.public: Destruction complete after 2s
+aws_route_table.public: Destroying... [id=rtb-036bbf49674cb66d6]
+aws_s3_bucket_public_access_block.artifacts: Destruction complete after 3s
+aws_s3_bucket.artifacts: Destroying... [id=devops-homework-24bcs10006-final-525426877661]
+aws_s3_bucket.artifacts: Destruction complete after 1s
+aws_route_table.public: Destruction complete after 2s
+aws_internet_gateway.project: Destroying... [id=igw-04e69c7b119e7638d]
+aws_instance.demo: Still destroying... [id=i-043429f32ae8aac6d, 00m10s elapsed]
+aws_internet_gateway.project: Still destroying... [id=igw-04e69c7b119e7638d, 00m10s elapsed]
+aws_instance.demo: Still destroying... [id=i-043429f32ae8aac6d, 00m20s elapsed]
+aws_internet_gateway.project: Still destroying... [id=igw-04e69c7b119e7638d, 00m20s elapsed]
+aws_internet_gateway.project: Destruction complete after 25s
+aws_instance.demo: Still destroying... [id=i-043429f32ae8aac6d, 00m30s elapsed]
+aws_instance.demo: Destruction complete after 36s
+aws_subnet.public: Destroying... [id=subnet-006369af2ad781391]
+aws_security_group.web: Destroying... [id=sg-09f38c34bed96ffd4]
+aws_subnet.public: Destruction complete after 1s
+aws_security_group.web: Destruction complete after 2s
+aws_vpc.project: Destroying... [id=vpc-036751fa507980bb8]
+aws_vpc.project: Destruction complete after 2s
+
+Apply complete! Resources: 0 added, 0 changed, 11 destroyed.

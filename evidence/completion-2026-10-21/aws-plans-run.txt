@@ -1,0 +1,211 @@
+{
+  "prepared_at_utc": "2026-10-20T20:45:16.962012+00:00",
+  "account": "525426877661",
+  "profile": "devops-new",
+  "region": "ap-southeast-2",
+  "ami_id": "ami-085ce13fd231ab4ae",
+  "admin_cidr": "202.131.146.146/32",
+  "applied": false,
+  "projects": [
+    {
+      "directory": "terraform-s3-demo",
+      "bucket": "devops-homework-24bcs10006-s18-525426877661",
+      "input_snapshot": "evidence/private/aws-inputs/s18.tfvars.json",
+      "saved_plan": "terraform-s3-demo/tfplan-completion",
+      "plan_sha256": "9259cc497c56c649e35bfd5eaefe1f4a57f456a68014f11f2f25a18d25192c67",
+      "source_sha256": {
+        "main.tf": "017a00a4a14fe3f2924396b35dc149a780c21a57067a163491615a359f71ecc2",
+        "outputs.tf": "22dea04b82dbf267a819af6d11877e223d00897640573b2f95a1ea01af145c4e",
+        "provider.tf": "2f8a9f97160f921906dc0b6149c11563ee37eeac72f1e73ecfce2714a9633228",
+        "variables.tf": "0d2e9dc00ca0d84ce3da8ad23b8974259d837857bdd4a076e7d39bbb84063a12"
+      },
+      "changes": [
+        {
+          "address": "aws_s3_bucket.homework",
+          "actions": [
+            "create"
+          ]
+        },
+        {
+          "address": "aws_s3_bucket_public_access_block.homework",
+          "actions": [
+            "create"
+          ]
+        },
+        {
+          "address": "aws_s3_bucket_server_side_encryption_configuration.homework",
+          "actions": [
+            "create"
+          ]
+        },
+        {
+          "address": "aws_s3_bucket_versioning.homework",
+          "actions": [
+            "create"
+          ]
+        }
+      ]
+    },
+    {
+      "directory": "terraform-cloud",
+      "bucket": "devops-homework-24bcs10006-s19-525426877661",
+      "input_snapshot": "evidence/private/aws-inputs/s19.tfvars.json",
+      "saved_plan": "terraform-cloud/tfplan-completion",
+      "plan_sha256": "fe23433a02d411c03cd6798377e97e4daf9b947abdb5ea67cd5b26e36ad3974d",
+      "source_sha256": {
+        "main.tf": "251257f40460a02d191282d6d98d56edf656a46b58a5b31620f471860851e3f0",
+        "outputs.tf": "473dcf142b99bd5ffb3ef111d8b1c9f26256ee796a08040e325d744f985770e4",
+        "variables.tf": "bdb9c9e9aefcaf20d74f54c6fc93ebabb5e218206ff7410816d68a564971efba"
+      },
+      "changes": [
+        {
+          "address": "aws_instance.demo",
+          "actions": [
+            "create"
+          ]
+        },
+        {
+          "address": "aws_internet_gateway.project",
+          "actions": [
+            "create"
+          ]
+        },
+        {
+          "address": "aws_route_table.public",
+          "actions": [
+            "create"
+          ]
+        },
+        {
+          "address": "aws_route_table_association.public",
+          "actions": [
+            "create"
+          ]
+        },
+        {
+          "address": "aws_s3_bucket.artifacts",
+          "actions": [
+            "create"
+          ]
+        },
+        {
+          "address": "aws_s3_bucket_public_access_block.artifacts",
+          "actions": [
+            "create"
+          ]
+        },
+        {
+          "address": "aws_s3_bucket_server_side_encryption_configuration.artifacts",
+          "actions": [
+            "create"
+          ]
+        },
+        {
+          "address": "aws_s3_bucket_versioning.artifacts",
+          "actions": [
+            "create"
+          ]
+        },
+        {
+          "address": "aws_security_group.web",
+          "actions": [
+            "create"
+          ]
+        },
+        {
+          "address": "aws_subnet.public",
+          "actions": [
+            "create"
+          ]
+        },
+        {
+          "address": "aws_vpc.project",
+          "actions": [
+            "create"
+          ]
+        }
+      ]
+    },
+    {
+      "directory": "final-devops-project/terraform",
+      "bucket": "devops-homework-24bcs10006-final-525426877661",
+      "input_snapshot": "evidence/private/aws-inputs/final.tfvars.json",
+      "saved_plan": "final-devops-project/terraform/tfplan-completion",
+      "plan_sha256": "9712a1e6ce74d019b037f4f73f2dfb5809ed19641ef4d492afdf2b6eee3b186d",
+      "source_sha256": {
+        "main.tf": "9c90ff2dedf51bc35da493a47a555cb2293a307dea496f5e160489d3d64b692b",
+        "outputs.tf": "473dcf142b99bd5ffb3ef111d8b1c9f26256ee796a08040e325d744f985770e4",
+        "variables.tf": "bdb9c9e9aefcaf20d74f54c6fc93ebabb5e218206ff7410816d68a564971efba"
+      },
+      "changes": [
+        {
+          "address": "aws_instance.demo",
+          "actions": [
+            "create"
+          ]
+        },
+        {
+          "address": "aws_internet_gateway.project",
+          "actions": [
+            "create"
+          ]
+        },
+        {
+          "address": "aws_route_table.public",
+          "actions": [
+            "create"
+          ]
+        },
+        {
+          "address": "aws_route_table_association.public",
+          "actions": [
+            "create"
+          ]
+        },
+        {
+          "address": "aws_s3_bucket.artifacts",
+          "actions": [
+            "create"
+          ]
+        },
+        {
+          "address": "aws_s3_bucket_public_access_block.artifacts",
+          "actions": [
+            "create"
+          ]
+        },
+        {
+          "address": "aws_s3_bucket_server_side_encryption_configuration.artifacts",
+          "actions": [
+            "create"
+          ]
+        },
+        {
+          "address": "aws_s3_bucket_versioning.artifacts",
+          "actions": [
+            "create"
+          ]
+        },
+        {
+          "address": "aws_security_group.web",
+          "actions": [
+            "create"
+          ]
+        },
+        {
+          "address": "aws_subnet.public",
+          "actions": [
+            "create"
+          ]
+        },
+        {
+          "address": "aws_vpc.project",
+          "actions": [
+            "create"
+          ]
+        }
+      ]
+    }
+  ]
+}
+Read-only plans prepared. No AWS resources were created, changed or deleted. Review before requesting deployment approval.

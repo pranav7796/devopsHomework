@@ -1,0 +1,16 @@
+aws_s3_bucket.homework: Creating...
+aws_s3_bucket.homework: Still creating... [00m10s elapsed]
+aws_s3_bucket.homework: Creation complete after 10s [id=devops-homework-24bcs10006-s18-525426877661]
+aws_s3_bucket_public_access_block.homework: Creating...
+aws_s3_bucket_versioning.homework: Creating...
+aws_s3_bucket_server_side_encryption_configuration.homework: Creating...
+aws_s3_bucket_public_access_block.homework: Creation complete after 2s [id=devops-homework-24bcs10006-s18-525426877661]
+aws_s3_bucket_server_side_encryption_configuration.homework: Creation complete after 2s [id=devops-homework-24bcs10006-s18-525426877661]
+aws_s3_bucket_versioning.homework: Creation complete after 4s [id=devops-homework-24bcs10006-s18-525426877661]
+
+Apply complete! Resources: 4 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+bucket_arn = "arn:aws:s3:::devops-homework-24bcs10006-s18-525426877661"
+bucket_name = "devops-homework-24bcs10006-s18-525426877661"

@@ -1,0 +1,163 @@
+[
+  {
+    "name": "shell-syntax",
+    "command": [
+      "bash",
+      "-n",
+      "02-shell-scripting/system-information-script/system_info.sh",
+      "scripts/terraform-readonly.sh"
+    ],
+    "exit_code": 0,
+    "captured_at_utc": "2026-10-20T20:42:19.479884+00:00"
+  },
+  {
+    "name": "api-unit-tests",
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "final-devops-project/application",
+      "-p",
+      "test_*.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "captured_at_utc": "2026-10-20T20:42:20.118191+00:00"
+  },
+  {
+    "name": "helm-lint",
+    "command": [
+      "helm",
+      "lint",
+      "final-devops-project/helm"
+    ],
+    "exit_code": 0,
+    "captured_at_utc": "2026-10-20T20:42:20.231203+00:00"
+  },
+  {
+    "name": "helm-render",
+    "command": [
+      "helm",
+      "template",
+      "homework",
+      "final-devops-project/helm"
+    ],
+    "exit_code": 0,
+    "captured_at_utc": "2026-10-20T20:42:20.284538+00:00"
+  },
+  {
+    "name": "aws-plan-help",
+    "command": [
+      "python3",
+      "scripts/prepare-aws-plans.py",
+      "--help"
+    ],
+    "exit_code": 0,
+    "captured_at_utc": "2026-10-20T20:42:20.412253+00:00"
+  },
+  {
+    "name": "terraform-s3-demo-fmt",
+    "command": [
+      "terraform",
+      "-chdir=terraform-s3-demo",
+      "fmt",
+      "-check"
+    ],
+    "exit_code": 0,
+    "captured_at_utc": "2026-10-20T20:42:20.439105+00:00"
+  },
+  {
+    "name": "terraform-cloud-fmt",
+    "command": [
+      "terraform",
+      "-chdir=terraform-cloud",
+      "fmt",
+      "-check"
+    ],
+    "exit_code": 0,
+    "captured_at_utc": "2026-10-20T20:42:20.471913+00:00"
+  },
+  {
+    "name": "final-devops-project-terraform-fmt",
+    "command": [
+      "terraform",
+      "-chdir=final-devops-project/terraform",
+      "fmt",
+      "-check"
+    ],
+    "exit_code": 0,
+    "captured_at_utc": "2026-10-20T20:42:20.519865+00:00"
+  },
+  {
+    "name": "guard-rejects-apply",
+    "exit_code": 2,
+    "expected_exit_code": 2
+  },
+  {
+    "name": "guard-rejects-destroy",
+    "exit_code": 2,
+    "expected_exit_code": 2
+  },
+  {
+    "name": "wrapper-shell-syntax",
+    "command": [
+      "bash",
+      "-n",
+      "scripts/terraform-readonly.sh"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "system-script-syntax",
+    "command": [
+      "bash",
+      "-n",
+      "02-shell-scripting/system-information-script/system_info.sh"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "python-helper-syntax",
+    "result": "PASS"
+  },
+  {
+    "name": "plan-source-and-private-file-checks",
+    "result": "PASS",
+    "creates": 26,
+    "changes": 0,
+    "deletes": 0
+  },
+  {
+    "name": "markdown-local-links",
+    "result": "PASS"
+  },
+  {
+    "name": "limited-credential-signature-scan",
+    "result": "PASS",
+    "files_scanned": 279,
+    "limitation": "Known token/private-key signatures only, not a comprehensive security guarantee."
+  },
+  {
+    "name": "public-evidence-json",
+    "result": "PASS"
+  },
+  {
+    "name": "tracked-diff-check",
+    "exit_code": 0
+  },
+  {
+    "name": "actual-aws-lifecycles-and-independent-absence",
+    "result": "PASS",
+    "projects": 3,
+    "applied_managed_resources": 26,
+    "homework_resources_remaining": 0,
+    "checked_at_utc": "2026-10-20T21:15:00.023769+00:00"
+  },
+  {
+    "name": "post-execution-source-syntax-privacy-links-json-and-diff",
+    "result": "PASS",
+    "limitation": "Credential scan covers known token/private-key signatures; hosted Gitleaks remains the full CI gate."
+  }
+]

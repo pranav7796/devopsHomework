@@ -1,0 +1,29 @@
+aws_s3_bucket_server_side_encryption_configuration.artifacts: Destroying... [id=devops-homework-24bcs10006-s19-525426877661]
+aws_s3_bucket_versioning.artifacts: Destroying... [id=devops-homework-24bcs10006-s19-525426877661]
+aws_route_table_association.public: Destroying... [id=rtbassoc-0691c0dc88dca4927]
+aws_s3_bucket_public_access_block.artifacts: Destroying... [id=devops-homework-24bcs10006-s19-525426877661]
+aws_instance.demo: Destroying... [id=i-0ead9c11a3e0b0c7a]
+aws_s3_bucket_public_access_block.artifacts: Destruction complete after 2s
+aws_s3_bucket_versioning.artifacts: Destruction complete after 2s
+aws_route_table_association.public: Destruction complete after 2s
+aws_route_table.public: Destroying... [id=rtb-09787dab6e4df3894]
+aws_s3_bucket_server_side_encryption_configuration.artifacts: Destruction complete after 3s
+aws_s3_bucket.artifacts: Destroying... [id=devops-homework-24bcs10006-s19-525426877661]
+aws_s3_bucket.artifacts: Destruction complete after 1s
+aws_route_table.public: Destruction complete after 2s
+aws_internet_gateway.project: Destroying... [id=igw-028301ec4c0a66755]
+aws_instance.demo: Still destroying... [id=i-0ead9c11a3e0b0c7a, 00m10s elapsed]
+aws_internet_gateway.project: Still destroying... [id=igw-028301ec4c0a66755, 00m10s elapsed]
+aws_instance.demo: Still destroying... [id=i-0ead9c11a3e0b0c7a, 00m20s elapsed]
+aws_internet_gateway.project: Still destroying... [id=igw-028301ec4c0a66755, 00m20s elapsed]
+aws_internet_gateway.project: Destruction complete after 25s
+aws_instance.demo: Still destroying... [id=i-0ead9c11a3e0b0c7a, 00m30s elapsed]
+aws_instance.demo: Destruction complete after 36s
+aws_subnet.public: Destroying... [id=subnet-0c2a40ebc2e9130eb]
+aws_security_group.web: Destroying... [id=sg-021b89fa7dd6b921f]
+aws_subnet.public: Destruction complete after 2s
+aws_security_group.web: Destruction complete after 2s
+aws_vpc.project: Destroying... [id=vpc-0dee40a401c0a5954]
+aws_vpc.project: Destruction complete after 2s
+
+Apply complete! Resources: 0 added, 0 changed, 11 destroyed.
