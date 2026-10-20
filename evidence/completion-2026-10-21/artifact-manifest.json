@@ -1,5 +1,5 @@
 {
-  "verified_at_utc": "2026-10-20T21:15:00.071776+00:00",
+  "verified_at_utc": "2026-10-20T21:31:53.293661+00:00",
   "files": [
     {
       "path": "evidence/aws-plans/README.md",
@@ -118,8 +118,8 @@
     },
     {
       "path": "evidence/completion-2026-10-21/README.md",
-      "bytes": 3590,
-      "sha256": "974c8bae62c1264d80c8798087153a2b570477ecc0dbf094dcb6c799bffa3f0f"
+      "bytes": 4240,
+      "sha256": "ddb45dfaff2830842698101fbba642f58ae5141eaed217d6d1a58b9b6a3d81ec"
     },
     {
       "path": "evidence/completion-2026-10-21/api-unit-tests.txt",
@@ -750,6 +750,11 @@
       "path": "evidence/completion-2026-10-21/ci-shallow-fingerprint-failure.txt",
       "bytes": 8160,
       "sha256": "8272163be9af78402e4c967e00e0def15b2951d20a2b801a481375efa0a3caf8"
+    },
+    {
+      "path": "evidence/completion-2026-10-21/ci-success.json",
+      "bytes": 4458,
+      "sha256": "808ac2d28e87bb469cd08c31803236fdd227de4f8491ef0c9e6a9917bf0ffe4c"
     }
   ],
   "scope": "Public planning, execution and validation artifacts; private inputs/state/plan binaries excluded."
