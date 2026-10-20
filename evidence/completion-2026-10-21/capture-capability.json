@@ -5,5 +5,16 @@
     "browsers": []
   },
   "new_screenshots": 0,
-  "result": "BLOCKED: no capture surface; actual CLI/HTTP logs published instead. No screenshot was fabricated."
+  "result": "BLOCKED: no capture surface; actual CLI/HTTP logs published instead. No screenshot was fabricated.",
+  "followup_capture": {
+    "at_utc": "2026-10-20T21:43:51.886312+00:00",
+    "computer_use_inventory": {
+      "apps": [],
+      "browsers": []
+    },
+    "method": "Dedicated Foot terminal window captured with Grim through the local Wayland compositor",
+    "new_screenshots": 5,
+    "provenance": "evidence/screenshots-2026-10-21/provenance.json",
+    "result": "PASS: real screenshots of labeled saved AWS logs and freshly queried CI status; no new deployment"
+  }
 }

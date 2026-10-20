@@ -1,0 +1,81 @@
+{
+  "checked_at_utc": "2026-10-20T21:44:47.685845+00:00",
+  "images": [
+    {
+      "path": "terraform-cloud/evidence/terraform-plan.png",
+      "dimensions": [
+        1366,
+        768
+      ],
+      "image_and_source_hashes": "PASS",
+      "visual_review": "PASS: all displayed output readable; no terminal errors or other windows"
+    },
+    {
+      "path": "evidence/screenshots-2026-10-21/s18-evidence.png",
+      "dimensions": [
+        1366,
+        768
+      ],
+      "image_and_source_hashes": "PASS",
+      "visual_review": "PASS: all displayed output readable; no terminal errors or other windows"
+    },
+    {
+      "path": "evidence/screenshots-2026-10-21/s19-evidence.png",
+      "dimensions": [
+        1366,
+        768
+      ],
+      "image_and_source_hashes": "PASS",
+      "visual_review": "PASS: all displayed output readable; no terminal errors or other windows"
+    },
+    {
+      "path": "evidence/screenshots-2026-10-21/final-evidence.png",
+      "dimensions": [
+        1366,
+        768
+      ],
+      "image_and_source_hashes": "PASS",
+      "visual_review": "PASS: all displayed output readable; no terminal errors or other windows"
+    },
+    {
+      "path": "evidence/screenshots-2026-10-21/ci-evidence.png",
+      "dimensions": [
+        1366,
+        768
+      ],
+      "image_and_source_hashes": "PASS",
+      "visual_review": "PASS: all displayed output readable; no terminal errors or other windows"
+    }
+  ],
+  "local_markdown_links_checked": 207,
+  "missing_local_links": [],
+  "capture_helper_syntax": "PASS",
+  "ci_run": 39501169416,
+  "ci_status": "success",
+  "cloud_mutations_for_capture": false,
+  "checklist_destinations_verified": [
+    "12-kubernetes-config-ingress/kubernetes12.png",
+    "12-kubernetes-config-ingress/kubernetes12session.png",
+    "12-kubernetes-config-ingress/kuberenetes12troubleshooting.png",
+    "14-kubernetes-troubleshooting/session14-pods-before.png",
+    "14-kubernetes-troubleshooting/session14.png",
+    "14-kubernetes-troubleshooting/session14troubleshooting.png",
+    "14-kubernetes-troubleshooting/networkafter.png",
+    "13-kubernetes-storage-hpa/session13.png",
+    "15-helm/helm-rollback.png",
+    "15-helm/helm-uninstall.png",
+    "final-devops-project/evidence/github-actions.png",
+    "terraform-cloud/evidence/terraform-plan.png",
+    "evidence/screenshots-2026-10-21/s18-evidence.png",
+    "evidence/screenshots-2026-10-21/s19-evidence.png",
+    "evidence/screenshots-2026-10-21/final-evidence.png",
+    "evidence/screenshots-2026-10-21/ci-evidence.png",
+    "20-monitoring-gitops/evidence/monitoring-grafana.png",
+    "final-devops-project/evidence/argocd-sync.png"
+  ],
+  "secret_scan": {
+    "command": "/tmp/devops-homework-gitleaks/gitleaks git --pre-commit --staged --redact --no-banner",
+    "exit_code": 0,
+    "result": "no leaks found; scanner configuration unchanged"
+  }
+}

@@ -1,0 +1,324 @@
+{
+  "ci_query_command": [
+    "/home/pranav/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/gh",
+    "run",
+    "view",
+    "39501169416",
+    "--repo",
+    "pranav7796/devopsHomework",
+    "--json",
+    "databaseId,headSha,status,conclusion,url,jobs"
+  ],
+  "capture_method": "Actual dedicated Foot terminal window captured by Grim on the owner's Wayland desktop; no image synthesis or editing",
+  "records": [
+    {
+      "view": "plan",
+      "image": "terraform-cloud/evidence/terraform-plan.png",
+      "captured_at_utc": "2026-10-20T21:42:30.771053+00:00",
+      "terminal_command": [
+        "foot",
+        "-c",
+        "/dev/null",
+        "-F",
+        "-H",
+        "-a",
+        "homework-evidence-capture",
+        "-T",
+        "Homework evidence",
+        "-f",
+        "monospace:size=11",
+        "-o",
+        "colors-dark.alpha=1.0",
+        "/usr/bin/python3",
+        "/home/pranav/Projects/devopsHomework/evidence/screenshots-2026-10-21/capture.py",
+        "--show",
+        "plan"
+      ],
+      "capture_command": [
+        "grim",
+        "-g",
+        "0,0 1366x768",
+        "/home/pranav/Projects/devopsHomework/terraform-cloud/evidence/terraform-plan.png"
+      ],
+      "sha256": "757415d33f5a78ca6b2689061e1270bc17c271ba1fa618ace28062170bc13ca6",
+      "sources": [
+        {
+          "path": "evidence/aws-plans/s19-plan.txt",
+          "sha256": "54f0c7ecea446271e08ee4b8215dc52bdc2020efd9227e45a019bc1b2aaa58a8"
+        }
+      ]
+    },
+    {
+      "view": "s18",
+      "image": "evidence/screenshots-2026-10-21/s18-evidence.png",
+      "captured_at_utc": "2026-10-20T21:42:31.974681+00:00",
+      "terminal_command": [
+        "foot",
+        "-c",
+        "/dev/null",
+        "-F",
+        "-H",
+        "-a",
+        "homework-evidence-capture",
+        "-T",
+        "Homework evidence",
+        "-f",
+        "monospace:size=11",
+        "-o",
+        "colors-dark.alpha=1.0",
+        "/usr/bin/python3",
+        "/home/pranav/Projects/devopsHomework/evidence/screenshots-2026-10-21/capture.py",
+        "--show",
+        "s18"
+      ],
+      "capture_command": [
+        "grim",
+        "-g",
+        "0,0 1366x768",
+        "/home/pranav/Projects/devopsHomework/evidence/screenshots-2026-10-21/s18-evidence.png"
+      ],
+      "sha256": "dd79b015ae06aa83b6c8f725747de81737603400a751139acd11bbfcafcd0898",
+      "sources": [
+        {
+          "path": "evidence/aws-execution/s18-apply.txt",
+          "sha256": "3f69581523fe8ac465cc1ccb9cd437279b586e1eaab7771378a354056d51a237"
+        },
+        {
+          "path": "evidence/aws-execution/s18-bucket-after-cleanup-stderr.txt",
+          "sha256": "339cd21d49c04711ebb5f3d049b25a51619937c5205481672d13c0aeceeb7074"
+        },
+        {
+          "path": "evidence/aws-execution/s18-bucket-encryption.txt",
+          "sha256": "9dcbf5a9219555f282511d108aea0d88f078e8824b9fdd397160394bd3c2a213"
+        },
+        {
+          "path": "evidence/aws-execution/s18-bucket-public-access.txt",
+          "sha256": "31f1f0a092cfdc6587c931923da09fc537545478aca3c5dcc2c060b73a91e4d9"
+        },
+        {
+          "path": "evidence/aws-execution/s18-bucket-versioning.txt",
+          "sha256": "e0d7fcfe6b2ca7b3376e1af42cfbf309d2ee91d4cd664565f9b73c4816079f22"
+        },
+        {
+          "path": "evidence/aws-execution/s18-destroy.txt",
+          "sha256": "323e0833bf2210364a2890790ffc883bdf80bd5d1ac6e21023728de3342b068f"
+        },
+        {
+          "path": "evidence/aws-execution/s18-state-after-cleanup.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "evidence/aws-execution/summary.json",
+          "sha256": "ec302b6a76d69a18a40fb43f4602b18b088fab28840fcf007615c9dea073837c"
+        }
+      ]
+    },
+    {
+      "view": "s19",
+      "image": "evidence/screenshots-2026-10-21/s19-evidence.png",
+      "captured_at_utc": "2026-10-20T21:42:33.195637+00:00",
+      "terminal_command": [
+        "foot",
+        "-c",
+        "/dev/null",
+        "-F",
+        "-H",
+        "-a",
+        "homework-evidence-capture",
+        "-T",
+        "Homework evidence",
+        "-f",
+        "monospace:size=11",
+        "-o",
+        "colors-dark.alpha=1.0",
+        "/usr/bin/python3",
+        "/home/pranav/Projects/devopsHomework/evidence/screenshots-2026-10-21/capture.py",
+        "--show",
+        "s19"
+      ],
+      "capture_command": [
+        "grim",
+        "-g",
+        "0,0 1366x768",
+        "/home/pranav/Projects/devopsHomework/evidence/screenshots-2026-10-21/s19-evidence.png"
+      ],
+      "sha256": "ea650222f3222a436534d3ed3f8a467b356445096f2dff39bc7ce11fa0e01ffe",
+      "sources": [
+        {
+          "path": "evidence/aws-execution/s19-apply.txt",
+          "sha256": "018e3332961421201b8b6a56e11e2ab6744899ff7c9828a66b66e49ed726dfa8"
+        },
+        {
+          "path": "evidence/aws-execution/s19-bucket-after-cleanup-stderr.txt",
+          "sha256": "339cd21d49c04711ebb5f3d049b25a51619937c5205481672d13c0aeceeb7074"
+        },
+        {
+          "path": "evidence/aws-execution/s19-bucket-encryption.txt",
+          "sha256": "9dcbf5a9219555f282511d108aea0d88f078e8824b9fdd397160394bd3c2a213"
+        },
+        {
+          "path": "evidence/aws-execution/s19-bucket-public-access.txt",
+          "sha256": "31f1f0a092cfdc6587c931923da09fc537545478aca3c5dcc2c060b73a91e4d9"
+        },
+        {
+          "path": "evidence/aws-execution/s19-bucket-versioning.txt",
+          "sha256": "e0d7fcfe6b2ca7b3376e1af42cfbf309d2ee91d4cd664565f9b73c4816079f22"
+        },
+        {
+          "path": "evidence/aws-execution/s19-destroy.txt",
+          "sha256": "fa3de24adda8365575dfb7c50f24d11e52fa583b204cc93eb63187be19e14875"
+        },
+        {
+          "path": "evidence/aws-execution/s19-http-attempts.json",
+          "sha256": "a36ad8a1b90c847946c3c92d0acdc0fc9e050262c1bfdb5e5c014b9053f88357"
+        },
+        {
+          "path": "evidence/aws-execution/s19-http.txt",
+          "sha256": "0c78b082a56f55bae7708900fdf6f70048d65fc88d9ad00e23e2f69ad49e64eb"
+        },
+        {
+          "path": "evidence/aws-execution/s19-instance-after-cleanup.txt",
+          "sha256": "450306cb3973eba4c965ce1e378b8618877c3ecd4957675a507591b938981d5d"
+        },
+        {
+          "path": "evidence/aws-execution/s19-state-after-cleanup.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "evidence/aws-execution/s19-volume-after-cleanup-vol-017b0b8da7a576465-stderr.txt",
+          "sha256": "0adcf2849c44a49cac12d7da235a0bd7c3f0ec97939699fb40fafb8525550118"
+        },
+        {
+          "path": "evidence/aws-execution/s19-vpc-after-cleanup-stderr.txt",
+          "sha256": "176ba67ee389d7996120cdb003a5b567af9b7af6ecce1a9c32e5a081be58694a"
+        },
+        {
+          "path": "evidence/aws-execution/summary.json",
+          "sha256": "ec302b6a76d69a18a40fb43f4602b18b088fab28840fcf007615c9dea073837c"
+        }
+      ]
+    },
+    {
+      "view": "final",
+      "image": "evidence/screenshots-2026-10-21/final-evidence.png",
+      "captured_at_utc": "2026-10-20T21:42:34.391874+00:00",
+      "terminal_command": [
+        "foot",
+        "-c",
+        "/dev/null",
+        "-F",
+        "-H",
+        "-a",
+        "homework-evidence-capture",
+        "-T",
+        "Homework evidence",
+        "-f",
+        "monospace:size=11",
+        "-o",
+        "colors-dark.alpha=1.0",
+        "/usr/bin/python3",
+        "/home/pranav/Projects/devopsHomework/evidence/screenshots-2026-10-21/capture.py",
+        "--show",
+        "final"
+      ],
+      "capture_command": [
+        "grim",
+        "-g",
+        "0,0 1366x768",
+        "/home/pranav/Projects/devopsHomework/evidence/screenshots-2026-10-21/final-evidence.png"
+      ],
+      "sha256": "5bfc0237308e9129b2fbcf432e36fc6a998db398756f60a35357b0dc645ef5fd",
+      "sources": [
+        {
+          "path": "evidence/aws-execution/final-apply.txt",
+          "sha256": "646ede8f4f606e5021fc582375bff2593a2bdabd4a090cf84bc2077e73f91169"
+        },
+        {
+          "path": "evidence/aws-execution/final-bucket-after-cleanup-stderr.txt",
+          "sha256": "339cd21d49c04711ebb5f3d049b25a51619937c5205481672d13c0aeceeb7074"
+        },
+        {
+          "path": "evidence/aws-execution/final-bucket-encryption.txt",
+          "sha256": "9dcbf5a9219555f282511d108aea0d88f078e8824b9fdd397160394bd3c2a213"
+        },
+        {
+          "path": "evidence/aws-execution/final-bucket-public-access.txt",
+          "sha256": "31f1f0a092cfdc6587c931923da09fc537545478aca3c5dcc2c060b73a91e4d9"
+        },
+        {
+          "path": "evidence/aws-execution/final-bucket-versioning.txt",
+          "sha256": "e0d7fcfe6b2ca7b3376e1af42cfbf309d2ee91d4cd664565f9b73c4816079f22"
+        },
+        {
+          "path": "evidence/aws-execution/final-destroy.txt",
+          "sha256": "b8ef14cbddb23b836185cebd2b9dea5a6f323236877b7a350d8847266fdc13ad"
+        },
+        {
+          "path": "evidence/aws-execution/final-http-attempts.json",
+          "sha256": "9d8fec1c8936fd9260a979506438b869d53e66f1c2d8fa35971140b3981c5a1a"
+        },
+        {
+          "path": "evidence/aws-execution/final-http.txt",
+          "sha256": "00ee76030b39cd902e68d52d4ad1258648579bbd0d9a9f584611b60669b27436"
+        },
+        {
+          "path": "evidence/aws-execution/final-instance-after-cleanup.txt",
+          "sha256": "0ec1a358d2ddd6292d42f2191ae15aa9e32b93f31f9b79c9e392deb9f6b0f731"
+        },
+        {
+          "path": "evidence/aws-execution/final-state-after-cleanup.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "evidence/aws-execution/final-volume-after-cleanup-vol-0b3b4ff465efd44ea-stderr.txt",
+          "sha256": "817a7f49d0e5b46ece698a76a2a51cd583d0f59252e29a29a5f51e595a1a56cb"
+        },
+        {
+          "path": "evidence/aws-execution/final-vpc-after-cleanup-stderr.txt",
+          "sha256": "8e24e02c078a051bf35478880c168fbda05bc85e2712cd4bbe1663d9d55cbe56"
+        },
+        {
+          "path": "evidence/aws-execution/summary.json",
+          "sha256": "ec302b6a76d69a18a40fb43f4602b18b088fab28840fcf007615c9dea073837c"
+        }
+      ]
+    },
+    {
+      "view": "ci",
+      "image": "evidence/screenshots-2026-10-21/ci-evidence.png",
+      "captured_at_utc": "2026-10-20T21:42:35.618151+00:00",
+      "terminal_command": [
+        "foot",
+        "-c",
+        "/dev/null",
+        "-F",
+        "-H",
+        "-a",
+        "homework-evidence-capture",
+        "-T",
+        "Homework evidence",
+        "-f",
+        "monospace:size=11",
+        "-o",
+        "colors-dark.alpha=1.0",
+        "/usr/bin/python3",
+        "/home/pranav/Projects/devopsHomework/evidence/screenshots-2026-10-21/capture.py",
+        "--show",
+        "ci"
+      ],
+      "capture_command": [
+        "grim",
+        "-g",
+        "0,0 1366x768",
+        "/home/pranav/Projects/devopsHomework/evidence/screenshots-2026-10-21/ci-evidence.png"
+      ],
+      "sha256": "09b6a694b8642c0c957a0211a8e7afb319493a8b460bf6474218219d6d3e6a53",
+      "sources": [
+        {
+          "path": "evidence/screenshots-2026-10-21/ci-run.json",
+          "sha256": "30e47e2e388d9934985e1d3cc9f3ee9069d1c6fe685faec1924d30cd4d8ce189"
+        }
+      ]
+    }
+  ]
+}

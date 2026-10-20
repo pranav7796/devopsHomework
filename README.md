@@ -99,14 +99,14 @@ The API exports a Prometheus text endpoint. Scrape and datasource examples are i
 
 ## Troubleshooting and evidence
 
-Kubernetes failure cases and commands are documented in `14-kubernetes-troubleshooting/`. Deliberately broken YAML remains isolated in session `troubleshooting/` folders. Do not apply these examples to a production namespace. Historical screenshots are embedded in existing session READMEs. New live evidence still needed is enumerated in [SCREENSHOT_CHECKLIST.md](SCREENSHOT_CHECKLIST.md); no screenshot was fabricated.
+Kubernetes failure cases and commands are documented in `14-kubernetes-troubleshooting/`. Deliberately broken YAML remains isolated in session `troubleshooting/` folders. Do not apply these examples to a production namespace. Historical screenshots are embedded in existing session READMEs. [SCREENSHOT_CHECKLIST.md](SCREENSHOT_CHECKLIST.md) links the captures, including [five new terminal screenshots](evidence/screenshots-2026-10-21/README.md); no screenshot was fabricated.
 
 ## Validation status
 
 - **VERIFIED LOCALLY:** only checks recorded in `PROGRESS.md` after execution.
 - **AWS LIFECYCLE VERIFIED:** all three plans were applied, verified and destroyed; [actual execution/absence proof](evidence/aws-execution/README.md). No homework resources remain running. GitHub Actions/GHCR evidence retains its own dates.
 - **REQUIRES WORKING RUNTIMES:** Docker image/Compose and Kubernetes deploy, HPA, Ingress, Helm rollback, GitOps and monitoring.
-- **CAPTURE PENDING:** new AWS plan/deployment/destroy PNGs require a real capture surface; Computer Use exposed none in this session. Actual CLI output is saved; no screenshot was fabricated.
+- **SCREENSHOTS ADDED:** the missing Terraform plan image, three AWS lifecycle captures and a current CI terminal capture are [available with provenance](evidence/screenshots-2026-10-21/README.md). AWS panels show clearly labeled saved execution logs; no new AWS deployment was performed for capture.
 
 Latest local completion check: [21 October 2026 results](evidence/completion-2026-10-21/README.md). All four deployment strategies were exercised on local Minikube, four API unit tests and Helm validation passed, and all three AWS projects produced authenticated plans. All three temporary AWS exercises were then applied, verified and cleaned up; see [AWS execution evidence](evidence/aws-execution/README.md).
 

@@ -81,7 +81,7 @@ The API exposes `/metrics` and structured request logs. `monitoring/` runs Prome
 
 ## Screenshots and evidence
 
-The [GitHub Actions](evidence/github-actions.png) and [Argo CD](evidence/argocd-sync.png) screenshots document the final-project pipeline and local GitOps deployment. The [monitoring screenshot](../20-monitoring-gitops/evidence/monitoring-grafana.png) and earlier session evidence are linked from their READMEs. The remaining AWS screenshot is listed in `../SCREENSHOT_CHECKLIST.md`. Actual local checks and external work are recorded in `../PROGRESS.md`.
+The historical [GitHub Actions](evidence/github-actions.png) and [Argo CD](evidence/argocd-sync.png) screenshots document the final-project pipeline and local GitOps deployment. The [monitoring screenshot](../20-monitoring-gitops/evidence/monitoring-grafana.png) and earlier session evidence are linked from their READMEs. New [successful CI](../evidence/screenshots-2026-10-21/ci-evidence.png) and [final-project AWS lifecycle](../evidence/screenshots-2026-10-21/final-evidence.png) terminal captures are available with [provenance and saved-output labels](../evidence/screenshots-2026-10-21/README.md). The missing [Session 19 plan screenshot](../terraform-cloud/evidence/terraform-plan.png) has also been added. Actual local checks and external work are recorded in `../PROGRESS.md`.
 
 ## Lessons learned
 

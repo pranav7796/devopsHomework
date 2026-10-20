@@ -1,5 +1,5 @@
 {
-  "verified_at_utc": "2026-10-20T21:31:53.293661+00:00",
+  "verified_at_utc": "2026-10-20T21:44:47.686863+00:00",
   "files": [
     {
       "path": "evidence/aws-plans/README.md",
@@ -118,8 +118,8 @@
     },
     {
       "path": "evidence/completion-2026-10-21/README.md",
-      "bytes": 4240,
-      "sha256": "ddb45dfaff2830842698101fbba642f58ae5141eaed217d6d1a58b9b6a3d81ec"
+      "bytes": 4452,
+      "sha256": "7bc28c5e9e7fdd53c96d9025373054ce1a9d0da13e0ced77d7e2d645353a0c38"
     },
     {
       "path": "evidence/completion-2026-10-21/api-unit-tests.txt",
@@ -138,8 +138,8 @@
     },
     {
       "path": "evidence/completion-2026-10-21/capture-capability.json",
-      "bytes": 268,
-      "sha256": "940d2203386f6efdbfb510d292025e24e877b81fad38382062e95e2c801f0d33"
+      "bytes": 738,
+      "sha256": "3ca24faab38f95c0ffb200dbd197296f88812452a14c908dd641c5c79fea2618"
     },
     {
       "path": "evidence/completion-2026-10-21/final-devops-project-terraform-fmt.txt",
@@ -203,8 +203,8 @@
     },
     {
       "path": "evidence/aws-execution/README.md",
-      "bytes": 3283,
-      "sha256": "ab81b792aba49ddfff827cbcbd40bd0f40c1290633764942193a83085a49d112"
+      "bytes": 3424,
+      "sha256": "df40a9348c0c53c07ea70d63181ac510f854bb3866eea903f6559c0f9f6fd6c7"
     },
     {
       "path": "evidence/aws-execution/command-results.json",
@@ -755,6 +755,56 @@
       "path": "evidence/completion-2026-10-21/ci-success.json",
       "bytes": 4458,
       "sha256": "808ac2d28e87bb469cd08c31803236fdd227de4f8491ef0c9e6a9917bf0ffe4c"
+    },
+    {
+      "path": "evidence/screenshots-2026-10-21/README.md",
+      "bytes": 2420,
+      "sha256": "a1e96f90d9e9c3978c0a00d199b8535530fde46b5d15c3a8b02a7ce6f13c22a0"
+    },
+    {
+      "path": "evidence/screenshots-2026-10-21/capture.py",
+      "bytes": 7452,
+      "sha256": "34640b992a1971b214ce8d9a1eee2f148d9a65a4aa52a8204ed0bd81da8bb9d0"
+    },
+    {
+      "path": "evidence/screenshots-2026-10-21/ci-evidence.png",
+      "bytes": 67098,
+      "sha256": "09b6a694b8642c0c957a0211a8e7afb319493a8b460bf6474218219d6d3e6a53"
+    },
+    {
+      "path": "evidence/screenshots-2026-10-21/ci-run.json",
+      "bytes": 4458,
+      "sha256": "30e47e2e388d9934985e1d3cc9f3ee9069d1c6fe685faec1924d30cd4d8ce189"
+    },
+    {
+      "path": "evidence/screenshots-2026-10-21/final-evidence.png",
+      "bytes": 95537,
+      "sha256": "5bfc0237308e9129b2fbcf432e36fc6a998db398756f60a35357b0dc645ef5fd"
+    },
+    {
+      "path": "evidence/screenshots-2026-10-21/provenance.json",
+      "bytes": 11380,
+      "sha256": "a8acedfe35fe1bd99bee108689f5a7dd4f5747aa7b5d13179b45cf4ac76d7d7c"
+    },
+    {
+      "path": "evidence/screenshots-2026-10-21/s18-evidence.png",
+      "bytes": 68974,
+      "sha256": "dd79b015ae06aa83b6c8f725747de81737603400a751139acd11bbfcafcd0898"
+    },
+    {
+      "path": "evidence/screenshots-2026-10-21/s19-evidence.png",
+      "bytes": 94942,
+      "sha256": "ea650222f3222a436534d3ed3f8a467b356445096f2dff39bc7ce11fa0e01ffe"
+    },
+    {
+      "path": "evidence/screenshots-2026-10-21/validation.json",
+      "bytes": 2872,
+      "sha256": "f1f83f2a20aa2848b68280596ed4a6314c94c9a621bc5f643597ba8e6cb5cf63"
+    },
+    {
+      "path": "terraform-cloud/evidence/terraform-plan.png",
+      "bytes": 80368,
+      "sha256": "757415d33f5a78ca6b2689061e1270bc17c271ba1fa618ace28062170bc13ca6"
     }
   ],
   "scope": "Public planning, execution and validation artifacts; private inputs/state/plan binaries excluded."

@@ -72,6 +72,8 @@ were verified, show/output captured, and destroy completed. The EC2 instance is
 terminated; its VPC, root disk and bucket are absent. [Execution proof](../evidence/aws-execution/README.md). Use the [account-guarded credential workflow](../AWS-HOMEWORK.md)
 for the existing `devops-new` CLI login. Providers are restricted to account
 `525426877661`; the default region is `ap-southeast-2`. The example file is safe
-input guidance, not populated deployment values. The required plan screenshot
-remains pending because no capture surface was available. This is a homework
+input guidance, not populated deployment values. The [required plan screenshot](evidence/terraform-plan.png)
+shows labeled excerpts of the saved authenticated plan, captured in a real terminal on 21 October 2026 (IST).
+[Lifecycle screenshot](../evidence/screenshots-2026-10-21/s19-evidence.png) displays the saved execution/cleanup logs.
+This is a homework
 topology; EC2, storage, public IPv4 and transfer can incur charges.

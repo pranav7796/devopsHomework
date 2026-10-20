@@ -18,7 +18,7 @@ The initial planning was read-only. After owner authorization, only the newly cr
 
 The accidental CLI-output file was moved to ignored private storage. The previously untracked multi-container screenshot was visually inspected, retained under a descriptive name and linked from the lifecycle guide with its original October 8 date. The preexisting removal of an unrelated-project Argo screenshot was preserved; this repository's actual final-project Argo evidence remains linked.
 
-Computer Use returned no browser/app surfaces, so no fresh screenshots were captured. The plan text files are genuine CLI output, not screenshots. See [AWS-HOMEWORK.md](../../AWS-HOMEWORK.md) for resource/cost/cleanup scope and completed execution/cleanup proof.
+Computer Use returned no browser/app surfaces during the initial check. A subsequent pass captured [five genuine terminal screenshots](../screenshots-2026-10-21/README.md) using Foot/Grim, including the missing plan image, saved AWS lifecycle excerpts and freshly queried CI status. The AWS captures explicitly label saved output and do not rerun deployment. See [AWS-HOMEWORK.md](../../AWS-HOMEWORK.md) for resource/cost/cleanup scope and completed execution/cleanup proof.
 
 ## Final hosted CI and publication
 

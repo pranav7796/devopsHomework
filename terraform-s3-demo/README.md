@@ -14,3 +14,5 @@ terraform destroy
 ```
 
 **Authenticated plan verified on 21 October 2026 (IST): 4 to add, 0 to change, 0 to destroy.** [Actual plan](../evidence/aws-plans/s18-plan.txt). The reviewed plan was subsequently applied and its S3 controls verified, then destroyed; AWS confirmed bucket absence. [Execution evidence](../evidence/aws-execution/README.md). The provider defaults to Sydney and rejects accounts other than `525426877661`. Use the existing CLI login with the [reviewed credential/workflow instructions](../AWS-HOMEWORK.md); never put credentials in tfvars. Remote state and state locking are not configured in this learning demo.
+
+[Terminal screenshot of the saved execution/cleanup logs](../evidence/screenshots-2026-10-21/s18-evidence.png), captured on 21 October 2026 (IST), shows apply/destroy totals, S3 controls and bucket absence. [Capture provenance](../evidence/screenshots-2026-10-21/README.md).
