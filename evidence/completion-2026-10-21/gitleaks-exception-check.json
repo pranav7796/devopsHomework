@@ -1,0 +1,10 @@
+{
+  "verified_at_utc": "2026-10-20T21:21:23.315175+00:00",
+  "version": "8.24.3",
+  "source_commit": "8f379b94da37dcc7727ad05ca051b0ddca2f5b73",
+  "without_exception_exit_code": 1,
+  "findings_without_exception": 1,
+  "with_exact_fingerprint_exception_exit_code": 0,
+  "findings_with_exception": 0,
+  "scope": "Exact historical public container-image tag finding only; original output unchanged; no rule or directory exclusion."
+}

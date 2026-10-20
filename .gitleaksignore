@@ -1,0 +1,3 @@
+# Public GHCR commit tag in the preserved Helm render, not a credential.
+# Exact historical finding only; no file, rule or future-commit exclusion.
+8f379b94da37dcc7727ad05ca051b0ddca2f5b73:evidence/completion-2026-10-21/helm-render.txt:generic-api-key:48

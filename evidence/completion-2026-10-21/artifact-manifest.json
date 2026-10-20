@@ -720,6 +720,26 @@
       "path": "evidence/aws-execution-run.txt",
       "bytes": 5005,
       "sha256": "9b9bd2960018d60700c3381a8d486cdde402beb0c62f204580988331fd49b81a"
+    },
+    {
+      "path": "evidence/completion-2026-10-21/ci-initial-failure.txt",
+      "bytes": 7839,
+      "sha256": "309e537566881eb78fb534beba8d123d019034d135d913ca8203f2c9e7b4acc9"
+    },
+    {
+      "path": "evidence/completion-2026-10-21/gitleaks-false-positive-reproduction.json",
+      "bytes": 946,
+      "sha256": "1a91998583a7b5282ef2e5814ff70cdbb7e00f86802d955297a895c405909b05"
+    },
+    {
+      "path": "evidence/completion-2026-10-21/gitleaks-reviewed-commit.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "evidence/completion-2026-10-21/gitleaks-exception-check.json",
+      "bytes": 431,
+      "sha256": "83c33ca41663548909f794a8c28c9b77f95a62071185751f6ab5664d5f8b059e"
     }
   ],
   "scope": "Public planning, execution and validation artifacts; private inputs/state/plan binaries excluded."

@@ -1,0 +1,23 @@
+[
+ {
+  "RuleID": "generic-api-key",
+  "Description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+  "StartLine": 48,
+  "EndLine": 48,
+  "StartColumn": 54,
+  "EndColumn": 107,
+  "Match": "homework-api:REDACTED\"",
+  "Secret": "REDACTED",
+  "File": "evidence/completion-2026-10-21/helm-render.txt",
+  "SymlinkFile": "",
+  "Commit": "8f379b94da37dcc7727ad05ca051b0ddca2f5b73",
+  "Link": "https://github.com/pranav7796/devopsHomework/blob/8f379b94da37dcc7727ad05ca051b0ddca2f5b73/evidence/completion-2026-10-21/helm-render.txt#L48",
+  "Entropy": 3.7709506,
+  "Author": "Pranav",
+  "Email": "pranav.24bcs10006@sst.scaler.com",
+  "Date": "2026-10-20T21:15:53Z",
+  "Message": "Complete homework AWS lifecycle and deployment strategy verification",
+  "Tags": [],
+  "Fingerprint": "8f379b94da37dcc7727ad05ca051b0ddca2f5b73:evidence/completion-2026-10-21/helm-render.txt:generic-api-key:48"
+ }
+]
